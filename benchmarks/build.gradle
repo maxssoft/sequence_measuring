@@ -1,0 +1,46 @@
+plugins {
+    id 'java'
+    id 'org.jetbrains.kotlin.jvm'
+    id 'org.jetbrains.kotlin.plugin.allopen' version "1.9.20"
+    id 'org.jetbrains.kotlinx.benchmark' version '0.4.10'
+}
+
+allOpen {
+    annotation("org.openjdk.jmh.annotations.State")
+}
+
+compileJava {
+    sourceCompatibility = "21"
+    targetCompatibility = "21"
+}
+
+compileKotlin {
+    kotlinOptions.jvmTarget = "21"
+}
+compileTestKotlin {
+    kotlinOptions.jvmTarget = "21"
+}
+
+dependencies {
+    implementation("org.jetbrains.kotlinx:kotlinx-benchmark-runtime:0.4.10")
+    testImplementation 'junit:junit:4.13.2'
+}
+
+// Configure benchmark
+benchmark {
+    configurations {
+        named("main") {
+            mode = "avgt" // mode = "avgt" / "thrpt"
+            iterations = 25
+            include("run") // move classes which you want to run to the package "run"
+            outputTimeUnit = "ns" // outputTimeUnit = "us" / "ms" / "sec" / "ns"
+            reportFormat = "text"
+        }
+    }
+    targets {
+        register("main") {
+            jmhVersion = "1.21"
+        }
+    }
+}
+
