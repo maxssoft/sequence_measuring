@@ -1,4 +1,4 @@
-package com.maxssoft.test.run
+package com.maxssoft.test.sequence
 
 import com.maxssoft.func.createIntList
 import com.maxssoft.func.distinct_collection_10

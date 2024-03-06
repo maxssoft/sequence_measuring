@@ -1,4 +1,4 @@
-package com.maxssoft.test.run
+package com.maxssoft.test.sequence
 
 import com.maxssoft.func.crazy_collection_10
 import com.maxssoft.func.crazy_collection_90

@@ -140,6 +140,63 @@ fun map10_stream(sourceCollection: List<Int?>): Stream<Int?> {
         .map { it?.plus(10) }
 }
 
+fun map10_sequence_int(sourceCollection: List<Int?>): Sequence<Int?> {
+    return sourceCollection.asSequence()
+        .map { it?.plus(1) }
+        .map { it?.toDouble() }
+        .map { it?.toLong() }
+        .map { it?.toInt() }
+        .map { it?.toDouble() }
+        .map { it?.toLong() }
+        .map { it?.toInt() }
+        .map { it?.toDouble() }
+        .map { it?.toLong() }
+        .map { it?.toInt() }
+}
+
+fun map10_collection_int(sourceCollection: List<Int?>): List<Int?> {
+    return sourceCollection
+        .map { it?.plus(1) }
+        .map { it?.toDouble() }
+        .map { it?.toLong() }
+        .map { it?.toInt() }
+        .map { it?.toDouble() }
+        .map { it?.toLong() }
+        .map { it?.toInt() }
+        .map { it?.toDouble() }
+        .map { it?.toLong() }
+        .map { it?.toInt() }
+}
+fun map10_sequence_take(sourceCollection: List<Int?>): Sequence<Int?> {
+    val size = sourceCollection.size
+    return sourceCollection.asSequence()
+        .map { it?.plus(1) }
+        .take(size - 1)
+        .map { it?.plus(1) }
+        .take(size - 2)
+        .map { it?.plus(1) }
+        .take(size - 3)
+        .map { it?.plus(1) }
+        .take(size - 4)
+        .map { it?.plus(1) }
+        .take(size - 5)
+}
+
+fun map10_collection_take(sourceCollection: List<Int?>): List<Int?> {
+    val size = sourceCollection.size
+    return sourceCollection
+        .map { it?.plus(1) }
+        .take(size - 1)
+        .map { it?.plus(1) }
+        .take(size - 2)
+        .map { it?.plus(1) }
+        .take(size - 3)
+        .map { it?.plus(1) }
+        .take(size - 4)
+        .map { it?.plus(1) }
+        .take(size - 5)
+}
+
 fun filter_sequence_10(sourceCollection: List<Int?>): Sequence<Int?> {
     val percent10 = (sourceCollection.size * 0.1).toInt()
     return sourceCollection.asSequence()

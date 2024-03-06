@@ -1,4 +1,4 @@
-package com.maxssoft.test.run
+package com.maxssoft.test.sequence
 
 import com.maxssoft.func.createListOfList
 import com.maxssoft.func.flatten_collection

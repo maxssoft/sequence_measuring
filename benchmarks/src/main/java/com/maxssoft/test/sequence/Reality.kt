@@ -1,4 +1,4 @@
-package com.maxssoft.test.run
+package com.maxssoft.test.sequence
 
 import com.maxssoft.func.reality_collection
 import com.maxssoft.func.reality_sequence
