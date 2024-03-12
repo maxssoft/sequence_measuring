@@ -418,6 +418,10 @@ abstract class AbstractIteratorStateInt<T> : Iterator<T> {
 //------------------------------------------------------------------------------------
 //---------------------------- F L A T T E N -----------------------------------------
 //------------------------------------------------------------------------------------
+fun <T> Sequence<T>.plus_v2(elements: Iterable<T>): Sequence<T> {
+    return sequenceOf(this, elements.asSequence()).flatten_v2 { it.iterator() }
+}
+
 fun <T> Sequence<Iterable<T>>.flatten_v2(): Sequence<T> = flatten_v2 { it.iterator() }
 
 private fun <T, R> Sequence<T>.flatten_v2(iterator: (T) -> Iterator<R>): Sequence<R> {

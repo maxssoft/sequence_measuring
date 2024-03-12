@@ -1,11 +1,9 @@
 package com.maxssoft.test.sequence
 
-import com.maxssoft.func.crazy_collection_10
-import com.maxssoft.func.crazy_collection_90
-import com.maxssoft.func.crazy_sequence_10
-import com.maxssoft.func.crazy_sequence_90
-import com.maxssoft.func.crazy_stream_10
-import com.maxssoft.func.crazy_stream_90
+import com.maxssoft.func.crazy_collection
+import com.maxssoft.func.crazy_sequence
+import com.maxssoft.func.crazy_sequence_opt
+import com.maxssoft.func.crazy_stream
 import com.maxssoft.func.createIntList
 import com.maxssoft.test.factory.WARN_UP_ITERATIONS
 import com.maxssoft.test.factory.WARN_UP_TIME
@@ -40,153 +38,102 @@ class Crazy {
     }
 
     @Benchmark
-    fun crazy_10_percentage_100_rec_sequence(blackHole: Blackhole) {
-        crazy_sequence_10(originCollection_100).collectBlackHole(blackHole)
+    fun crazy_100_rec_sequence(blackHole: Blackhole) {
+        crazy_sequence(originCollection_100).collectBlackHole(blackHole)
     }
 
     @Benchmark
-    fun crazy_10_percentage_1000_rec_sequence(blackHole: Blackhole) {
-        crazy_sequence_10(originCollection_1_000).collectBlackHole(blackHole)
+    fun crazy_1000_rec_sequence(blackHole: Blackhole) {
+        crazy_sequence(originCollection_1_000).collectBlackHole(blackHole)
     }
 
     @Benchmark
-    fun crazy_10_percentage_10000_rec_sequence(blackHole: Blackhole) {
-        crazy_sequence_10(originCollection_10_000).collectBlackHole(blackHole)
+    fun crazy_10000_rec_sequence(blackHole: Blackhole) {
+        crazy_sequence(originCollection_10_000).collectBlackHole(blackHole)
     }
 
     @Benchmark
-    fun crazy_10_percentage_50000_rec_sequence(blackHole: Blackhole) {
-        crazy_sequence_10(originCollection_50_000).collectBlackHole(blackHole)
+    fun crazy_50000_rec_sequence(blackHole: Blackhole) {
+        crazy_sequence(originCollection_50_000).collectBlackHole(blackHole)
     }
 
     @Benchmark
-    fun crazy_10_percentage_100000_rec_sequence(blackHole: Blackhole) {
-        crazy_sequence_10(originCollection_100_000).collectBlackHole(blackHole)
+    fun crazy_100000_rec_sequence(blackHole: Blackhole) {
+        crazy_sequence(originCollection_100_000).collectBlackHole(blackHole)
     }
 
     @Benchmark
-    fun crazy_10_percentage_100_rec_stream(blackHole: Blackhole) {
-        crazy_stream_10(originCollection_100).collectBlackHole(blackHole)
+    fun crazy_100_rec_sequence_opt(blackHole: Blackhole) {
+        crazy_sequence_opt(originCollection_100).collectBlackHole(blackHole)
     }
 
     @Benchmark
-    fun crazy_10_percentage_1000_rec_stream(blackHole: Blackhole) {
-        crazy_stream_10(originCollection_1_000).collectBlackHole(blackHole)
+    fun crazy_1000_rec_sequence_opt(blackHole: Blackhole) {
+        crazy_sequence_opt(originCollection_1_000).collectBlackHole(blackHole)
     }
 
     @Benchmark
-    fun crazy_10_percentage_10000_rec_stream(blackHole: Blackhole) {
-        crazy_stream_10(originCollection_10_000).collectBlackHole(blackHole)
+    fun crazy_10000_rec_sequence_opt(blackHole: Blackhole) {
+        crazy_sequence_opt(originCollection_10_000).collectBlackHole(blackHole)
     }
 
     @Benchmark
-    fun crazy_10_percentage_50000_rec_stream(blackHole: Blackhole) {
-        crazy_stream_10(originCollection_50_000).collectBlackHole(blackHole)
+    fun crazy_50000_rec_sequence_opt(blackHole: Blackhole) {
+        crazy_sequence_opt(originCollection_50_000).collectBlackHole(blackHole)
     }
 
     @Benchmark
-    fun crazy_10_percentage_100000_rec_stream(blackHole: Blackhole) {
-        crazy_stream_10(originCollection_100_000).collectBlackHole(blackHole)
+    fun crazy_100000_rec_sequence_opt(blackHole: Blackhole) {
+        crazy_sequence_opt(originCollection_100_000).collectBlackHole(blackHole)
     }
 
     @Benchmark
-    fun crazy_10_percentage_100_rec_collection(blackHole: Blackhole) {
-        crazy_collection_10(originCollection_100).collectBlackHole(blackHole)
+    fun crazy_100_rec_stream(blackHole: Blackhole) {
+        crazy_stream(originCollection_100).collectBlackHole(blackHole)
     }
 
     @Benchmark
-    fun crazy_10_percentage_1000_rec_collection(blackHole: Blackhole) {
-        crazy_collection_10(originCollection_1_000).collectBlackHole(blackHole)
+    fun crazy_1000_rec_stream(blackHole: Blackhole) {
+        crazy_stream(originCollection_1_000).collectBlackHole(blackHole)
     }
 
     @Benchmark
-    fun crazy_10_percentage_10000_rec_collection(blackHole: Blackhole) {
-        crazy_collection_10(originCollection_10_000).collectBlackHole(blackHole)
+    fun crazy_10000_rec_stream(blackHole: Blackhole) {
+        crazy_stream(originCollection_10_000).collectBlackHole(blackHole)
     }
 
     @Benchmark
-    fun crazy_10_percentage_50000_rec_collection(blackHole: Blackhole) {
-        crazy_collection_10(originCollection_50_000).collectBlackHole(blackHole)
+    fun crazy_50000_rec_stream(blackHole: Blackhole) {
+        crazy_stream(originCollection_50_000).collectBlackHole(blackHole)
     }
 
     @Benchmark
-    fun crazy_10_percentage_100000_rec_collection(blackHole: Blackhole) {
-        crazy_collection_10(originCollection_100_000).collectBlackHole(blackHole)
+    fun crazy_100000_rec_stream(blackHole: Blackhole) {
+        crazy_stream(originCollection_100_000).collectBlackHole(blackHole)
     }
 
     @Benchmark
-    fun crazy_90_percentage_100_rec_sequence(blackHole: Blackhole) {
-        crazy_sequence_90(originCollection_100).collectBlackHole(blackHole)
+    fun crazy_100_rec_collection(blackHole: Blackhole) {
+        crazy_collection(originCollection_100).collectBlackHole(blackHole)
     }
 
     @Benchmark
-    fun crazy_90_percentage_1000_rec_sequence(blackHole: Blackhole) {
-        crazy_sequence_90(originCollection_1_000).collectBlackHole(blackHole)
+    fun crazy_1000_rec_collection(blackHole: Blackhole) {
+        crazy_collection(originCollection_1_000).collectBlackHole(blackHole)
     }
 
     @Benchmark
-    fun crazy_90_percentage_10000_rec_sequence(blackHole: Blackhole) {
-        crazy_sequence_90(originCollection_10_000).collectBlackHole(blackHole)
+    fun crazy_10000_rec_collection(blackHole: Blackhole) {
+        crazy_collection(originCollection_10_000).collectBlackHole(blackHole)
     }
 
     @Benchmark
-    fun crazy_90_percentage_50000_rec_sequence(blackHole: Blackhole) {
-        crazy_sequence_90(originCollection_50_000).collectBlackHole(blackHole)
+    fun crazy_50000_rec_collection(blackHole: Blackhole) {
+        crazy_collection(originCollection_50_000).collectBlackHole(blackHole)
     }
 
     @Benchmark
-    fun crazy_90_percentage_100000_rec_sequence(blackHole: Blackhole) {
-        crazy_sequence_90(originCollection_100_000).collectBlackHole(blackHole)
+    fun crazy_100000_rec_collection(blackHole: Blackhole) {
+        crazy_collection(originCollection_100_000).collectBlackHole(blackHole)
     }
-
-    @Benchmark
-    fun crazy_90_percentage_100_rec_stream(blackHole: Blackhole) {
-        crazy_stream_90(originCollection_100).collectBlackHole(blackHole)
-    }
-
-    @Benchmark
-    fun crazy_90_percentage_1000_rec_stream(blackHole: Blackhole) {
-        crazy_stream_90(originCollection_1_000).collectBlackHole(blackHole)
-    }
-
-    @Benchmark
-    fun crazy_90_percentage_10000_rec_stream(blackHole: Blackhole) {
-        crazy_stream_90(originCollection_10_000).collectBlackHole(blackHole)
-    }
-
-    @Benchmark
-    fun crazy_90_percentage_50000_rec_stream(blackHole: Blackhole) {
-        crazy_stream_90(originCollection_50_000).collectBlackHole(blackHole)
-    }
-
-    @Benchmark
-    fun crazy_90_percentage_100000_rec_stream(blackHole: Blackhole) {
-        crazy_stream_90(originCollection_100_000).collectBlackHole(blackHole)
-    }
-
-    @Benchmark
-    fun crazy_90_percentage_100_rec_collection(blackHole: Blackhole) {
-        crazy_collection_90(originCollection_100).collectBlackHole(blackHole)
-    }
-
-    @Benchmark
-    fun crazy_90_percentage_1000_rec_collection(blackHole: Blackhole) {
-        crazy_collection_90(originCollection_1_000).collectBlackHole(blackHole)
-    }
-
-    @Benchmark
-    fun crazy_90_percentage_10000_rec_collection(blackHole: Blackhole) {
-        crazy_collection_90(originCollection_10_000).collectBlackHole(blackHole)
-    }
-
-    @Benchmark
-    fun crazy_90_percentage_50000_rec_collection(blackHole: Blackhole) {
-        crazy_collection_90(originCollection_50_000).collectBlackHole(blackHole)
-    }
-
-    @Benchmark
-    fun crazy_90_percentage_100000_rec_collection(blackHole: Blackhole) {
-        crazy_collection_90(originCollection_100_000).collectBlackHole(blackHole)
-    }
-
 }

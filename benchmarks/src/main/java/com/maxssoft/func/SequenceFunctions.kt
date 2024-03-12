@@ -1,6 +1,7 @@
 package com.maxssoft.func
 
 import com.maxssoft.test.factory.DataFactory
+import kotlinx.benchmark.Blackhole
 import java.util.concurrent.atomic.AtomicInteger
 import java.util.stream.Collectors
 import java.util.stream.Stream
@@ -31,6 +32,21 @@ fun createListOfList(count: Int, countInternal: Int): List<List<Int?>> {
 }
 
 fun random(interval: Int = 100): Int = Random.nextInt(1, interval)
+
+fun map1_sequence(sourceCollection: List<Int?>): Sequence<Int?> {
+    return sourceCollection.asSequence()
+        .map { it?.plus(2) }
+}
+
+fun map1_collection(sourceCollection: List<Int?>): List<Int?> {
+    return sourceCollection
+        .map { it?.plus(2) }
+}
+
+fun map1_stream(sourceCollection: List<Int?>): Stream<Int?> {
+    return sourceCollection.stream()
+        .map { it?.plus(2) }
+}
 
 fun map2_sequence(sourceCollection: List<Int?>): Sequence<Int?> {
     return sourceCollection.asSequence()
@@ -200,43 +216,271 @@ fun map10_collection_take(sourceCollection: List<Int?>): List<Int?> {
 fun filter_sequence_10(sourceCollection: List<Int?>): Sequence<Int?> {
     val percent10 = (sourceCollection.size * 0.1).toInt()
     return sourceCollection.asSequence()
-        .map { it }
+        .map { it?.plus(1) }
         .filter { it in 0..percent10 }
 }
 
 fun filter_stream_10(sourceCollection: List<Int?>): Stream<Int?> {
     val percent10 = (sourceCollection.size * 0.1).toInt()
     return sourceCollection.stream()
-        .map { it }
+        .map { it?.plus(1) }
         .filter { it in 0..percent10 }
 }
 
 fun filter_collection_10(sourceCollection: List<Int?>): List<Int?> {
     val percent10 = (sourceCollection.size * 0.1).toInt()
     return sourceCollection
-        .map { it }
+        .map { it?.plus(1) }
         .filter { it in 0..percent10 }
 }
 
 fun filter_sequence_90(sourceCollection: List<Int?>): Sequence<Int?> {
     val percent90 = (sourceCollection.size * 0.9).toInt()
     return sourceCollection.asSequence()
-        .map { it }
+        .map { it?.plus(1) }
         .filter { it in 0..percent90 }
 }
 
 fun filter_stream_90(sourceCollection: List<Int?>): Stream<Int?> {
     val percent90 = (sourceCollection.size * 0.9).toInt()
     return sourceCollection.stream()
-        .map { it }
+        .map { it?.plus(1) }
         .filter { it in 0..percent90 }
 }
 
 fun filter_collection_90(sourceCollection: List<Int?>): List<Int?> {
     val percent90 = (sourceCollection.size * 0.9).toInt()
     return sourceCollection
-        .map { it }
+        .map { it?.plus(1) }
         .filter { it in 0..percent90 }
+}
+
+fun filter2_sequence_10(sourceCollection: List<Int?>): Sequence<Int?> {
+    val percent10 = (sourceCollection.size * 0.1).toInt()
+    return sourceCollection.asSequence()
+        .filter { it in 0..percent10 }
+}
+
+fun filter2_stream_10(sourceCollection: List<Int?>): Stream<Int?> {
+    val percent10 = (sourceCollection.size * 0.1).toInt()
+    return sourceCollection.stream()
+        .filter { it in 0..percent10 }
+}
+
+fun filter2_collection_10(sourceCollection: List<Int?>): List<Int?> {
+    val percent10 = (sourceCollection.size * 0.1).toInt()
+    return sourceCollection
+        .filter { it in 0..percent10 }
+}
+
+fun filter2_sequence_90(sourceCollection: List<Int?>): Sequence<Int?> {
+    val percent90 = (sourceCollection.size * 0.9).toInt()
+    return sourceCollection.asSequence()
+        .filter { it in 0..percent90 }
+}
+
+fun filter2_stream_90(sourceCollection: List<Int?>): Stream<Int?> {
+    val percent90 = (sourceCollection.size * 0.9).toInt()
+    return sourceCollection.stream()
+        .filter { it in 0..percent90 }
+}
+
+fun filter2_collection_90(sourceCollection: List<Int?>): List<Int?> {
+    val percent90 = (sourceCollection.size * 0.9).toInt()
+    return sourceCollection
+        .filter { it in 0..percent90 }
+}
+
+fun filter_sequence_1r(sourceCollection: List<Int?>): Sequence<Int?> {
+    val size = sourceCollection.size
+    val range_1 = size
+    val range_2 = (size * 0.9).toInt()
+    val range_3 = (size * 0.8).toInt()
+    val range_4 = (size * 0.7).toInt()
+    val range_5 = (size * 0.6).toInt()
+    val range_6 = (size * 0.5).toInt()
+    val range_7 = (size * 0.4).toInt()
+    val range_8 = (size * 0.3).toInt()
+    val range_9 = (size * 0.2).toInt()
+    val range_10 = (size * 0.1).toInt()
+    return sourceCollection.asSequence()
+        .filter { it in 0..range_1 }
+}
+
+fun filter_sequence_2r(sourceCollection: List<Int?>): Sequence<Int?> {
+    val size = sourceCollection.size
+    val range_1 = size
+    val range_2 = (size * 0.9).toInt()
+    val range_3 = (size * 0.8).toInt()
+    val range_4 = (size * 0.7).toInt()
+    val range_5 = (size * 0.6).toInt()
+    val range_6 = (size * 0.5).toInt()
+    val range_7 = (size * 0.4).toInt()
+    val range_8 = (size * 0.3).toInt()
+    val range_9 = (size * 0.2).toInt()
+    val range_10 = (size * 0.1).toInt()
+    return sourceCollection.asSequence()
+        .filter { it in 0..range_1 }
+        .filter { it in 0..range_2 }
+}
+
+fun filter_sequence_3r(sourceCollection: List<Int?>): Sequence<Int?> {
+    val size = sourceCollection.size
+    val range_1 = size
+    val range_2 = (size * 0.9).toInt()
+    val range_3 = (size * 0.8).toInt()
+    val range_4 = (size * 0.7).toInt()
+    val range_5 = (size * 0.6).toInt()
+    val range_6 = (size * 0.5).toInt()
+    val range_7 = (size * 0.4).toInt()
+    val range_8 = (size * 0.3).toInt()
+    val range_9 = (size * 0.2).toInt()
+    val range_10 = (size * 0.1).toInt()
+    return sourceCollection.asSequence()
+        .filter { it in 0..range_1 }
+        .filter { it in 0..range_2 }
+        .filter { it in 0..range_3 }
+}
+
+fun filter_sequence_5r(sourceCollection: List<Int?>): Sequence<Int?> {
+    val size = sourceCollection.size
+    val range_1 = size
+    val range_2 = (size * 0.9).toInt()
+    val range_3 = (size * 0.8).toInt()
+    val range_4 = (size * 0.7).toInt()
+    val range_5 = (size * 0.6).toInt()
+    val range_6 = (size * 0.5).toInt()
+    val range_7 = (size * 0.4).toInt()
+    val range_8 = (size * 0.3).toInt()
+    val range_9 = (size * 0.2).toInt()
+    val range_10 = (size * 0.1).toInt()
+    return sourceCollection.asSequence()
+        .filter { it in 0..range_1 }
+        .filter { it in 0..range_2 }
+        .filter { it in 0..range_3 }
+        .filter { it in 0..range_4 }
+        .filter { it in 0..range_5 }
+}
+
+fun filter_sequence_10r(sourceCollection: List<Int?>): Sequence<Int?> {
+    val size = sourceCollection.size
+    val range_1 = size
+    val range_2 = (size * 0.9).toInt()
+    val range_3 = (size * 0.8).toInt()
+    val range_4 = (size * 0.7).toInt()
+    val range_5 = (size * 0.6).toInt()
+    val range_6 = (size * 0.5).toInt()
+    val range_7 = (size * 0.4).toInt()
+    val range_8 = (size * 0.3).toInt()
+    val range_9 = (size * 0.2).toInt()
+    val range_10 = (size * 0.1).toInt()
+    return sourceCollection.asSequence()
+        .filter { it in 0..range_1 }
+        .filter { it in 0..range_2 }
+        .filter { it in 0..range_3 }
+        .filter { it in 0..range_4 }
+        .filter { it in 0..range_5 }
+        .filter { it in 0..range_6 }
+        .filter { it in 0..range_7 }
+        .filter { it in 0..range_8 }
+        .filter { it in 0..range_9 }
+        .filter { it in 0..range_10 }
+}
+
+fun filter_collection_1r(sourceCollection: List<Int?>): List<Int?> {
+    val size = sourceCollection.size
+    val range_1 = size
+    val range_2 = (size * 0.9).toInt()
+    val range_3 = (size * 0.8).toInt()
+    val range_4 = (size * 0.7).toInt()
+    val range_5 = (size * 0.6).toInt()
+    val range_6 = (size * 0.5).toInt()
+    val range_7 = (size * 0.4).toInt()
+    val range_8 = (size * 0.3).toInt()
+    val range_9 = (size * 0.2).toInt()
+    val range_10 = (size * 0.1).toInt()
+    return sourceCollection
+        .filter { it in 0..range_1 }
+}
+
+fun filter_collection_2r(sourceCollection: List<Int?>): List<Int?> {
+    val size = sourceCollection.size
+    val range_1 = size
+    val range_2 = (size * 0.9).toInt()
+    val range_3 = (size * 0.8).toInt()
+    val range_4 = (size * 0.7).toInt()
+    val range_5 = (size * 0.6).toInt()
+    val range_6 = (size * 0.5).toInt()
+    val range_7 = (size * 0.4).toInt()
+    val range_8 = (size * 0.3).toInt()
+    val range_9 = (size * 0.2).toInt()
+    val range_10 = (size * 0.1).toInt()
+    return sourceCollection
+        .filter { it in 0..range_1 }
+        .filter { it in 0..range_2 }
+}
+
+fun filter_collection_3r(sourceCollection: List<Int?>): List<Int?> {
+    val size = sourceCollection.size
+    val range_1 = size
+    val range_2 = (size * 0.9).toInt()
+    val range_3 = (size * 0.8).toInt()
+    val range_4 = (size * 0.7).toInt()
+    val range_5 = (size * 0.6).toInt()
+    val range_6 = (size * 0.5).toInt()
+    val range_7 = (size * 0.4).toInt()
+    val range_8 = (size * 0.3).toInt()
+    val range_9 = (size * 0.2).toInt()
+    val range_10 = (size * 0.1).toInt()
+    return sourceCollection
+        .filter { it in 0..range_1 }
+        .filter { it in 0..range_2 }
+        .filter { it in 0..range_3 }
+}
+
+fun filter_collection_5r(sourceCollection: List<Int?>): List<Int?> {
+    val size = sourceCollection.size
+    val range_1 = size
+    val range_2 = (size * 0.9).toInt()
+    val range_3 = (size * 0.8).toInt()
+    val range_4 = (size * 0.7).toInt()
+    val range_5 = (size * 0.6).toInt()
+    val range_6 = (size * 0.5).toInt()
+    val range_7 = (size * 0.4).toInt()
+    val range_8 = (size * 0.3).toInt()
+    val range_9 = (size * 0.2).toInt()
+    val range_10 = (size * 0.1).toInt()
+    return sourceCollection
+        .filter { it in 0..range_1 }
+        .filter { it in 0..range_2 }
+        .filter { it in 0..range_3 }
+        .filter { it in 0..range_4 }
+        .filter { it in 0..range_5 }
+}
+
+fun filter_collection_10r(sourceCollection: List<Int?>): List<Int?> {
+    val size = sourceCollection.size
+    val range_1 = size
+    val range_2 = (size * 0.9).toInt()
+    val range_3 = (size * 0.8).toInt()
+    val range_4 = (size * 0.7).toInt()
+    val range_5 = (size * 0.6).toInt()
+    val range_6 = (size * 0.5).toInt()
+    val range_7 = (size * 0.4).toInt()
+    val range_8 = (size * 0.3).toInt()
+    val range_9 = (size * 0.2).toInt()
+    val range_10 = (size * 0.1).toInt()
+    return sourceCollection
+        .filter { it in 0..range_1 }
+        .filter { it in 0..range_2 }
+        .filter { it in 0..range_3 }
+        .filter { it in 0..range_4 }
+        .filter { it in 0..range_5 }
+        .filter { it in 0..range_6 }
+        .filter { it in 0..range_7 }
+        .filter { it in 0..range_8 }
+        .filter { it in 0..range_9 }
+        .filter { it in 0..range_10 }
 }
 
 fun distinct_sequence_90_standard(sourceCollection: List<Int>): Int {
@@ -343,6 +587,46 @@ fun distinct_stream_10(sourceCollection: List<Int?>): Stream<Int?> {
         .distinct()
 }
 
+fun distinct2_sequence_90(sourceCollection: List<Int?>): Sequence<Int?> {
+    return sourceCollection.asSequence()
+        .distinctBy { it }
+}
+
+fun distinct2_sequence_90_optimized(sourceCollection: List<Int?>): Sequence<Int?> {
+    return sourceCollection.asSequence()
+        .distinctBy_v1_withCondition { it }
+}
+
+fun distinct2_collection_90(sourceCollection: List<Int?>): List<Int?> {
+    return sourceCollection
+        .distinctBy { it }
+}
+
+fun distinct2_stream_90(sourceCollection: List<Int?>): Stream<Int?> {
+    return sourceCollection.stream()
+        .distinct()
+}
+
+fun distinct2_sequence_10(sourceCollection: List<Int?>): Sequence<Int?> {
+    return sourceCollection.asSequence()
+        .distinctBy { it }
+}
+
+fun distinct2_sequence_10_optimized(sourceCollection: List<Int?>): Sequence<Int?> {
+    return sourceCollection.asSequence()
+        .distinctBy_v1_withCondition { it }
+}
+
+fun distinct2_collection_10(sourceCollection: List<Int?>): List<Int?> {
+    return sourceCollection
+        .distinctBy { it }
+}
+
+fun distinct2_stream_10(sourceCollection: List<Int?>): Stream<Int?> {
+    return sourceCollection.stream()
+        .distinct()
+}
+
 fun sort_sequence(sourceCollection: List<Int?>): Sequence<Int?> {
     return sourceCollection.asSequence()
         .map { it?.plus(1) }
@@ -361,16 +645,31 @@ fun sort_collection(sourceCollection: List<Int?>): List<Int?> {
         .sortedByDescending { it }
 }
 
-fun flatten_collection(sourceCollection: List<List<Int?>>): List<Int?> {
+fun sort2_sequence(sourceCollection: List<Int?>): Sequence<Int?> {
+    return sourceCollection.asSequence()
+        .sortedByDescending { it }
+}
+
+fun sort2_stream(sourceCollection: List<Int?>): Stream<Int?> {
+    return sourceCollection.stream()
+        .sorted()
+}
+
+fun sort2_collection(sourceCollection: List<Int?>): List<Int?> {
     return sourceCollection
-        .map { it }
-        .flatten()
+        .sortedByDescending { it }
 }
 
 fun flatten_sequence(sourceCollection: List<List<Int?>>): Sequence<Int?> {
     return sourceCollection.asSequence()
         .map { it }
         .flatten()
+}
+
+fun flatten_sequence_optimized(sourceCollection: List<List<Int?>>): Sequence<Int?> {
+    return sourceCollection.asSequence()
+        .map { it }
+        .flatten_v2()
 }
 
 fun flatten_stream(sourceCollection: List<List<Int?>>): List<Int?> {
@@ -380,10 +679,31 @@ fun flatten_stream(sourceCollection: List<List<Int?>>): List<Int?> {
         .collect(Collectors.toList())
 }
 
-fun flatten_sequence_optimized(sourceCollection: List<List<Int?>>): Sequence<Int?> {
-    return sourceCollection.asSequence()
+fun flatten_collection(sourceCollection: List<List<Int?>>): List<Int?> {
+    return sourceCollection
         .map { it }
+        .flatten()
+}
+
+fun flatten2_sequence(sourceCollection: List<List<Int?>>): Sequence<Int?> {
+    return sourceCollection.asSequence()
+        .flatten()
+}
+
+fun flatten2_sequence_optimized(sourceCollection: List<List<Int?>>): Sequence<Int?> {
+    return sourceCollection.asSequence()
         .flatten_v2()
+}
+
+fun flatten2_stream(sourceCollection: List<List<Int?>>): List<Int?> {
+    return sourceCollection.stream()
+        .flatMap { it.stream() }
+        .collect(Collectors.toList())
+}
+
+fun flatten2_collection(sourceCollection: List<List<Int?>>): List<Int?> {
+    return sourceCollection
+        .flatten()
 }
 
 fun flatten_sequence_standard(sourceCollection: List<List<Int?>>): Int {
@@ -417,10 +737,35 @@ fun drop_sequence(sourceCollection: List<Int?>, percent: Int): Sequence<Int?> {
         .drop(count)
 }
 
+fun drop_stream(sourceCollection: List<Int?>, percent: Int): Stream<Int?> {
+    val count = sourceCollection.size * percent / 100L
+    return sourceCollection.stream()
+        .map { it?.plus(1) }
+        .skip(count)
+}
+
 fun drop_collection(sourceCollection: List<Int?>, percent: Int): List<Int?> {
     val count = sourceCollection.size * percent / 100
     return sourceCollection
         .map { it?.plus(1) }
+        .drop(count)
+}
+
+fun drop2_sequence(sourceCollection: List<Int?>, percent: Int): Sequence<Int?> {
+    val count = sourceCollection.size * percent / 100
+    return sourceCollection.asSequence()
+        .drop(count)
+}
+
+fun drop2_stream(sourceCollection: List<Int?>, percent: Int): Stream<Int?> {
+    val count = sourceCollection.size * percent / 100L
+    return sourceCollection.stream()
+        .skip(count)
+}
+
+fun drop2_collection(sourceCollection: List<Int?>, percent: Int): List<Int?> {
+    val count = sourceCollection.size * percent / 100
+    return sourceCollection
         .drop(count)
 }
 
@@ -431,10 +776,35 @@ fun take_sequence(sourceCollection: List<Int?>, percent: Int): Sequence<Int?> {
         .take(count)
 }
 
-fun take_collection(sourceCollection: List<Int>, percent: Int): List<Int> {
+fun take_stream(sourceCollection: List<Int?>, percent: Int): Stream<Int?> {
+    val count = sourceCollection.size * percent / 100L
+    return sourceCollection.stream()
+        .map { it?.plus(1) }
+        .limit(count)
+}
+
+fun take_collection(sourceCollection: List<Int?>, percent: Int): List<Int?> {
     val count = sourceCollection.size * percent / 100
     return sourceCollection
-        .map { it + 1 }
+        .map { it?.plus(1) }
+        .take(count)
+}
+
+fun take2_sequence(sourceCollection: List<Int?>, percent: Int): Sequence<Int?> {
+    val count = sourceCollection.size * percent / 100
+    return sourceCollection.asSequence()
+        .take(count)
+}
+
+fun take2_stream(sourceCollection: List<Int?>, percent: Int): Stream<Int?> {
+    val count = sourceCollection.size * percent / 100L
+    return sourceCollection.stream()
+        .limit(count)
+}
+
+fun take2_collection(sourceCollection: List<Int?>, percent: Int): List<Int?> {
+    val count = sourceCollection.size * percent / 100
+    return sourceCollection
         .take(count)
 }
 
@@ -486,6 +856,36 @@ fun groupBy_collection_10(sourceCollection: List<Int?>): Map<Int, List<Int?>> {
         .groupBy { (it ?: 1) * 10 / 100 }
 }
 
+fun groupBy2_sequence_90(sourceCollection: List<Int?>): Map<Int, List<Int?>> {
+    return sourceCollection.asSequence()
+        .groupBy { (it ?: 1) * 90 / 100 }
+}
+
+fun groupBy2_stream_90(sourceCollection: List<Int?>): Map<Int, List<Int?>> {
+    return sourceCollection.stream()
+        .collect(Collectors.groupingBy { (it ?: 1) * 90 / 100 })
+}
+
+fun groupBy2_collection_90(sourceCollection: List<Int?>): Map<Int, List<Int?>> {
+    return sourceCollection
+        .groupBy { (it ?: 1) * 90 / 100 }
+}
+
+fun groupBy2_sequence_10(sourceCollection: List<Int?>): Map<Int, List<Int?>> {
+    return sourceCollection.asSequence()
+        .groupBy { (it ?: 1) * 10 / 100 }
+}
+
+fun groupBy2_stream_10(sourceCollection: List<Int?>): Map<Int, List<Int?>> {
+    return sourceCollection.stream()
+        .collect(Collectors.groupingBy { (it ?: 1) * 10 / 100 })
+}
+
+fun groupBy2_collection_10(sourceCollection: List<Int?>): Map<Int, List<Int?>> {
+    return sourceCollection
+        .groupBy { (it ?: 1) * 10 / 100 }
+}
+
 fun associateBy_sequence(sourceCollection: List<Int?>): Map<Int, Int?> {
     return sourceCollection.asSequence()
         .map { it?.plus(1) }
@@ -504,6 +904,12 @@ fun plus_sequence(sourceCollection: List<Int?>): Sequence<Int?> {
         .plus(sourceCollection)
 }
 
+fun plus_sequence_opt(sourceCollection: List<Int?>): Sequence<Int?> {
+    return sourceCollection.asSequence()
+        .map { it?.plus(1) }
+        .plus_v2 ( sourceCollection )
+}
+
 fun plus_stream(sourceCollection: List<Int?>): Stream<Int?> {
     return Stream.concat(sourceCollection.stream().map { it?.plus(1) }, sourceCollection.stream())
 }
@@ -511,6 +917,25 @@ fun plus_stream(sourceCollection: List<Int?>): Stream<Int?> {
 fun plus_collection(sourceCollection: List<Int?>): List<Int?> {
     return sourceCollection
         .map { it?.plus(1) }
+        .plus(sourceCollection)
+}
+
+fun plus2_sequence(sourceCollection: List<Int?>): Sequence<Int?> {
+    return sourceCollection.asSequence()
+        .plus(sourceCollection)
+}
+
+fun plus2_sequence_opt(sourceCollection: List<Int?>): Sequence<Int?> {
+    return sourceCollection.asSequence()
+        .plus_v2(sourceCollection)
+}
+
+fun plus2_stream(sourceCollection: List<Int?>): Stream<Int?> {
+    return Stream.concat(sourceCollection.stream(), sourceCollection.stream())
+}
+
+fun plus2_collection(sourceCollection: List<Int?>): List<Int?> {
+    return sourceCollection
         .plus(sourceCollection)
 }
 
@@ -529,6 +954,21 @@ fun minus_stream(sourceCollection: List<Int?>, minusCollection: Set<Int?>): Stre
 fun minus_collection(sourceCollection: List<Int?>, minusCollection: Set<Int?>): List<Int?> {
     return sourceCollection
         .map { it?.plus(1) }
+        .minus(minusCollection)
+}
+
+fun minus2_sequence(sourceCollection: List<Int?>, minusCollection: Set<Int?>): Sequence<Int?> {
+    return sourceCollection.asSequence()
+        .minus(minusCollection)
+}
+
+fun minus2_stream(sourceCollection: List<Int?>, minusCollection: Set<Int?>): Stream<Int?> {
+    return sourceCollection.stream()
+        .filter { !minusCollection.contains(it) }
+}
+
+fun minus2_collection(sourceCollection: List<Int?>, minusCollection: Set<Int?>): List<Int?> {
+    return sourceCollection
         .minus(minusCollection)
 }
 
@@ -675,6 +1115,46 @@ fun crazy_collection_90(sourceCollection: List<Int?>): List<Int?> {
         .map { it + 1 }
 }
 
+fun crazy_sequence(sourceCollection: List<Int?>): Sequence<Int?> {
+    return sourceCollection.asSequence()
+        .map { it?.plus(1) }
+        .sortedBy { it }
+        .map { it?.let { it % 3 } }
+        .filter { it ?: 0  > 0 }
+        .map { it?.plus(1) }
+        .distinctBy { it }
+}
+
+fun crazy_sequence_opt(sourceCollection: List<Int?>): Sequence<Int?> {
+    return sourceCollection.asSequence()
+        .map { it?.plus(1) }
+        .sortedBy { it }
+        .map { it?.let { it % 3 } }
+        .filter { it ?: 0  > 0 }
+        .map { it?.plus(1) }
+        .distinctBy_v1 { it }
+}
+
+fun crazy_stream(sourceCollection: List<Int?>): Stream<Int?> {
+    return sourceCollection.stream()
+        .map { it?.plus(1) }
+        .sorted()
+        .map { it?.let { it % 3 } }
+        .filter { it ?: 0  > 0 }
+        .map { it?.plus(1) }
+        .distinct()
+}
+
+fun crazy_collection(sourceCollection: List<Int?>): List<Int?> {
+    return sourceCollection
+        .map { it?.plus(1) }
+        .sortedBy { it }
+        .map { it?.let { it % 3 } }
+        .filter { it ?: 0  > 0 }
+        .map { it?.plus(1) }
+        .distinctBy { it }
+}
+
 // return list of products with default photo Pair<productUid, photoUrl>
 fun reality_sequence(realData: DataFactory): Sequence<Pair<String, String?>> {
     return realData.sessionManager.productCategories
@@ -773,3 +1253,22 @@ fun example() {
         .map { it + 1 }
 }
 
+fun testExample(sourceCollection: List<Int?>, blackHole: Blackhole) {
+    val percent10 = 10
+    sourceCollection.asSequence()
+        .map { it?.plus(1) }
+        .plus(sourceCollection)
+        .forEach { blackHole.consume(it) }
+}
+
+fun testExample_reality(realData: DataFactory, blackHole: Blackhole) {
+    realData.sessionManager.productCategories.asSequence()
+        .map { it.categoryName }
+        .mapNotNull { realData.productRepository.getCategoryProducts(it) }
+        .flatten()
+        .distinctBy { it.productUid }
+        .map { product ->
+            product.productUid to product.photos.firstOrNull { it.isDefault }?.url
+        }
+        .forEach { blackHole.consume(it) }
+}
