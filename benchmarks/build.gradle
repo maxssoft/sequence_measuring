@@ -31,7 +31,7 @@ benchmark {
     configurations {
         named("main") {
             mode = "avgt" // mode = "avgt" / "thrpt"
-            iterations = 25
+            iterations = 10
             include("run") // move classes which you want to run to the package "run"
             outputTimeUnit = "ns" // outputTimeUnit = "us" / "ms" / "sec" / "ns"
             reportFormat = "text"

@@ -1,0 +1,433 @@
+map10_mem
+Benchmark                          Mode  Cnt          Score        Error  Units
+Map10.map10_100000_rec_collection  avgt   10  43108977,794 ± 4965532,786  ns/op
+Map10.map10_100000_rec_sequence    avgt   10  16029241,680 ± 2073235,099  ns/op
+Map10.map10_100000_rec_stream      avgt   10  13458171,557 ± 1610942,935  ns/op
+Map10.map10_50000_rec_collection   avgt   10  14758753,714 ± 1349657,594  ns/op
+Map10.map10_50000_rec_sequence     avgt   10   8444861,387 ± 1465213,701  ns/op
+Map10.map10_50000_rec_stream       avgt   10   7440749,030 ±  791121,104  ns/op
+Map10.map10_10000_rec_collection   avgt   10   2532170,299 ±   71930,048  ns/op
+Map10.map10_10000_rec_sequence     avgt   10   1608612,206 ±   92577,254  ns/op
+Map10.map10_10000_rec_stream       avgt   10   1410869,833 ±  106110,875  ns/op
+Map10.map10_1000_rec_collection    avgt   10    344756,611 ±   56805,145  ns/op
+Map10.map10_1000_rec_sequence      avgt   10    221869,857 ±   13724,523  ns/op
+Map10.map10_1000_rec_stream        avgt   10    165108,330 ±    7894,152  ns/op
+Map10.map10_100_rec_collection     avgt   10     90976,102 ±    1847,631  ns/op
+Map10.map10_100_rec_sequence       avgt   10     91940,429 ±    3563,697  ns/op
+Map10.map10_100_rec_stream         avgt   10     90999,211 ±    5936,601  ns/op
+
+map5_mem
+Benchmark                          Mode  Cnt          Score        Error  Units
+Map5.map5_100000_rec_collection    avgt   10  22521004,026 ± 5736386,882  ns/op
+Map5.map5_100000_rec_sequence      avgt   10   6842163,136 ±  296874,629  ns/op
+Map5.map5_100000_rec_stream        avgt   10   7849855,242 ± 1122058,839  ns/op
+Map5.map5_50000_rec_collection     avgt   10   6943751,271 ±  808378,715  ns/op
+Map5.map5_50000_rec_sequence       avgt   10   3517709,383 ±  261332,858  ns/op
+Map5.map5_50000_rec_stream         avgt   10   3758909,747 ±  509964,797  ns/op
+Map5.map5_10000_rec_collection     avgt   10   1454678,283 ±  307772,376  ns/op
+Map5.map5_10000_rec_sequence       avgt   10    944810,110 ±  235705,938  ns/op
+Map5.map5_10000_rec_stream         avgt   10    821782,900 ±  113909,887  ns/op
+Map5.map5_1000_rec_collection      avgt   10    246725,373 ±   80100,135  ns/op
+Map5.map5_1000_rec_sequence        avgt   10    139004,536 ±    8839,226  ns/op
+Map5.map5_1000_rec_stream          avgt   10    126336,625 ±   13405,557  ns/op
+Map5.map5_100_rec_collection       avgt   10     88659,795 ±    5244,486  ns/op
+Map5.map5_100_rec_sequence         avgt   10     85675,210 ±    3047,854  ns/op
+Map5.map5_100_rec_stream           avgt   10     84487,771 ±    2162,272  ns/op
+
+map3_mem
+Benchmark                          Mode  Cnt          Score        Error  Units
+Map3.map3_100000_rec_collection    avgt   10  13211700,789 ± 4159510,396  ns/op
+Map3.map3_100000_rec_sequence      avgt   10   4165498,846 ± 1022386,551  ns/op
+Map3.map3_100000_rec_stream        avgt   10   4457363,524 ±  377653,239  ns/op
+Map3.map3_50000_rec_collection     avgt   10   5624809,197 ±  954942,920  ns/op
+Map3.map3_50000_rec_sequence       avgt   10   3012872,554 ± 1105392,447  ns/op
+Map3.map3_50000_rec_stream         avgt   10   3065689,359 ±  524518,322  ns/op
+Map3.map3_10000_rec_collection     avgt   10    824892,598 ±   56583,872  ns/op
+Map3.map3_10000_rec_sequence       avgt   10    499759,812 ±  125944,472  ns/op
+Map3.map3_10000_rec_stream         avgt   10    549311,969 ±  104736,735  ns/op
+Map3.map3_1000_rec_collection      avgt   10    118989,812 ±   17284,327  ns/op
+Map3.map3_1000_rec_sequence        avgt   10    123731,320 ±    9675,173  ns/op
+Map3.map3_1000_rec_stream          avgt   10    116517,441 ±   20706,553  ns/op
+Map3.map3_100_rec_collection       avgt   10     87538,995 ±    5975,961  ns/op
+Map3.map3_100_rec_sequence         avgt   10     84466,107 ±    2762,588  ns/op
+Map3.map3_100_rec_stream           avgt   10     85198,732 ±    3516,929  ns/op
+
+map2_mem
+Benchmark                          Mode  Cnt          Score        Error  Units
+Map2.map2_100000_rec_collection    avgt   10   7519225,838 ±  312306,542  ns/op
+Map2.map2_100000_rec_sequence      avgt   10   2636676,732 ±  248250,023  ns/op
+Map2.map2_100000_rec_stream        avgt   10   4019511,762 ± 2008684,691  ns/op
+Map2.map2_50000_rec_collection     avgt   10   3523390,711 ± 1166793,161  ns/op
+Map2.map2_50000_rec_sequence       avgt   10   1301555,000 ±  280369,992  ns/op
+Map2.map2_50000_rec_stream         avgt   10   1378233,002 ±  145720,501  ns/op
+Map2.map2_10000_rec_collection     avgt   10    626789,946 ±   78370,298  ns/op
+Map2.map2_10000_rec_sequence       avgt   10    330535,747 ±   77246,235  ns/op
+Map2.map2_10000_rec_stream         avgt   10    346536,224 ±   97351,265  ns/op
+Map2.map2_1000_rec_collection      avgt   10    110709,376 ±   13465,679  ns/op
+Map2.map2_1000_rec_sequence        avgt   10    102350,537 ±    9888,950  ns/op
+Map2.map2_1000_rec_stream          avgt   10    101826,240 ±    5117,298  ns/op
+Map2.map2_100_rec_collection       avgt   10     86865,085 ±    8558,669  ns/op
+Map2.map2_100_rec_sequence         avgt   10     83224,530 ±    1803,093  ns/op
+Map2.map2_100_rec_stream           avgt   10     84402,579 ±    4230,318  ns/op
+
+map1_mem
+Benchmark                          Mode  Cnt          Score        Error  Units
+Map1.map1_100000_rec_collection    avgt   10   3632656,889 ± 1715643,219  ns/op
+Map1.map1_100000_rec_sequence      avgt   10   1453144,824 ±  265718,805  ns/op
+Map1.map1_100000_rec_stream        avgt   10   1997074,151 ±  440007,162  ns/op
+Map1.map1_50000_rec_collection     avgt   10   1505810,512 ±  372704,455  ns/op
+Map1.map1_50000_rec_sequence       avgt   10    688083,613 ±  214788,416  ns/op
+Map1.map1_50000_rec_stream         avgt   10    799596,854 ±  185952,671  ns/op
+Map1.map1_10000_rec_collection     avgt   10    373479,367 ±   94672,832  ns/op
+Map1.map1_10000_rec_sequence       avgt   10    196273,758 ±   52938,022  ns/op
+Map1.map1_10000_rec_stream         avgt   10    153009,130 ±   12427,469  ns/op
+Map1.map1_1000_rec_collection      avgt   10    104174,039 ±   11930,601  ns/op
+Map1.map1_1000_rec_sequence        avgt   10     93272,376 ±    4631,963  ns/op
+Map1.map1_1000_rec_stream          avgt   10     95088,250 ±    5459,426  ns/op
+Map1.map1_100_rec_collection       avgt   10     85959,812 ±    5625,673  ns/op
+Map1.map1_100_rec_sequence         avgt   10     81188,551 ±    2084,417  ns/op
+Map1.map1_100_rec_stream           avgt   10     86040,362 ±    8261,557  ns/op
+
+filter2_10_mem
+Benchmark                                            Mode  Cnt          Score          Error  Units
+Filter2.filter2_10_percentage_100000_rec_collection  avgt   10     426429,655 ±    93209,180  ns/op
+Filter2.filter2_10_percentage_100000_rec_sequence    avgt   10     283609,560 ±    31143,852  ns/op
+Filter2.filter2_10_percentage_100000_rec_stream      avgt   10     373975,736 ±    31180,816  ns/op
+Filter2.filter2_10_percentage_50000_rec_collection   avgt   10     221455,548 ±    15272,898  ns/op
+Filter2.filter2_10_percentage_50000_rec_sequence     avgt   10     155516,234 ±     6099,862  ns/op
+Filter2.filter2_10_percentage_50000_rec_stream       avgt   10     208371,727 ±     3059,661  ns/op
+Filter2.filter2_10_percentage_10000_rec_collection   avgt   10     120945,476 ±    24335,653  ns/op
+Filter2.filter2_10_percentage_10000_rec_sequence     avgt   10      93088,595 ±      769,971  ns/op
+Filter2.filter2_10_percentage_10000_rec_stream       avgt   10     331721,143 ±    43814,815  ns/op
+Filter2.filter2_10_percentage_1000_rec_collection    avgt   10      87910,665 ±     4467,855  ns/op
+Filter2.filter2_10_percentage_1000_rec_sequence      avgt   10      82561,449 ±     1501,556  ns/op
+Filter2.filter2_10_percentage_1000_rec_stream        avgt   10      97181,363 ±     4433,134  ns/op
+Filter2.filter2_10_percentage_100_rec_collection     avgt   10      81765,476 ±     1466,640  ns/op
+Filter2.filter2_10_percentage_100_rec_sequence       avgt   10      80531,603 ±     2983,455  ns/op
+Filter2.filter2_10_percentage_100_rec_stream         avgt   10      85560,716 ±     2655,483  ns/op
+
+filter2_90_mem
+Benchmark                                            Mode  Cnt          Score          Error  Units
+Filter2.filter2_90_percentage_100000_rec_collection  avgt   10    2671370,017 ±   313359,980  ns/op
+Filter2.filter2_90_percentage_100000_rec_sequence    avgt   10     506263,430 ±    38691,820  ns/op
+Filter2.filter2_90_percentage_100000_rec_stream      avgt   10     588786,560 ±    20224,475  ns/op
+Filter2.filter2_90_percentage_50000_rec_collection   avgt   10    1001916,806 ±   133930,929  ns/op
+Filter2.filter2_90_percentage_50000_rec_sequence     avgt   10     295057,210 ±     3265,753  ns/op
+Filter2.filter2_90_percentage_50000_rec_stream       avgt   10     326562,891 ±     6930,132  ns/op
+Filter2.filter2_90_percentage_10000_rec_collection   avgt   10     262909,634 ±    51187,320  ns/op
+Filter2.filter2_90_percentage_10000_rec_sequence     avgt   10     119608,701 ±      423,131  ns/op
+Filter2.filter2_90_percentage_10000_rec_stream       avgt   10     233833,481 ±    42335,852  ns/op
+Filter2.filter2_90_percentage_1000_rec_collection    avgt   10      94418,190 ±     2596,073  ns/op
+Filter2.filter2_90_percentage_1000_rec_sequence      avgt   10      83976,774 ±      836,034  ns/op
+Filter2.filter2_90_percentage_1000_rec_stream        avgt   10     102809,515 ±     7505,837  ns/op
+Filter2.filter2_90_percentage_100_rec_collection     avgt   10      85065,103 ±     3421,043  ns/op
+Filter2.filter2_90_percentage_100_rec_sequence       avgt   10      82879,294 ±     1870,726  ns/op
+Filter2.filter2_90_percentage_100_rec_stream         avgt   10      85514,949 ±     1998,644  ns/op
+
+flatten2_mem
+Benchmark                                            Mode  Cnt          Score          Error  Units
+Flatten2.flatten2_100000_rec_collection              avgt   10  475500756,640 ± 37477704,199  ns/op
+Flatten2.flatten2_100000_rec_sequence                avgt   10    8996090,687 ±   212510,842  ns/op
+Flatten2.flatten2_100000_rec_sequence_opt            avgt   10    6072273,393 ±   844021,587  ns/op
+Flatten2.flatten2_100000_rec_stream                  avgt   10  666806147,952 ± 90808987,844  ns/op
+Flatten2.flatten2_50000_rec_collection               avgt   10  161739658,531 ± 17009826,744  ns/op
+Flatten2.flatten2_50000_rec_sequence                 avgt   10    3720342,457 ±   224683,019  ns/op
+Flatten2.flatten2_50000_rec_sequence_opt             avgt   10    2373276,467 ±   266781,726  ns/op
+Flatten2.flatten2_50000_rec_stream                   avgt   10  142044831,158 ± 16109683,100  ns/op
+Flatten2.flatten2_10000_rec_collection               avgt   10    3940682,874 ±   526694,299  ns/op
+Flatten2.flatten2_10000_rec_sequence                 avgt   10     744835,169 ±    88607,768  ns/op
+Flatten2.flatten2_10000_rec_sequence_opt             avgt   10     475526,176 ±    27983,386  ns/op
+Flatten2.flatten2_10000_rec_stream                   avgt   10    4167481,100 ±   387047,605  ns/op
+Flatten2.flatten2_1000_rec_collection                avgt   10     397903,421 ±    44116,582  ns/op
+Flatten2.flatten2_1000_rec_sequence                  avgt   10     156263,754 ±     8159,837  ns/op
+Flatten2.flatten2_1000_rec_sequence_opt              avgt   10     126715,161 ±     9029,539  ns/op
+Flatten2.flatten2_1000_rec_stream                    avgt   10     557178,878 ±    30384,800  ns/op
+Flatten2.flatten2_100_rec_collection                 avgt   10      97146,792 ±     5577,665  ns/op
+Flatten2.flatten2_100_rec_sequence                   avgt   10      91888,030 ±     2101,093  ns/op
+Flatten2.flatten2_100_rec_sequence_opt               avgt   10      91062,631 ±     4143,049  ns/op
+Flatten2.flatten2_100_rec_stream                     avgt   10     102637,480 ±     5213,866  ns/op
+--------------------------
+distinct2_10_mem
+Benchmark                                                  Mode  Cnt         Score          Error  Units
+Distinct2.distinct2_10_percentage_100000_rec_collection    avgt   10   1637124,722 ±   243910,942  ns/op
+Distinct2.distinct2_10_percentage_100000_rec_sequence      avgt   10   1799363,632 ±   260756,318  ns/op
+Distinct2.distinct2_10_percentage_100000_rec_sequence_opt  avgt   10   1743966,663 ±   351464,423  ns/op
+Distinct2.distinct2_10_percentage_100000_rec_stream        avgt   10   1901658,438 ±   181840,910  ns/op
+Distinct2.distinct2_10_percentage_50000_rec_collection     avgt   10    843971,001 ±   124931,039  ns/op
+Distinct2.distinct2_10_percentage_50000_rec_sequence       avgt   10    788512,049 ±    86731,444  ns/op
+Distinct2.distinct2_10_percentage_50000_rec_sequence_opt   avgt   10    834785,086 ±   147089,088  ns/op
+Distinct2.distinct2_10_percentage_50000_rec_stream         avgt   10    887025,468 ±   146348,476  ns/op
+Distinct2.distinct2_10_percentage_10000_rec_collection     avgt   10    201800,226 ±    23245,537  ns/op
+Distinct2.distinct2_10_percentage_10000_rec_sequence       avgt   10    231390,033 ±    11804,494  ns/op
+Distinct2.distinct2_10_percentage_10000_rec_sequence_opt   avgt   10    195520,924 ±     8911,898  ns/op
+Distinct2.distinct2_10_percentage_10000_rec_stream         avgt   10    224564,303 ±    19328,608  ns/op
+Distinct2.distinct2_10_percentage_1000_rec_collection      avgt   10     94724,940 ±     2509,563  ns/op
+Distinct2.distinct2_10_percentage_1000_rec_sequence        avgt   10     10202,647 ±     3437,584  ns/op
+Distinct2.distinct2_10_percentage_1000_rec_sequence_opt    avgt   10     94253,577 ±     2513,627  ns/op
+Distinct2.distinct2_10_percentage_1000_rec_stream          avgt   10     97292,951 ±     4832,001  ns/op
+Distinct2.distinct2_10_percentage_100_rec_collection       avgt   10     82795,186 ±     3837,948  ns/op
+Distinct2.distinct2_10_percentage_100_rec_sequence         avgt   10     83124,575 ±     2854,450  ns/op
+Distinct2.distinct2_10_percentage_100_rec_sequence_opt     avgt   10     84715,967 ±     5530,860  ns/op
+Distinct2.distinct2_10_percentage_100_rec_stream           avgt   10     85951,865 ±     3505,078  ns/op
+
+distinct2_90_mem
+Benchmark                                                  Mode  Cnt         Score          Error  Units
+Distinct2.distinct2_90_percentage_100000_rec_collection    avgt   10  22174116,383 ± 10511270,012  ns/op
+Distinct2.distinct2_90_percentage_100000_rec_sequence      avgt   10  12854931,496 ±  1885604,781  ns/op
+Distinct2.distinct2_90_percentage_100000_rec_sequence_opt  avgt   10  14929837,502 ±  9210245,108  ns/op
+Distinct2.distinct2_90_percentage_100000_rec_stream        avgt   10  12109437,019 ±  2368454,072  ns/op
+Distinct2.distinct2_90_percentage_50000_rec_collection     avgt   10   5836700,993 ±  1246995,444  ns/op
+Distinct2.distinct2_90_percentage_50000_rec_sequence       avgt   10   4973085,930 ±   751961,681  ns/op
+Distinct2.distinct2_90_percentage_50000_rec_sequence_opt   avgt   10   4664168,089 ±  1818068,513  ns/op
+Distinct2.distinct2_90_percentage_50000_rec_stream         avgt   10   4565574,113 ±  1225040,108  ns/op
+Distinct2.distinct2_90_percentage_10000_rec_collection     avgt   10    967145,668 ±   252550,008  ns/op
+Distinct2.distinct2_90_percentage_10000_rec_sequence       avgt   10   1067686,337 ±   279953,841  ns/op
+Distinct2.distinct2_90_percentage_10000_rec_sequence_opt   avgt   10    734424,831 ±    58232,637  ns/op
+Distinct2.distinct2_90_percentage_10000_rec_stream         avgt   10    876411,346 ±   238151,702  ns/op
+Distinct2.distinct2_90_percentage_1000_rec_collection      avgt   10    180374,174 ±     9953,526  ns/op
+Distinct2.distinct2_90_percentage_1000_rec_sequence        avgt   10    128411,050 ±    13582,174  ns/op
+Distinct2.distinct2_90_percentage_1000_rec_sequence_opt    avgt   10    115634,736 ±    18543,470  ns/op
+Distinct2.distinct2_90_percentage_1000_rec_stream          avgt   10    117188,664 ±    12229,355  ns/op
+Distinct2.distinct2_90_percentage_100_rec_collection       avgt   10     94309,892 ±    13374,904  ns/op
+Distinct2.distinct2_90_percentage_100_rec_sequence         avgt   10     89216,690 ±     1393,252  ns/op
+Distinct2.distinct2_90_percentage_100_rec_sequence_opt     avgt   10     91114,308 ±     6531,033  ns/op
+Distinct2.distinct2_90_percentage_100_rec_stream           avgt   10     90557,793 ±     4158,921  ns/op
+
+minus2_10_mem
+Benchmark                                                  Mode  Cnt         Score          Error  Units
+Minus2.minus2_10_percentage_100000_rec_collection          avgt   10   4549410,628 ±  1873046,052  ns/op
+Minus2.minus2_10_percentage_100000_rec_sequence            avgt   10   2022500,688 ±   145435,598  ns/op
+Minus2.minus2_10_percentage_100000_rec_stream              avgt   10   1764303,755 ±    59735,874  ns/op
+Minus2.minus2_10_percentage_50000_rec_collection           avgt   10   1558715,197 ±   100188,743  ns/op
+Minus2.minus2_10_percentage_50000_rec_sequence             avgt   10    980728,614 ±    81118,872  ns/op
+Minus2.minus2_10_percentage_50000_rec_stream               avgt   10    846314,593 ±    22096,124  ns/op
+Minus2.minus2_10_percentage_10000_rec_collection           avgt   10    278671,689 ±    16711,904  ns/op
+Minus2.minus2_10_percentage_10000_rec_sequence             avgt   10    250939,252 ±     9807,438  ns/op
+Minus2.minus2_10_percentage_10000_rec_stream               avgt   10    226310,389 ±     2761,331  ns/op
+Minus2.minus2_10_percentage_1000_rec_collection            avgt   10    100821,341 ±     6444,289  ns/op
+Minus2.minus2_10_percentage_1000_rec_sequence              avgt   10     92677,933 ±     4524,413  ns/op
+Minus2.minus2_10_percentage_1000_rec_stream                avgt   10     89654,558 ±     3076,056  ns/op
+Minus2.minus2_10_percentage_100_rec_collection             avgt   10     84633,624 ±     2176,463  ns/op
+Minus2.minus2_10_percentage_100_rec_sequence               avgt   10     82785,982 ±     2205,450  ns/op
+Minus2.minus2_10_percentage_100_rec_stream                 avgt   10     83571,542 ±     3279,832  ns/op
+
+minus2_90_mem
+Benchmark                                                  Mode  Cnt         Score          Error  Units
+Minus2.minus2_90_percentage_100000_rec_collection          avgt   10   1731100,730 ±   184932,822  ns/op
+Minus2.minus2_90_percentage_100000_rec_sequence            avgt   10   1971500,682 ±   354898,575  ns/op
+Minus2.minus2_90_percentage_100000_rec_stream              avgt   10   1066926,233 ±   188878,329  ns/op
+Minus2.minus2_90_percentage_50000_rec_collection           avgt   10   1242894,401 ±   305658,845  ns/op
+Minus2.minus2_90_percentage_50000_rec_sequence             avgt   10    826457,779 ±   150555,913  ns/op
+Minus2.minus2_90_percentage_50000_rec_stream               avgt   10    477270,371 ±    21684,368  ns/op
+Minus2.minus2_90_percentage_10000_rec_collection           avgt   10    181318,168 ±     3982,298  ns/op
+Minus2.minus2_90_percentage_10000_rec_sequence             avgt   10    188322,513 ±     4518,721  ns/op
+Minus2.minus2_90_percentage_10000_rec_stream               avgt   10    168525,817 ±     6630,017  ns/op
+Minus2.minus2_90_percentage_1000_rec_collection            avgt   10     92517,371 ±     2479,813  ns/op
+Minus2.minus2_90_percentage_1000_rec_sequence              avgt   10     94013,254 ±     5123,229  ns/op
+Minus2.minus2_90_percentage_1000_rec_stream                avgt   10     90524,587 ±     4473,709  ns/op
+Minus2.minus2_90_percentage_100_rec_collection             avgt   10     83509,061 ±     2100,670  ns/op
+Minus2.minus2_90_percentage_100_rec_sequence               avgt   10     82137,337 ±     1816,970  ns/op
+Minus2.minus2_90_percentage_100_rec_stream                 avgt   10     82516,591 ±     1132,300  ns/op
+
+Filter2_exp
+Benchmark                                     Mode  Cnt        Score         Error  Units
+Filter2_exp.filter2_10r_10000_rec_collection  avgt   10  1716875,786 ± 1495729,647  ns/op
+Filter2_exp.filter2_10r_10000_rec_sequence    avgt   10   621510,779 ±   45688,238  ns/op
+Filter2_exp.filter2_5r_10000_rec_collection   avgt   10   853047,899 ±   61730,233  ns/op
+Filter2_exp.filter2_5r_10000_rec_sequence     avgt   10   508607,852 ±   40265,384  ns/op
+Filter2_exp.filter2_3r_10000_rec_collection   avgt   10   644931,289 ±  104272,407  ns/op
+Filter2_exp.filter2_3r_10000_rec_sequence     avgt   10   801110,427 ±   32950,121  ns/op
+Filter2_exp.filter2_2r_10000_rec_collection   avgt   10   482829,215 ±   75115,585  ns/op
+Filter2_exp.filter2_2r_10000_rec_sequence     avgt   10   245628,712 ±   22178,914  ns/op
+Filter2_exp.filter2_1r_10000_rec_collection   avgt   10   295341,994 ±   26279,028  ns/op
+Filter2_exp.filter2_1r_10000_rec_sequence     avgt   10   111487,129 ±    3861,596  ns/op
+
+crazy2_mem
+Benchmark                                Mode  Cnt          Score           Error  Units
+Crazy2.crazy2_100000_rec_collection      avgt   10   20634162,559 ±   2619443,329  ns/op
+Crazy2.crazy2_100000_rec_sequence        avgt   10   20825330,535 ±   2645583,436  ns/op
+Crazy2.crazy2_100000_rec_sequence_opt    avgt   10   21083524,751 ±   2324937,345  ns/op
+Crazy2.crazy2_100000_rec_stream          avgt   10   19197423,448 ±   2358873,563  ns/op
+Crazy2.crazy2_50000_rec_collection       avgt   10    9606778,659 ±    782645,311  ns/op
+Crazy2.crazy2_50000_rec_sequence         avgt   10    9648795,042 ±    940593,223  ns/op
+Crazy2.crazy2_50000_rec_sequence_opt     avgt   10    9398006,594 ±    575428,667  ns/op
+Crazy2.crazy2_50000_rec_stream           avgt   10    8843450,160 ±    218623,655  ns/op
+Crazy2.crazy2_10000_rec_collection       avgt   10    1578002,532 ±    139858,182  ns/op
+Crazy2.crazy2_10000_rec_sequence         avgt   10    1666959,327 ±    124804,508  ns/op
+Crazy2.crazy2_10000_rec_sequence_opt     avgt   10    1679260,695 ±    106935,293  ns/op
+Crazy2.crazy2_10000_rec_stream           avgt   10    1583098,176 ±    148387,995  ns/op
+Crazy2.crazy2_1000_rec_collection        avgt   10     178293,531 ±     14876,905  ns/op
+Crazy2.crazy2_1000_rec_sequence          avgt   10     180748,677 ±     12516,799  ns/op
+Crazy2.crazy2_1000_rec_sequence_opt      avgt   10     175860,087 ±      9161,059  ns/op
+Crazy2.crazy2_1000_rec_stream            avgt   10     176783,829 ±     17743,680  ns/op
+Crazy2.crazy2_100_rec_collection         avgt   10      89769,110 ±      2413,494  ns/op
+Crazy2.crazy2_100_rec_sequence           avgt   10      91736,487 ±      3002,314  ns/op
+Crazy2.crazy2_100_rec_sequence_opt       avgt   10      90624,050 ±      4847,953  ns/op
+Crazy2.crazy2_100_rec_stream             avgt   10      87730,964 ±      2891,104  ns/op
+
+reality2_mem
+Benchmark                                Mode  Cnt          Score           Error  Units
+Reality2.reality2_100000_rec_collection  avgt   10  579946114,342 ± 318001619,147  ns/op
+Reality2.reality2_100000_rec_sequence    avgt   10   24197499,659 ±   1345634,219  ns/op
+Reality2.reality2_100000_rec_stream      avgt   10   51073063,557 ±   3726710,543  ns/op
+Reality2.reality2_50000_rec_collection   avgt   10   62428121,393 ±  10487773,622  ns/op
+Reality2.reality2_50000_rec_sequence     avgt   10   11446456,691 ±    458623,764  ns/op
+Reality2.reality2_50000_rec_stream       avgt   10   17529383,707 ±   5921957,435  ns/op
+Reality2.reality2_10000_rec_collection   avgt   10    6780299,314 ±   1605136,840  ns/op
+Reality2.reality2_10000_rec_sequence     avgt   10    2624962,355 ±    325454,505  ns/op
+Reality2.reality2_10000_rec_stream       avgt   10    4355885,974 ±   1017200,807  ns/op
+Reality2.reality2_1000_rec_collection    avgt   10     865323,891 ±    367965,743  ns/op
+Reality2.reality2_1000_rec_sequence      avgt   10     562808,634 ±     96330,458  ns/op
+Reality2.reality2_1000_rec_stream        avgt   10     777921,150 ±     67419,618  ns/op
+Reality2.reality2_100_rec_collection     avgt   10     225350,384 ±     22317,368  ns/op
+Reality2.reality2_100_rec_sequence       avgt   10     181941,134 ±      2955,521  ns/op
+Reality2.reality2_100_rec_stream         avgt   10     219311,141 ±     25407,669  ns/op
+
+groupBy2_10_mem
+Benchmark                                              Mode  Cnt         Score         Error  Units
+GroupBy2.groupBy2_10_percentage_100000_rec_collection  avgt   10   6777810,511 ± 1109579,579  ns/op
+GroupBy2.groupBy2_10_percentage_100000_rec_sequence    avgt   10   6041566,657 ±  285365,796  ns/op
+GroupBy2.groupBy2_10_percentage_100000_rec_stream      avgt   10  11076703,390 ± 1220521,574  ns/op
+GroupBy2.groupBy2_10_percentage_50000_rec_collection   avgt   10   2606466,787 ±  252519,258  ns/op
+GroupBy2.groupBy2_10_percentage_50000_rec_sequence     avgt   10   2290093,172 ±  162729,130  ns/op
+GroupBy2.groupBy2_10_percentage_50000_rec_stream       avgt   10   4037010,665 ±  394089,282  ns/op
+GroupBy2.groupBy2_10_percentage_10000_rec_collection   avgt   10    526931,193 ±   47101,306  ns/op
+GroupBy2.groupBy2_10_percentage_10000_rec_sequence     avgt   10    564555,909 ±   20634,723  ns/op
+GroupBy2.groupBy2_10_percentage_10000_rec_stream       avgt   10   1091144,819 ±  561681,450  ns/op
+GroupBy2.groupBy2_10_percentage_1000_rec_collection    avgt   10    101330,061 ±    3797,229  ns/op
+GroupBy2.groupBy2_10_percentage_1000_rec_sequence      avgt   10    104811,414 ±    9385,521  ns/op
+GroupBy2.groupBy2_10_percentage_1000_rec_stream        avgt   10    113484,284 ±   10926,431  ns/op
+GroupBy2.groupBy2_10_percentage_100_rec_collection     avgt   10     87548,713 ±    5491,090  ns/op
+GroupBy2.groupBy2_10_percentage_100_rec_sequence       avgt   10     84331,440 ±     719,538  ns/op
+GroupBy2.groupBy2_10_percentage_100_rec_stream         avgt   10     88102,523 ±    4253,464  ns/op
+
+groupBy2_90_mem
+Benchmark                                              Mode  Cnt         Score         Error  Units
+GroupBy2.groupBy2_90_percentage_100000_rec_collection  avgt   10  73352017,834 ± 1687176,583  ns/op
+GroupBy2.groupBy2_90_percentage_100000_rec_sequence    avgt   10  76686811,119 ± 7688092,526  ns/op
+GroupBy2.groupBy2_90_percentage_100000_rec_stream      avgt   10  88677196,136 ± 8505552,708  ns/op
+GroupBy2.groupBy2_90_percentage_50000_rec_collection   avgt   10  20018384,645 ± 1449970,306  ns/op
+GroupBy2.groupBy2_90_percentage_50000_rec_sequence     avgt   10  19954321,045 ± 1553759,968  ns/op
+GroupBy2.groupBy2_90_percentage_50000_rec_stream       avgt   10  22125955,047 ± 1069694,161  ns/op
+GroupBy2.groupBy2_90_percentage_10000_rec_collection   avgt   10   1960772,196 ±  295969,652  ns/op
+GroupBy2.groupBy2_90_percentage_10000_rec_sequence     avgt   10   1870428,665 ±  163651,386  ns/op
+GroupBy2.groupBy2_90_percentage_10000_rec_stream       avgt   10   2170323,354 ±  165485,944  ns/op
+GroupBy2.groupBy2_90_percentage_1000_rec_collection    avgt   10    256240,900 ±   31452,998  ns/op
+GroupBy2.groupBy2_90_percentage_1000_rec_sequence      avgt   10    243295,736 ±   26394,880  ns/op
+GroupBy2.groupBy2_90_percentage_1000_rec_stream        avgt   10    251369,237 ±   23771,200  ns/op
+GroupBy2.groupBy2_90_percentage_100_rec_collection     avgt   10     92337,849 ±    5715,928  ns/op
+GroupBy2.groupBy2_90_percentage_100_rec_sequence       avgt   10     90839,088 ±    2078,718  ns/op
+GroupBy2.groupBy2_90_percentage_100_rec_stream         avgt   10     91533,727 ±    2360,654  ns/op
+
+plus2_mem
+Benchmark                                              Mode  Cnt         Score         Error  Units
+Plus2.plus2_100000_rec_collection                      avgt   10   2012542,222 ±  202819,028  ns/op
+Plus2.plus2_100000_rec_sequence                        avgt   10    727712,870 ±   57626,403  ns/op
+Plus2.plus2_100000_rec_sequence_opt                    avgt   10    629616,860 ±    3810,932  ns/op
+Plus2.plus2_100000_rec_stream                          avgt   10    634618,112 ±   37573,221  ns/op
+Plus2.plus2_50000_rec_collection                       avgt   10    931812,779 ±   80760,910  ns/op
+Plus2.plus2_50000_rec_sequence                         avgt   10    393173,765 ±   18927,715  ns/op
+Plus2.plus2_50000_rec_sequence_opt                     avgt   10    367083,070 ±   55473,952  ns/op
+Plus2.plus2_50000_rec_stream                           avgt   10    354336,187 ±   14653,870  ns/op
+Plus2.plus2_10000_rec_collection                       avgt   10    274298,575 ±   10997,411  ns/op
+Plus2.plus2_10000_rec_sequence                         avgt   10    142448,122 ±    2956,402  ns/op
+Plus2.plus2_10000_rec_sequence_opt                     avgt   10    135528,220 ±    2832,368  ns/op
+Plus2.plus2_10000_rec_stream                           avgt   10    136350,324 ±    2648,801  ns/op
+Plus2.plus2_1000_rec_collection                        avgt   10     98000,333 ±   10541,625  ns/op
+Plus2.plus2_1000_rec_sequence                          avgt   10     87243,597 ±    2541,344  ns/op
+Plus2.plus2_1000_rec_sequence_opt                      avgt   10     87865,057 ±    2583,171  ns/op
+Plus2.plus2_1000_rec_stream                            avgt   10     88457,528 ±    6255,457  ns/op
+Plus2.plus2_100_rec_collection                         avgt   10     86447,703 ±    6090,970  ns/op
+Plus2.plus2_100_rec_sequence                           avgt   10     83327,530 ±    3952,196  ns/op
+Plus2.plus2_100_rec_sequence_opt                       avgt   10     81637,569 ±    1321,955  ns/op
+Plus2.plus2_100_rec_stream                             avgt   10     83698,438 ±    6081,483  ns/op
+
+sort2_mem
+Benchmark                                              Mode  Cnt         Score         Error  Units
+Sort2.sort2_100000_rec_collection                      avgt   10  16527181,954 ±  827009,146  ns/op
+Sort2.sort2_100000_rec_sequence                        avgt   10  17785807,842 ±  162126,985  ns/op
+Sort2.sort2_100000_rec_stream                          avgt   10  16654435,963 ± 1306345,493  ns/op
+Sort2.sort2_50000_rec_collection                       avgt   10   7728741,421 ±  436054,087  ns/op
+Sort2.sort2_50000_rec_sequence                         avgt   10   8431070,544 ±  258493,897  ns/op
+Sort2.sort2_50000_rec_stream                           avgt   10   7844875,925 ±  450447,703  ns/op
+Sort2.sort2_10000_rec_collection                       avgt   10   1368735,581 ±  133863,853  ns/op
+Sort2.sort2_10000_rec_sequence                         avgt   10   1503978,181 ±  165480,839  ns/op
+Sort2.sort2_10000_rec_stream                           avgt   10   1405753,399 ±   78182,682  ns/op
+Sort2.sort2_1000_rec_collection                        avgt   10    143769,186 ±    6139,791  ns/op
+Sort2.sort2_1000_rec_sequence                          avgt   10    161700,690 ±   13194,516  ns/op
+Sort2.sort2_1000_rec_stream                            avgt   10    142908,159 ±   15985,385  ns/op
+Sort2.sort2_100_rec_collection                         avgt   10     88008,675 ±    4393,457  ns/op
+Sort2.sort2_100_rec_sequence                           avgt   10     87762,802 ±    3171,206  ns/op
+Sort2.sort2_100_rec_stream                             avgt   10     87329,395 ±    2940,749  ns/op
+
+drop2_10_mem
+Benchmark                                        Mode  Cnt       Score       Error  Units
+Drop2.drop2_10_percentage_100000_rec_collection  avgt   10  658499,787 ± 54965,225  ns/op
+Drop2.drop2_10_percentage_100000_rec_sequence    avgt   10  360566,862 ± 19877,571  ns/op
+Drop2.drop2_10_percentage_100000_rec_stream      avgt   10  397982,565 ± 23847,905  ns/op
+Drop2.drop2_10_percentage_50000_rec_collection   avgt   10  339730,580 ± 20969,639  ns/op
+Drop2.drop2_10_percentage_50000_rec_sequence     avgt   10  224742,143 ±  9359,295  ns/op
+Drop2.drop2_10_percentage_50000_rec_stream       avgt   10  231376,094 ±  6088,843  ns/op
+Drop2.drop2_10_percentage_10000_rec_collection   avgt   10  152723,833 ± 27598,894  ns/op
+Drop2.drop2_10_percentage_10000_rec_sequence     avgt   10  114746,388 ± 13648,667  ns/op
+Drop2.drop2_10_percentage_10000_rec_stream       avgt   10  112442,454 ±  4795,763  ns/op
+Drop2.drop2_10_percentage_1000_rec_collection    avgt   10   90423,240 ±  2582,814  ns/op
+Drop2.drop2_10_percentage_1000_rec_sequence      avgt   10   84965,773 ±  3747,173  ns/op
+Drop2.drop2_10_percentage_1000_rec_stream        avgt   10   84753,078 ±  1780,248  ns/op
+Drop2.drop2_10_percentage_100_rec_collection     avgt   10   84367,111 ±  5151,249  ns/op
+Drop2.drop2_10_percentage_100_rec_sequence       avgt   10   82349,263 ±  3229,096  ns/op
+Drop2.drop2_10_percentage_100_rec_stream         avgt   10   83468,106 ±  3900,932  ns/op
+
+drop2_90_mem
+Benchmark                                        Mode  Cnt       Score       Error  Units
+Drop2.drop2_90_percentage_100000_rec_collection  avgt   10  149552,659 ±  8896,435  ns/op
+Drop2.drop2_90_percentage_100000_rec_sequence    avgt   10  148670,411 ±  5393,752  ns/op
+Drop2.drop2_90_percentage_100000_rec_stream      avgt   10  224648,595 ±  8528,795  ns/op
+Drop2.drop2_90_percentage_50000_rec_collection   avgt   10  115206,603 ±  3856,908  ns/op
+Drop2.drop2_90_percentage_50000_rec_sequence     avgt   10  131328,311 ± 12380,683  ns/op
+Drop2.drop2_90_percentage_50000_rec_stream       avgt   10  152628,495 ±  3535,229  ns/op
+Drop2.drop2_90_percentage_10000_rec_collection   avgt   10   91840,345 ±  2490,135  ns/op
+Drop2.drop2_90_percentage_10000_rec_sequence     avgt   10   90735,652 ±  2685,588  ns/op
+Drop2.drop2_90_percentage_10000_rec_stream       avgt   10  103164,703 ±  2591,417  ns/op
+Drop2.drop2_90_percentage_1000_rec_collection    avgt   10   82365,454 ±  2174,209  ns/op
+Drop2.drop2_90_percentage_1000_rec_sequence      avgt   10   82629,972 ±  3033,800  ns/op
+Drop2.drop2_90_percentage_1000_rec_stream        avgt   10   85337,107 ±  3373,704  ns/op
+Drop2.drop2_90_percentage_100_rec_collection     avgt   10   81481,808 ±  1887,095  ns/op
+Drop2.drop2_90_percentage_100_rec_sequence       avgt   10   81400,776 ±  1307,844  ns/op
+Drop2.drop2_90_percentage_100_rec_stream         avgt   10   81906,454 ±  2072,868  ns/op
+
+take2_10_mem
+Benchmark                                        Mode  Cnt       Score       Error  Units
+Take2.take2_10_percentage_100000_rec_collection  avgt   10  151797,654 ± 11148,039  ns/op
+Take2.take2_10_percentage_100000_rec_sequence    avgt   10  109470,625 ±  1662,704  ns/op
+Take2.take2_10_percentage_100000_rec_stream      avgt   10  125796,443 ±  7653,575  ns/op
+Take2.take2_10_percentage_50000_rec_collection   avgt   10  117518,519 ±  3010,560  ns/op
+Take2.take2_10_percentage_50000_rec_sequence     avgt   10   95184,017 ±  2040,057  ns/op
+Take2.take2_10_percentage_50000_rec_stream       avgt   10  102680,512 ±  2612,049  ns/op
+Take2.take2_10_percentage_10000_rec_collection   avgt   10   91944,523 ±  2963,912  ns/op
+Take2.take2_10_percentage_10000_rec_sequence     avgt   10   85097,296 ±  4354,102  ns/op
+Take2.take2_10_percentage_10000_rec_stream       avgt   10   89178,827 ±  7233,463  ns/op
+Take2.take2_10_percentage_1000_rec_collection    avgt   10   85723,866 ± 11191,070  ns/op
+Take2.take2_10_percentage_1000_rec_sequence      avgt   10   82496,572 ±  3520,763  ns/op
+Take2.take2_10_percentage_1000_rec_stream        avgt   10   81913,827 ±  1882,652  ns/op
+Take2.take2_10_percentage_100_rec_collection     avgt   10   82400,448 ±  5029,292  ns/op
+Take2.take2_10_percentage_100_rec_sequence       avgt   10   80281,975 ±  1847,690  ns/op
+Take2.take2_10_percentage_100_rec_stream         avgt   10   81300,355 ±  1324,182  ns/op
+
+take2_90_mem
+Benchmark                                        Mode  Cnt       Score       Error  Units
+Take2.take2_90_percentage_100000_rec_collection  avgt   10  685029,481 ± 70685,278  ns/op
+Take2.take2_90_percentage_100000_rec_sequence    avgt   10  336123,633 ±  2337,333  ns/op
+Take2.take2_90_percentage_100000_rec_stream      avgt   10  422559,045 ±  3114,270  ns/op
+Take2.take2_90_percentage_50000_rec_collection   avgt   10  365550,227 ± 30687,087  ns/op
+Take2.take2_90_percentage_50000_rec_sequence     avgt   10  210893,337 ±  2775,880  ns/op
+Take2.take2_90_percentage_50000_rec_stream       avgt   10  251448,632 ±  4418,581  ns/op
+Take2.take2_90_percentage_10000_rec_collection   avgt   10  146784,716 ± 12139,782  ns/op
+Take2.take2_90_percentage_10000_rec_sequence     avgt   10  108143,789 ±  2357,715  ns/op
+Take2.take2_90_percentage_10000_rec_stream       avgt   10  120580,689 ±  3091,197  ns/op
+Take2.take2_90_percentage_1000_rec_collection    avgt   10   92550,067 ±  3763,231  ns/op
+Take2.take2_90_percentage_1000_rec_sequence      avgt   10   83106,108 ±   982,910  ns/op
+Take2.take2_90_percentage_1000_rec_stream        avgt   10   86577,360 ±  3049,581  ns/op
+Take2.take2_90_percentage_100_rec_collection     avgt   10   83094,308 ±  1984,803  ns/op
+Take2.take2_90_percentage_100_rec_sequence       avgt   10   81537,510 ±  2000,675  ns/op
+Take2.take2_90_percentage_100_rec_stream         avgt   10   83008,513 ±  2747,911  ns/op

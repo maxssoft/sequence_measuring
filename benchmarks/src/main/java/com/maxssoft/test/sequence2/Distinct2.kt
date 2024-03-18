@@ -1,5 +1,6 @@
 package com.maxssoft.test.sequence2
 
+import com.maxssoft.func.MemoryConsumer
 import com.maxssoft.func.createIntList
 import com.maxssoft.func.distinct2_collection_10
 import com.maxssoft.func.distinct2_collection_90
@@ -38,6 +39,8 @@ class Distinct2 {
     private lateinit var originCollection10_50_000: List<Int?>
     private lateinit var originCollection10_100_000: List<Int?>
 
+    private val memoryConsumer = MemoryConsumer()
+
     @Setup
     fun setup() {
         originCollection90_100 = createIntList(100).map { it?.let { it * 90 / 100 }  }
@@ -51,111 +54,134 @@ class Distinct2 {
         originCollection10_10_000 = createIntList(10_000).map { it?.let { it * 10 / 100 }  }
         originCollection10_50_000 = createIntList(50_000).map { it?.let { it * 10 / 100 }  }
         originCollection10_100_000 = createIntList(100_000).map { it?.let { it * 10 / 100 }  }
+
+        memoryConsumer.consumeMemory()
     }
 
     @Benchmark
     fun distinct2_90_percentage_100_rec_sequence(blackHole: Blackhole) {
         distinct2_sequence_90(originCollection90_100).collectBlackHole(blackHole)
+        blackHole.consume(memoryConsumer.read())
     }
 
     @Benchmark
     fun distinct2_90_percentage_1000_rec_sequence(blackHole: Blackhole) {
         distinct2_sequence_90(originCollection90_1_000).collectBlackHole(blackHole)
+        blackHole.consume(memoryConsumer.read())
     }
 
     @Benchmark
     fun distinct2_90_percentage_10000_rec_sequence(blackHole: Blackhole) {
         distinct2_sequence_90(originCollection90_10_000).collectBlackHole(blackHole)
+        blackHole.consume(memoryConsumer.read())
     }
 
     @Benchmark
     fun distinct2_90_percentage_50000_rec_sequence(blackHole: Blackhole) {
         distinct2_sequence_90(originCollection90_50_000).collectBlackHole(blackHole)
+        blackHole.consume(memoryConsumer.read())
     }
 
     @Benchmark
     fun distinct2_90_percentage_100000_rec_sequence(blackHole: Blackhole) {
         distinct2_sequence_90(originCollection90_100_000).collectBlackHole(blackHole)
+        blackHole.consume(memoryConsumer.read())
     }
 
     @Benchmark
     fun distinct2_90_percentage_100_rec_sequence_opt(blackHole: Blackhole) {
         distinct2_sequence_90_optimized(originCollection90_100).collectBlackHole(blackHole)
+        blackHole.consume(memoryConsumer.read())
     }
 
     @Benchmark
     fun distinct2_90_percentage_1000_rec_sequence_opt(blackHole: Blackhole) {
         distinct2_sequence_90_optimized(originCollection90_1_000).collectBlackHole(blackHole)
+        blackHole.consume(memoryConsumer.read())
     }
 
     @Benchmark
     fun distinct2_90_percentage_10000_rec_sequence_opt(blackHole: Blackhole) {
         distinct2_sequence_90_optimized(originCollection90_10_000).collectBlackHole(blackHole)
+        blackHole.consume(memoryConsumer.read())
     }
 
     @Benchmark
     fun distinct2_90_percentage_50000_rec_sequence_opt(blackHole: Blackhole) {
         distinct2_sequence_90_optimized(originCollection90_50_000).collectBlackHole(blackHole)
+        blackHole.consume(memoryConsumer.read())
     }
 
     @Benchmark
     fun distinct2_90_percentage_100000_rec_sequence_opt(blackHole: Blackhole) {
         distinct2_sequence_90_optimized(originCollection90_100_000).collectBlackHole(blackHole)
+        blackHole.consume(memoryConsumer.read())
     }
 
     @Benchmark
     fun distinct2_90_percentage_100_rec_collection(blackHole: Blackhole) {
         distinct2_collection_90(originCollection90_100).collectBlackHole(blackHole)
+        blackHole.consume(memoryConsumer.read())
     }
 
     @Benchmark
     fun distinct2_90_percentage_1000_rec_collection(blackHole: Blackhole) {
         distinct2_collection_90(originCollection90_1_000).collectBlackHole(blackHole)
+        blackHole.consume(memoryConsumer.read())
     }
 
     @Benchmark
     fun distinct2_90_percentage_10000_rec_collection(blackHole: Blackhole) {
         distinct2_collection_90(originCollection90_10_000).collectBlackHole(blackHole)
+        blackHole.consume(memoryConsumer.read())
     }
 
     @Benchmark
     fun distinct2_90_percentage_50000_rec_collection(blackHole: Blackhole) {
         distinct2_collection_90(originCollection90_50_000).collectBlackHole(blackHole)
+        blackHole.consume(memoryConsumer.read())
     }
 
     @Benchmark
     fun distinct2_90_percentage_100000_rec_collection(blackHole: Blackhole) {
         distinct2_collection_90(originCollection90_100_000).collectBlackHole(blackHole)
+        blackHole.consume(memoryConsumer.read())
     }
 
     @Benchmark
     fun distinct2_90_percentage_100_rec_stream(blackHole: Blackhole) {
         distinct2_stream_90(originCollection90_100).collectBlackHole(blackHole)
+        blackHole.consume(memoryConsumer.read())
     }
 
     @Benchmark
     fun distinct2_90_percentage_1000_rec_stream(blackHole: Blackhole) {
         distinct2_stream_90(originCollection90_1_000).collectBlackHole(blackHole)
+        blackHole.consume(memoryConsumer.read())
     }
 
     @Benchmark
     fun distinct2_90_percentage_10000_rec_stream(blackHole: Blackhole) {
         distinct2_stream_90(originCollection90_10_000).collectBlackHole(blackHole)
+        blackHole.consume(memoryConsumer.read())
     }
 
     @Benchmark
     fun distinct2_90_percentage_50000_rec_stream(blackHole: Blackhole) {
         distinct2_stream_90(originCollection90_50_000).collectBlackHole(blackHole)
+        blackHole.consume(memoryConsumer.read())
     }
 
     @Benchmark
     fun distinct2_90_percentage_100000_rec_stream(blackHole: Blackhole) {
         distinct2_stream_90(originCollection90_100_000).collectBlackHole(blackHole)
+        blackHole.consume(memoryConsumer.read())
     }
 
     @Benchmark
     fun distinct2_10_percentage_100_rec_sequence(blackHole: Blackhole) {
         distinct2_sequence_10(originCollection10_100).collectBlackHole(blackHole)
+        blackHole.consume(memoryConsumer.read())
     }
 
     @Benchmark
@@ -166,91 +192,109 @@ class Distinct2 {
     @Benchmark
     fun distinct2_10_percentage_10000_rec_sequence(blackHole: Blackhole) {
         distinct2_sequence_10(originCollection10_10_000).collectBlackHole(blackHole)
+        blackHole.consume(memoryConsumer.read())
     }
 
     @Benchmark
     fun distinct2_10_percentage_50000_rec_sequence(blackHole: Blackhole) {
         distinct2_sequence_10(originCollection10_50_000).collectBlackHole(blackHole)
+        blackHole.consume(memoryConsumer.read())
     }
 
     @Benchmark
     fun distinct2_10_percentage_100000_rec_sequence(blackHole: Blackhole) {
         distinct2_sequence_10(originCollection10_100_000).collectBlackHole(blackHole)
+        blackHole.consume(memoryConsumer.read())
     }
 
     @Benchmark
     fun distinct2_10_percentage_100_rec_sequence_opt(blackHole: Blackhole) {
         distinct2_sequence_10_optimized(originCollection10_100).collectBlackHole(blackHole)
+        blackHole.consume(memoryConsumer.read())
     }
 
     @Benchmark
     fun distinct2_10_percentage_1000_rec_sequence_opt(blackHole: Blackhole) {
         distinct2_sequence_10_optimized(originCollection10_1_000).collectBlackHole(blackHole)
+        blackHole.consume(memoryConsumer.read())
     }
 
     @Benchmark
     fun distinct2_10_percentage_10000_rec_sequence_opt(blackHole: Blackhole) {
         distinct2_sequence_10_optimized(originCollection10_10_000).collectBlackHole(blackHole)
+        blackHole.consume(memoryConsumer.read())
     }
 
     @Benchmark
     fun distinct2_10_percentage_50000_rec_sequence_opt(blackHole: Blackhole) {
         distinct2_sequence_10_optimized(originCollection10_50_000).collectBlackHole(blackHole)
+        blackHole.consume(memoryConsumer.read())
     }
 
     @Benchmark
     fun distinct2_10_percentage_100000_rec_sequence_opt(blackHole: Blackhole) {
         distinct2_sequence_10_optimized(originCollection10_100_000).collectBlackHole(blackHole)
+        blackHole.consume(memoryConsumer.read())
     }
 
     @Benchmark
     fun distinct2_10_percentage_100_rec_collection(blackHole: Blackhole) {
         distinct2_collection_10(originCollection10_100).collectBlackHole(blackHole)
+        blackHole.consume(memoryConsumer.read())
     }
 
     @Benchmark
     fun distinct2_10_percentage_1000_rec_collection(blackHole: Blackhole) {
         distinct2_collection_10(originCollection10_1_000).collectBlackHole(blackHole)
+        blackHole.consume(memoryConsumer.read())
     }
 
     @Benchmark
     fun distinct2_10_percentage_10000_rec_collection(blackHole: Blackhole) {
         distinct2_collection_10(originCollection10_10_000).collectBlackHole(blackHole)
+        blackHole.consume(memoryConsumer.read())
     }
 
     @Benchmark
     fun distinct2_10_percentage_50000_rec_collection(blackHole: Blackhole) {
         distinct2_collection_10(originCollection10_50_000).collectBlackHole(blackHole)
+        blackHole.consume(memoryConsumer.read())
     }
 
     @Benchmark
     fun distinct2_10_percentage_100000_rec_collection(blackHole: Blackhole) {
         distinct2_collection_10(originCollection10_100_000).collectBlackHole(blackHole)
+        blackHole.consume(memoryConsumer.read())
     }
 
     @Benchmark
     fun distinct2_10_percentage_100_rec_stream(blackHole: Blackhole) {
         distinct2_stream_10(originCollection10_100).collectBlackHole(blackHole)
+        blackHole.consume(memoryConsumer.read())
     }
 
     @Benchmark
     fun distinct2_10_percentage_1000_rec_stream(blackHole: Blackhole) {
         distinct2_stream_10(originCollection10_1_000).collectBlackHole(blackHole)
+        blackHole.consume(memoryConsumer.read())
     }
 
     @Benchmark
     fun distinct2_10_percentage_10000_rec_stream(blackHole: Blackhole) {
         distinct2_stream_10(originCollection10_10_000).collectBlackHole(blackHole)
+        blackHole.consume(memoryConsumer.read())
     }
 
     @Benchmark
     fun distinct2_10_percentage_50000_rec_stream(blackHole: Blackhole) {
         distinct2_stream_10(originCollection10_50_000).collectBlackHole(blackHole)
+        blackHole.consume(memoryConsumer.read())
     }
 
     @Benchmark
     fun distinct2_10_percentage_100000_rec_stream(blackHole: Blackhole) {
         distinct2_stream_10(originCollection10_100_000).collectBlackHole(blackHole)
+        blackHole.consume(memoryConsumer.read())
     }
 
 }

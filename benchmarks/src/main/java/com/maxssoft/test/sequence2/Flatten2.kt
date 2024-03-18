@@ -1,5 +1,6 @@
 package com.maxssoft.test.sequence2
 
+import com.maxssoft.func.MemoryConsumer
 import com.maxssoft.func.createListOfList
 import com.maxssoft.func.flatten2_collection
 import com.maxssoft.func.flatten2_sequence
@@ -30,6 +31,8 @@ class Flatten2 {
     private lateinit var originCollection_50_000: List<List<Int?>>
     private lateinit var originCollection_100_000: List<List<Int?>>
 
+    private val memoryConsumer = MemoryConsumer()
+
     @Setup
     fun setup() {
         originCollection_100 = createListOfList(100, internalCount)
@@ -37,106 +40,128 @@ class Flatten2 {
         originCollection_10_000 = createListOfList(10_000, internalCount)
         originCollection_50_000 = createListOfList(50_000, internalCount)
         originCollection_100_000 = createListOfList(100_000, internalCount)
+
+        memoryConsumer.consumeMemory()
     }
 
     @Benchmark
     fun flatten2_100_rec_sequence(blackHole: Blackhole) {
         flatten2_sequence(originCollection_100).collectBlackHole(blackHole)
+        blackHole.consume(memoryConsumer.read())
     }
 
     @Benchmark
     fun flatten2_1000_rec_sequence(blackHole: Blackhole) {
         flatten2_sequence(originCollection_1_000).collectBlackHole(blackHole)
+        blackHole.consume(memoryConsumer.read())
     }
 
     @Benchmark
     fun flatten2_10000_rec_sequence(blackHole: Blackhole) {
         flatten2_sequence(originCollection_10_000).collectBlackHole(blackHole)
+        blackHole.consume(memoryConsumer.read())
     }
 
     @Benchmark
     fun flatten2_50000_rec_sequence(blackHole: Blackhole) {
         flatten2_sequence(originCollection_50_000).collectBlackHole(blackHole)
+        blackHole.consume(memoryConsumer.read())
     }
 
     @Benchmark
     fun flatten2_100000_rec_sequence(blackHole: Blackhole) {
         flatten2_sequence(originCollection_100_000).collectBlackHole(blackHole)
+        blackHole.consume(memoryConsumer.read())
     }
 
     @Benchmark
     fun flatten2_100_rec_sequence_opt(blackHole: Blackhole) {
         flatten2_sequence_optimized(originCollection_100).collectBlackHole(blackHole)
+        blackHole.consume(memoryConsumer.read())
     }
 
     @Benchmark
     fun flatten2_1000_rec_sequence_opt(blackHole: Blackhole) {
         flatten2_sequence_optimized(originCollection_1_000).collectBlackHole(blackHole)
+        blackHole.consume(memoryConsumer.read())
     }
 
     @Benchmark
     fun flatten2_10000_rec_sequence_opt(blackHole: Blackhole) {
         flatten2_sequence_optimized(originCollection_10_000).collectBlackHole(blackHole)
+        blackHole.consume(memoryConsumer.read())
     }
 
     @Benchmark
     fun flatten2_50000_rec_sequence_opt(blackHole: Blackhole) {
         flatten2_sequence_optimized(originCollection_50_000).collectBlackHole(blackHole)
+        blackHole.consume(memoryConsumer.read())
     }
 
     @Benchmark
     fun flatten2_100000_rec_sequence_opt(blackHole: Blackhole) {
         flatten2_sequence_optimized(originCollection_100_000).collectBlackHole(blackHole)
+        blackHole.consume(memoryConsumer.read())
     }
 
     @Benchmark
     fun flatten2_100_rec_collection(blackHole: Blackhole) {
         flatten2_collection(originCollection_100).collectBlackHole(blackHole)
+        blackHole.consume(memoryConsumer.read())
     }
 
     @Benchmark
     fun flatten2_1000_rec_collection(blackHole: Blackhole) {
         flatten2_collection(originCollection_1_000).collectBlackHole(blackHole)
+        blackHole.consume(memoryConsumer.read())
     }
 
     @Benchmark
     fun flatten2_10000_rec_collection(blackHole: Blackhole) {
         flatten2_collection(originCollection_10_000).collectBlackHole(blackHole)
+        blackHole.consume(memoryConsumer.read())
     }
 
     @Benchmark
     fun flatten2_50000_rec_collection(blackHole: Blackhole) {
         flatten2_collection(originCollection_50_000).collectBlackHole(blackHole)
+        blackHole.consume(memoryConsumer.read())
     }
 
     @Benchmark
     fun flatten2_100000_rec_collection(blackHole: Blackhole) {
         flatten2_collection(originCollection_100_000).collectBlackHole(blackHole)
+        blackHole.consume(memoryConsumer.read())
     }
 
     @Benchmark
     fun flatten2_100_rec_stream(blackHole: Blackhole) {
         flatten2_stream(originCollection_100).collectBlackHole(blackHole)
+        blackHole.consume(memoryConsumer.read())
     }
 
     @Benchmark
     fun flatten2_1000_rec_stream(blackHole: Blackhole) {
         flatten2_stream(originCollection_1_000).collectBlackHole(blackHole)
+        blackHole.consume(memoryConsumer.read())
     }
 
     @Benchmark
     fun flatten2_10000_rec_stream(blackHole: Blackhole) {
         flatten2_stream(originCollection_10_000).collectBlackHole(blackHole)
+        blackHole.consume(memoryConsumer.read())
     }
 
     @Benchmark
     fun flatten2_50000_rec_stream(blackHole: Blackhole) {
         flatten2_stream(originCollection_50_000).collectBlackHole(blackHole)
+        blackHole.consume(memoryConsumer.read())
     }
 
     @Benchmark
     fun flatten2_100000_rec_stream(blackHole: Blackhole) {
         flatten2_stream(originCollection_100_000).collectBlackHole(blackHole)
+        blackHole.consume(memoryConsumer.read())
     }
 
 }
