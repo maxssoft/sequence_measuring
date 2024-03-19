@@ -1,4 +1,4 @@
-package com.maxssoft.test.experiment
+package com.maxssoft.test.r_un1
 
 import com.maxssoft.func.MemoryConsumer
 import com.maxssoft.func.createIntList

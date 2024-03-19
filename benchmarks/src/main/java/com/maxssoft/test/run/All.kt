@@ -42,8 +42,8 @@ import java.util.concurrent.TimeUnit
 
 @State(Scope.Benchmark)
 //@Fork(1)
-@Fork(value = 1, jvmArgsAppend = ["-Xms8G", "-Xmx8G"])
-// jvmArgsAppend = ["-Xmx8G"]
+@Fork(value = 1, jvmArgsAppend = [])
+// jvmArgsAppend = ["-Xms8G", "-Xmx8G"]
 // jvmArgsAppend = ["-XX:+UnlockDiagnosticVMOptions","-XX:+PrintAssembly"]
 // jvmArgsAppend = ["-XX:-UseOnStackReplacement"]
 // jvmArgsAppend = ["-XX:MaxInlineSize=0"]
@@ -237,12 +237,6 @@ class All {
         return (array.last() ?: 0) + memoryConsumer.read()
     }
 
-    @Benchmark
-    fun array_create_100000(blackHole: Blackhole): Int? {
-        val array = Array<Int?>(100_000) { null }
-        return (array.last() ?: 0) + memoryConsumer.read()
-    }
-
     //@Benchmark
     fun array_copy_1000(blackHole: Blackhole): Int? {
         val array = ArrayList<Int?>(originCollection_1_000.size)
@@ -266,8 +260,26 @@ class All {
     }
 
     @Benchmark
+    fun array_create_100000(blackHole: Blackhole): Int? {
+        val array = Array<Int?>(100_000) { null }
+        return (array.last() ?: 0) + memoryConsumer.read()
+    }
+
+    @Benchmark
+    fun map1_100000_rec_collection(blackHole: Blackhole) {
+        map1_collection(originCollection_100_000).collectBlackHole(blackHole)
+        blackHole.consume(memoryConsumer.read())
+    }
+
+    @Benchmark
     fun map10_100000_rec_collection(blackHole: Blackhole) {
         map10_collection(originCollection_100_000).collectBlackHole(blackHole)
+        blackHole.consume(memoryConsumer.read())
+    }
+
+    @Benchmark
+    fun map10_100000_rec_sequence(blackHole: Blackhole) {
+        map10_sequence(originCollection_100_000).collectBlackHole(blackHole)
         blackHole.consume(memoryConsumer.read())
     }
 }

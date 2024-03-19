@@ -1,4 +1,4 @@
-package com.maxssoft.test.sequence2
+package com.maxssoft.test.r_un4
 
 import com.maxssoft.func.MemoryConsumer
 import com.maxssoft.func.createIntList

@@ -1,10 +1,10 @@
-package com.maxssoft.test.sequence2
+package com.maxssoft.test.r_un1
 
 import com.maxssoft.func.MemoryConsumer
 import com.maxssoft.func.createIntList
-import com.maxssoft.func.map3_collection
-import com.maxssoft.func.map3_sequence
-import com.maxssoft.func.map3_stream
+import com.maxssoft.func.map2_collection
+import com.maxssoft.func.map2_sequence
+import com.maxssoft.func.map2_stream
 import com.maxssoft.test.factory.WARN_UP_ITERATIONS
 import com.maxssoft.test.factory.WARN_UP_TIME
 import com.maxssoft.test.factory.collectBlackHole
@@ -20,7 +20,7 @@ import java.util.concurrent.TimeUnit
 @State(Scope.Benchmark)
 @Fork(1)
 @Warmup(iterations = WARN_UP_ITERATIONS, time = WARN_UP_TIME, timeUnit = TimeUnit.SECONDS)
-class Map3 {
+class Map2 {
 
     private lateinit var originCollection_100: List<Int?>
     private lateinit var originCollection_1_000: List<Int?>
@@ -42,91 +42,91 @@ class Map3 {
     }
 
     @Benchmark
-    fun map3_100_rec_sequence(blackHole: Blackhole) {
-        map3_sequence(originCollection_100).collectBlackHole(blackHole)
+    fun map2_100_rec_sequence(blackHole: Blackhole) {
+        map2_sequence(originCollection_100).collectBlackHole(blackHole)
         blackHole.consume(memoryConsumer.read())
     }
 
     @Benchmark
-    fun map3_1000_rec_sequence(blackHole: Blackhole) {
-        map3_sequence(originCollection_1_000).collectBlackHole(blackHole)
+    fun map2_1000_rec_sequence(blackHole: Blackhole) {
+        map2_sequence(originCollection_1_000).collectBlackHole(blackHole)
         blackHole.consume(memoryConsumer.read())
     }
 
     @Benchmark
-    fun map3_10000_rec_sequence(blackHole: Blackhole) {
-        map3_sequence(originCollection_10_000).collectBlackHole(blackHole)
+    fun map2_10000_rec_sequence(blackHole: Blackhole) {
+        map2_sequence(originCollection_10_000).collectBlackHole(blackHole)
         blackHole.consume(memoryConsumer.read())
     }
 
     @Benchmark
-    fun map3_50000_rec_sequence(blackHole: Blackhole) {
-        map3_sequence(originCollection_50_000).collectBlackHole(blackHole)
+    fun map2_50000_rec_sequence(blackHole: Blackhole) {
+        map2_sequence(originCollection_50_000).collectBlackHole(blackHole)
         blackHole.consume(memoryConsumer.read())
     }
 
     @Benchmark
-    fun map3_100000_rec_sequence(blackHole: Blackhole) {
-        map3_sequence(originCollection_100_000).collectBlackHole(blackHole)
+    fun map2_100000_rec_sequence(blackHole: Blackhole) {
+        map2_sequence(originCollection_100_000).collectBlackHole(blackHole)
         blackHole.consume(memoryConsumer.read())
     }
 
     @Benchmark
-    fun map3_100_rec_collection(blackHole: Blackhole) {
-        map3_collection(originCollection_100).collectBlackHole(blackHole)
+    fun map2_100_rec_collection(blackHole: Blackhole) {
+        map2_collection(originCollection_100).collectBlackHole(blackHole)
         blackHole.consume(memoryConsumer.read())
     }
 
     @Benchmark
-    fun map3_1000_rec_collection(blackHole: Blackhole) {
-        map3_collection(originCollection_1_000).collectBlackHole(blackHole)
+    fun map2_1000_rec_collection(blackHole: Blackhole) {
+        map2_collection(originCollection_1_000).collectBlackHole(blackHole)
         blackHole.consume(memoryConsumer.read())
     }
 
     @Benchmark
-    fun map3_10000_rec_collection(blackHole: Blackhole) {
-        map3_collection(originCollection_10_000).collectBlackHole(blackHole)
+    fun map2_10000_rec_collection(blackHole: Blackhole) {
+        map2_collection(originCollection_10_000).collectBlackHole(blackHole)
         blackHole.consume(memoryConsumer.read())
     }
 
     @Benchmark
-    fun map3_50000_rec_collection(blackHole: Blackhole) {
-        map3_collection(originCollection_50_000).collectBlackHole(blackHole)
+    fun map2_50000_rec_collection(blackHole: Blackhole) {
+        map2_collection(originCollection_50_000).collectBlackHole(blackHole)
     }
 
     @Benchmark
-    fun map3_100000_rec_collection(blackHole: Blackhole) {
-        map3_collection(originCollection_100_000).collectBlackHole(blackHole)
+    fun map2_100000_rec_collection(blackHole: Blackhole) {
+        map2_collection(originCollection_100_000).collectBlackHole(blackHole)
         blackHole.consume(memoryConsumer.read())
     }
 
     @Benchmark
-    fun map3_100_rec_stream(blackHole: Blackhole) {
-        map3_stream(originCollection_100).collectBlackHole(blackHole)
+    fun map2_100_rec_stream(blackHole: Blackhole) {
+        map2_stream(originCollection_100).collectBlackHole(blackHole)
         blackHole.consume(memoryConsumer.read())
     }
 
     @Benchmark
-    fun map3_1000_rec_stream(blackHole: Blackhole) {
-        map3_stream(originCollection_1_000).collectBlackHole(blackHole)
+    fun map2_1000_rec_stream(blackHole: Blackhole) {
+        map2_stream(originCollection_1_000).collectBlackHole(blackHole)
         blackHole.consume(memoryConsumer.read())
     }
 
     @Benchmark
-    fun map3_10000_rec_stream(blackHole: Blackhole) {
-        map3_stream(originCollection_10_000).collectBlackHole(blackHole)
+    fun map2_10000_rec_stream(blackHole: Blackhole) {
+        map2_stream(originCollection_10_000).collectBlackHole(blackHole)
         blackHole.consume(memoryConsumer.read())
     }
 
     @Benchmark
-    fun map3_50000_rec_stream(blackHole: Blackhole) {
-        map3_stream(originCollection_50_000).collectBlackHole(blackHole)
+    fun map2_50000_rec_stream(blackHole: Blackhole) {
+        map2_stream(originCollection_50_000).collectBlackHole(blackHole)
         blackHole.consume(memoryConsumer.read())
     }
 
     @Benchmark
-    fun map3_100000_rec_stream(blackHole: Blackhole) {
-        map3_stream(originCollection_100_000).collectBlackHole(blackHole)
+    fun map2_100000_rec_stream(blackHole: Blackhole) {
+        map2_stream(originCollection_100_000).collectBlackHole(blackHole)
         blackHole.consume(memoryConsumer.read())
     }
 
