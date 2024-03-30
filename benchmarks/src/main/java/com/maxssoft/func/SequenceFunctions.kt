@@ -963,6 +963,102 @@ fun filter_collection_10r(sourceCollection: List<Int?>): List<Int?> {
         .filter { it in 0..range_10 }
 }
 
+fun filter_stream_1r(sourceCollection: List<Int?>): Stream<Int?> {
+    val size = sourceCollection.size
+    val range_1 = size
+    val range_2 = (size * 0.9).toInt()
+    val range_3 = (size * 0.8).toInt()
+    val range_4 = (size * 0.7).toInt()
+    val range_5 = (size * 0.6).toInt()
+    val range_6 = (size * 0.5).toInt()
+    val range_7 = (size * 0.4).toInt()
+    val range_8 = (size * 0.3).toInt()
+    val range_9 = (size * 0.2).toInt()
+    val range_10 = (size * 0.1).toInt()
+    return sourceCollection.stream()
+        .filter { it in 0..range_1 }
+}
+
+fun filter_stream_2r(sourceCollection: List<Int?>): Stream<Int?> {
+    val size = sourceCollection.size
+    val range_1 = size
+    val range_2 = (size * 0.9).toInt()
+    val range_3 = (size * 0.8).toInt()
+    val range_4 = (size * 0.7).toInt()
+    val range_5 = (size * 0.6).toInt()
+    val range_6 = (size * 0.5).toInt()
+    val range_7 = (size * 0.4).toInt()
+    val range_8 = (size * 0.3).toInt()
+    val range_9 = (size * 0.2).toInt()
+    val range_10 = (size * 0.1).toInt()
+    return sourceCollection.stream()
+        .filter { it in 0..range_1 }
+        .filter { it in 0..range_2 }
+}
+
+fun filter_stream_3r(sourceCollection: List<Int?>): Stream<Int?> {
+    val size = sourceCollection.size
+    val range_1 = size
+    val range_2 = (size * 0.9).toInt()
+    val range_3 = (size * 0.8).toInt()
+    val range_4 = (size * 0.7).toInt()
+    val range_5 = (size * 0.6).toInt()
+    val range_6 = (size * 0.5).toInt()
+    val range_7 = (size * 0.4).toInt()
+    val range_8 = (size * 0.3).toInt()
+    val range_9 = (size * 0.2).toInt()
+    val range_10 = (size * 0.1).toInt()
+    return sourceCollection.stream()
+        .filter { it in 0..range_1 }
+        .filter { it in 0..range_2 }
+        .filter { it in 0..range_3 }
+}
+
+fun filter_stream_5r(sourceCollection: List<Int?>): Stream<Int?> {
+    val size = sourceCollection.size
+    val range_1 = size
+    val range_2 = (size * 0.9).toInt()
+    val range_3 = (size * 0.8).toInt()
+    val range_4 = (size * 0.7).toInt()
+    val range_5 = (size * 0.6).toInt()
+    val range_6 = (size * 0.5).toInt()
+    val range_7 = (size * 0.4).toInt()
+    val range_8 = (size * 0.3).toInt()
+    val range_9 = (size * 0.2).toInt()
+    val range_10 = (size * 0.1).toInt()
+    return sourceCollection.stream()
+        .filter { it in 0..range_1 }
+        .filter { it in 0..range_2 }
+        .filter { it in 0..range_3 }
+        .filter { it in 0..range_4 }
+        .filter { it in 0..range_5 }
+}
+
+fun filter_stream_10r(sourceCollection: List<Int?>): Stream<Int?> {
+    val size = sourceCollection.size
+    val range_1 = size
+    val range_2 = (size * 0.9).toInt()
+    val range_3 = (size * 0.8).toInt()
+    val range_4 = (size * 0.7).toInt()
+    val range_5 = (size * 0.6).toInt()
+    val range_6 = (size * 0.5).toInt()
+    val range_7 = (size * 0.4).toInt()
+    val range_8 = (size * 0.3).toInt()
+    val range_9 = (size * 0.2).toInt()
+    val range_10 = (size * 0.1).toInt()
+    return sourceCollection.stream()
+        .filter { it in 0..range_1 }
+        .filter { it in 0..range_2 }
+        .filter { it in 0..range_3 }
+        .filter { it in 0..range_4 }
+        .filter { it in 0..range_5 }
+        .filter { it in 0..range_6 }
+        .filter { it in 0..range_7 }
+        .filter { it in 0..range_8 }
+        .filter { it in 0..range_9 }
+        .filter { it in 0..range_10 }
+}
+
 fun distinct_sequence_90_standard(sourceCollection: List<Int>): Int {
     return sourceCollection.asSequence()
         .map { it * 90 / 100 }

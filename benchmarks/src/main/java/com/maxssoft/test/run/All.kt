@@ -20,10 +20,11 @@ import com.maxssoft.func.map3_collection
 import com.maxssoft.func.map3_sequence
 import com.maxssoft.func.map1_collection
 import com.maxssoft.func.map1_sequence
+import com.maxssoft.func.map2_collection
+import com.maxssoft.func.map5_collection
 import com.maxssoft.func.map5_sequence
 import com.maxssoft.func.minus2_collection
 import com.maxssoft.func.minus2_sequence
-import com.maxssoft.func.random
 import com.maxssoft.func.sort2_collection
 import com.maxssoft.func.sort2_sequence
 import com.maxssoft.func.take2_collection
@@ -55,6 +56,8 @@ class All {
     private lateinit var originCollection_10_000: List<Int?>
     private lateinit var originCollection_100_000: List<Int?>
 
+    private lateinit var mutableCollection_10_000: ArrayList<Int?>
+
     private lateinit var originCollection_10_perc_10_000: Set<Int?>
     private lateinit var originCollection_90_perc_10_000: Set<Int?>
     private lateinit var originTreeCollection_10_000: MutableList<List<Int?>>
@@ -63,14 +66,16 @@ class All {
 
     @Setup
     fun setup() {
-        originCollection_1_000 = createIntList(1_000)
+        // originCollection_1_000 = createIntList(1_000)
         originCollection_10_000 = createIntList(10_000)
-        originCollection_100_000 = createIntList(100_000)
+        // originCollection_100_000 = createIntList(100_000)
         // originCollection_10_perc_10_000 = createIntList(1_000).toSet()
         // originCollection_90_perc_10_000 = createIntList(9_000).toSet()
         // originTreeCollection_10_000 = createListOfList(10_000, 10)
 
-        memoryConsumer.consumeMemory()
+        mutableCollection_10_000 = ArrayList(10_000)
+
+        memoryConsumer.consumeMemory(1)
     }
 
     //@Benchmark
@@ -165,12 +170,12 @@ class All {
 
     //@Benchmark
     fun take2_90_sequence(blackHole: Blackhole) {
-        take2_sequence(originCollection_10_000, 90).collectBlackHole(blackHole)
+        take2_sequence(originCollection_10_000, 90).sumOf { it ?: 0 }
     }
 
     //@Benchmark
     fun take2_90_collection(blackHole: Blackhole) {
-        take2_collection(originCollection_10_000, 90).collectBlackHole(blackHole)
+        take2_collection(originCollection_10_000, 90).last()
     }
 
     //@Benchmark
@@ -225,61 +230,71 @@ class All {
         )
     }
 
-    //@Benchmark
-    fun array_create_1000(blackHole: Blackhole): Int? {
-        val array = Array<Int?>(1_000) { null }
-        return (array.last() ?: 0) + memoryConsumer.read()
-    }
-
-    //@Benchmark
+    @Benchmark
     fun array_create_10000(blackHole: Blackhole): Int? {
         val array = Array<Int?>(10_000) { null }
-        return (array.last() ?: 0) + memoryConsumer.read()
-    }
-
-    //@Benchmark
-    fun array_copy_1000(blackHole: Blackhole): Int? {
-        val array = ArrayList<Int?>(originCollection_1_000.size)
-        originCollection_1_000.forEach { value -> array.add(value) }
-        return (array.last() ?: 0) + memoryConsumer.read()
+        return (array.last() ?: 0)
     }
 
     //@Benchmark
     fun array_copy_10000(blackHole: Blackhole): Int? {
-        val array = ArrayList<Int?>(originCollection_10_000.size)
-        originCollection_10_000.forEach { value -> array.add(value) }
-        return (array.last() ?: 0) + memoryConsumer.read()
-    }
-
-    //@Benchmark
-    fun array_copy_100000(blackHole: Blackhole) {
-        val array = ArrayList<Int?>(originCollection_100_000.size)
-        originCollection_100_000.forEach { value -> array.add(value) }
-        array.collectBlackHole(blackHole)
-        blackHole.consume(memoryConsumer.read())
+        for (item in originCollection_10_000) {
+            mutableCollection_10_000.add(item?.plus(1))
+        }
+        return mutableCollection_10_000.last()
     }
 
     @Benchmark
-    fun array_create_100000(blackHole: Blackhole): Int? {
-        val array = Array<Int?>(100_000) { null }
-        return (array.last() ?: 0) + memoryConsumer.read()
+    fun array_consume_10000(blackHole: Blackhole) {
+        originCollection_10_000.collectBlackHole(blackHole)
     }
 
     @Benchmark
-    fun map1_100000_rec_collection(blackHole: Blackhole) {
-        map1_collection(originCollection_100_000).collectBlackHole(blackHole)
-        blackHole.consume(memoryConsumer.read())
+    fun map1_10000_rec_collection(blackHole: Blackhole): Int? {
+        // map1_collection(originCollection_10_000).collectBlackHole(blackHole)
+        return map1_collection(originCollection_10_000).last()
     }
 
     @Benchmark
-    fun map10_100000_rec_collection(blackHole: Blackhole) {
-        map10_collection(originCollection_100_000).collectBlackHole(blackHole)
-        blackHole.consume(memoryConsumer.read())
+    fun map1_X10_10000_rec_collection(blackHole: Blackhole): Int? {
+        return originCollection_10_000
+            .map {
+                it?.plus(1)
+                    ?.plus(2)
+                    ?.plus(3)
+                    ?.plus(4)
+                    ?.plus(5)
+                    ?.plus(6)
+                    ?.plus(7)
+                    ?.plus(8)
+                    ?.plus(9)
+                    ?.plus(10)
+            }
+            .last()
     }
 
     @Benchmark
-    fun map10_100000_rec_sequence(blackHole: Blackhole) {
-        map10_sequence(originCollection_100_000).collectBlackHole(blackHole)
-        blackHole.consume(memoryConsumer.read())
+    fun map2_10000_rec_collection(blackHole: Blackhole): Int? {
+        // map2_collection(originCollection_10_000).collectBlackHole(blackHole)
+        return map2_collection(originCollection_10_000).last()
     }
+
+    @Benchmark
+    fun map3_10000_rec_collection(blackHole: Blackhole): Int? {
+        // map3_collection(originCollection_10_000).collectBlackHole(blackHole)
+        return map3_collection(originCollection_10_000).last()
+    }
+
+    @Benchmark
+    fun map5_10000_rec_collection(blackHole: Blackhole): Int? {
+        // map5_collection(originCollection_10_000).collectBlackHole(blackHole)
+        return map5_collection(originCollection_10_000).last()
+    }
+
+    @Benchmark
+    fun map10_10000_rec_collection(blackHole: Blackhole): Int? {
+        //map10_collection(originCollection_10_000).collectBlackHole(blackHole)
+        return map10_collection(originCollection_10_000).last()
+    }
+
 }

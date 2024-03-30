@@ -21,6 +21,30 @@ fun Iterable<*>.collectBlackHole(blackHole: Blackhole) {
     }
 }
 
+fun Sequence<Int?>.collectSum(blackHole: Blackhole) {
+    var sum = 0
+    forEach { element->
+        sum += element ?: 0
+    }
+    blackHole.consume(sum)
+}
+
+fun Stream<Int?>.collectSum(blackHole: Blackhole) {
+    var sum = 0
+    forEach { element->
+        sum += element ?: 0
+    }
+    blackHole.consume(sum)
+}
+
+fun Iterable<Int?>.collectSum(blackHole: Blackhole) {
+    var sum = 0
+    forEach { element->
+        sum += element ?: 0
+    }
+    blackHole.consume(sum)
+}
+
 
 /*
 fun Stream<Int?>.collectBlackHole(blackHole: Blackhole) {

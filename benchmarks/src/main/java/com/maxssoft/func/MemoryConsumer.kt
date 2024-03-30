@@ -12,7 +12,8 @@ import kotlin.math.min
 class MemoryConsumer {
 
     companion object {
-        private const val RECYCLE_MEMORY_SIZE_MB = 1000
+        private const val CONSUMER_ENABLED = false
+        private const val RECYCLE_MEMORY_SIZE_MB = 1
 
         // don't change this parameters
         private const val LIST_SIZE = 10
@@ -25,15 +26,23 @@ class MemoryConsumer {
      * Create list of large objects [MemoryData] and utilize memory size = [memorySizeMb]
      */
     fun consumeMemory(memorySizeMb: Int = RECYCLE_MEMORY_SIZE_MB) {
-        val pagesSize = (memorySizeMb * 1024 * 1024) / (LIST_SIZE * BLOCKS_SIZE * Int.SIZE_BYTES)
-        val list = ArrayList<MemoryData>(LIST_SIZE)
-        for (i in 0..LIST_SIZE) {
-            list.add(MemoryData(pagesSize, BLOCKS_SIZE))
+        if (CONSUMER_ENABLED) {
+            val pagesSize = (memorySizeMb * 1024 * 1024) / (LIST_SIZE * BLOCKS_SIZE * Int.SIZE_BYTES)
+            val list = ArrayList<MemoryData>(LIST_SIZE)
+            for (i in 0..LIST_SIZE) {
+                list.add(MemoryData(pagesSize, BLOCKS_SIZE))
+            }
+            memoryDataList = list
         }
-        memoryDataList = list
     }
 
-    fun read(): Int = memoryDataList.sumOf { memoryData -> memoryData.readValue() ?: 0 }
+    fun read(): Int {
+        return if (CONSUMER_ENABLED) {
+            memoryDataList.sumOf { memoryData -> memoryData.readValue() ?: 0 }
+        } else {
+            0
+        }
+    }
 
     /**
      * Create array [pages] with internal array [blocks]

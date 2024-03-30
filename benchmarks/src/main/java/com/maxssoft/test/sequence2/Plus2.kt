@@ -1,4 +1,4 @@
-package com.maxssoft.test.r_un3
+package com.maxssoft.test.sequence2
 
 import com.maxssoft.func.MemoryConsumer
 import com.maxssoft.func.createIntList
@@ -8,7 +8,7 @@ import com.maxssoft.func.plus2_sequence_opt
 import com.maxssoft.func.plus2_stream
 import com.maxssoft.test.factory.WARN_UP_ITERATIONS
 import com.maxssoft.test.factory.WARN_UP_TIME
-import com.maxssoft.test.factory.collectBlackHole
+import com.maxssoft.test.factory.collectSum
 import kotlinx.benchmark.Benchmark
 import kotlinx.benchmark.Blackhole
 import kotlinx.benchmark.Scope
@@ -44,121 +44,121 @@ class Plus2 {
 
     @Benchmark
     fun plus2_100_rec_sequence(blackHole: Blackhole) {
-        plus2_sequence(originCollection_100).collectBlackHole(blackHole)
+        plus2_sequence(originCollection_100).collectSum(blackHole)
         blackHole.consume(memoryConsumer.read())
     }
 
     @Benchmark
     fun plus2_1000_rec_sequence(blackHole: Blackhole) {
-        plus2_sequence(originCollection_1_000).collectBlackHole(blackHole)
+        plus2_sequence(originCollection_1_000).collectSum(blackHole)
         blackHole.consume(memoryConsumer.read())
     }
 
     @Benchmark
     fun plus2_10000_rec_sequence(blackHole: Blackhole) {
-        plus2_sequence(originCollection_10_000).collectBlackHole(blackHole)
+        plus2_sequence(originCollection_10_000).collectSum(blackHole)
         blackHole.consume(memoryConsumer.read())
     }
 
     @Benchmark
     fun plus2_50000_rec_sequence(blackHole: Blackhole) {
-        plus2_sequence(originCollection_50_000).collectBlackHole(blackHole)
+        plus2_sequence(originCollection_50_000).collectSum(blackHole)
         blackHole.consume(memoryConsumer.read())
     }
 
     @Benchmark
     fun plus2_100000_rec_sequence(blackHole: Blackhole) {
-        plus2_sequence(originCollection_100_000).collectBlackHole(blackHole)
+        plus2_sequence(originCollection_100_000).collectSum(blackHole)
         blackHole.consume(memoryConsumer.read())
     }
 
     @Benchmark
     fun plus2_100_rec_sequence_opt(blackHole: Blackhole) {
-        plus2_sequence_opt(originCollection_100).collectBlackHole(blackHole)
+        plus2_sequence_opt(originCollection_100).collectSum(blackHole)
         blackHole.consume(memoryConsumer.read())
     }
 
     @Benchmark
     fun plus2_1000_rec_sequence_opt(blackHole: Blackhole) {
-        plus2_sequence_opt(originCollection_1_000).collectBlackHole(blackHole)
+        plus2_sequence_opt(originCollection_1_000).collectSum(blackHole)
         blackHole.consume(memoryConsumer.read())
     }
 
     @Benchmark
     fun plus2_10000_rec_sequence_opt(blackHole: Blackhole) {
-        plus2_sequence_opt(originCollection_10_000).collectBlackHole(blackHole)
+        plus2_sequence_opt(originCollection_10_000).collectSum(blackHole)
         blackHole.consume(memoryConsumer.read())
     }
 
     @Benchmark
     fun plus2_50000_rec_sequence_opt(blackHole: Blackhole) {
-        plus2_sequence_opt(originCollection_50_000).collectBlackHole(blackHole)
+        plus2_sequence_opt(originCollection_50_000).collectSum(blackHole)
         blackHole.consume(memoryConsumer.read())
     }
 
     @Benchmark
     fun plus2_100000_rec_sequence_opt(blackHole: Blackhole) {
-        plus2_sequence_opt(originCollection_100_000).collectBlackHole(blackHole)
+        plus2_sequence_opt(originCollection_100_000).collectSum(blackHole)
         blackHole.consume(memoryConsumer.read())
     }
 
     @Benchmark
     fun plus2_100_rec_collection(blackHole: Blackhole) {
-        plus2_collection(originCollection_100).collectBlackHole(blackHole)
+        plus2_collection(originCollection_100).collectSum(blackHole)
         blackHole.consume(memoryConsumer.read())
     }
 
     @Benchmark
     fun plus2_1000_rec_collection(blackHole: Blackhole) {
-        plus2_collection(originCollection_1_000).collectBlackHole(blackHole)
+        plus2_collection(originCollection_1_000).collectSum(blackHole)
         blackHole.consume(memoryConsumer.read())
     }
 
     @Benchmark
     fun plus2_10000_rec_collection(blackHole: Blackhole) {
-        plus2_collection(originCollection_10_000).collectBlackHole(blackHole)
+        plus2_collection(originCollection_10_000).collectSum(blackHole)
         blackHole.consume(memoryConsumer.read())
     }
 
     @Benchmark
     fun plus2_50000_rec_collection(blackHole: Blackhole) {
-        plus2_collection(originCollection_50_000).collectBlackHole(blackHole)
+        plus2_collection(originCollection_50_000).collectSum(blackHole)
         blackHole.consume(memoryConsumer.read())
     }
 
     @Benchmark
     fun plus2_100000_rec_collection(blackHole: Blackhole) {
-        plus2_collection(originCollection_100_000).collectBlackHole(blackHole)
+        plus2_collection(originCollection_100_000).collectSum(blackHole)
         blackHole.consume(memoryConsumer.read())
     }
 
     @Benchmark
     fun plus2_100_rec_stream(blackHole: Blackhole) {
-        plus2_stream(originCollection_100).collectBlackHole(blackHole)
+        plus2_stream(originCollection_100).collectSum(blackHole)
         blackHole.consume(memoryConsumer.read())
     }
 
     @Benchmark
     fun plus2_1000_rec_stream(blackHole: Blackhole) {
-        plus2_stream(originCollection_1_000).collectBlackHole(blackHole)
+        plus2_stream(originCollection_1_000).collectSum(blackHole)
         blackHole.consume(memoryConsumer.read())
     }
 
     @Benchmark
     fun plus2_10000_rec_stream(blackHole: Blackhole) {
-        plus2_stream(originCollection_10_000).collectBlackHole(blackHole)
+        plus2_stream(originCollection_10_000).collectSum(blackHole)
         blackHole.consume(memoryConsumer.read())
     }
 
     @Benchmark
     fun plus2_50000_rec_stream(blackHole: Blackhole) {
-        plus2_stream(originCollection_50_000).collectBlackHole(blackHole)
+        plus2_stream(originCollection_50_000).collectSum(blackHole)
         blackHole.consume(memoryConsumer.read())
     }
 
     @Benchmark
     fun plus2_100000_rec_stream(blackHole: Blackhole) {
-        plus2_stream(originCollection_100_000).collectBlackHole(blackHole)
+        plus2_stream(originCollection_100_000).collectSum(blackHole)
         blackHole.consume(memoryConsumer.read())
     }
 

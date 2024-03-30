@@ -1,0 +1,29 @@
+main summary:
+Benchmark                          Mode  Cnt       Score       Error  Units
+All.array_consume_10000            avgt   10   28997,778 ±   679,137  ns/op
+All.array_copy_10000               avgt   10   71729,926 ±   747,695  ns/op
+All.array_create_10000             avgt   10    4754,796 ±   116,438  ns/op
+All.map10_10000_rec_collection     avgt   10  380875,403 ±  2414,391  ns/op
+All.map1_10000_rec_collection      avgt   10   63352,509 ±  1498,037  ns/op
+All.map1_X10_10000_rec_collection  avgt   10   62803,221 ±   510,222  ns/op
+All.map2_10000_rec_collection      avgt   10   99334,261 ±  1590,795  ns/op
+All.map3_10000_rec_collection      avgt   10  135374,633 ±  2977,457  ns/op
+All.map5_10000_rec_collection      avgt   10  209977,469 ± 11140,434  ns/op
+
+main summary:
+Benchmark                                   Mode  Cnt       Score       Error  Units
+Filter_exp.filter_10r_10000_rec_collection  avgt   10  292926,646 ±  7184,364  ns/op
+Filter_exp.filter_10r_10000_rec_sequence    avgt   10  514403,700 ± 13138,181  ns/op
+Filter_exp.filter_10r_10000_rec_stream      avgt   10  337575,519 ±  6640,371  ns/op
+Filter_exp.filter_1r_10000_rec_collection   avgt   10   62487,462 ±   216,396  ns/op
+Filter_exp.filter_1r_10000_rec_sequence     avgt   10   29117,712 ±   726,087  ns/op
+Filter_exp.filter_1r_10000_rec_stream       avgt   10   77425,621 ±  2848,351  ns/op
+Filter_exp.filter_2r_10000_rec_collection   avgt   10   89917,422 ±   558,691  ns/op
+Filter_exp.filter_2r_10000_rec_sequence     avgt   10  115740,779 ±  2734,694  ns/op
+Filter_exp.filter_2r_10000_rec_stream       avgt   10   65369,066 ±  2866,503  ns/op
+Filter_exp.filter_3r_10000_rec_collection   avgt   10  118395,271 ±  3167,174  ns/op
+Filter_exp.filter_3r_10000_rec_sequence     avgt   10  219521,587 ±   716,480  ns/op
+Filter_exp.filter_3r_10000_rec_stream       avgt   10  134733,103 ±  6865,050  ns/op
+Filter_exp.filter_5r_10000_rec_collection   avgt   10  173046,478 ± 11571,669  ns/op
+Filter_exp.filter_5r_10000_rec_sequence     avgt   10  355852,234 ±  3811,846  ns/op
+Filter_exp.filter_5r_10000_rec_stream       avgt   10  209967,896 ±  1583,130  ns/op
