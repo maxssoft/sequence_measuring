@@ -1,0 +1,28 @@
+Filter_N
+Benchmark                                                    Mode  Cnt       Score       Error  Units
+Filter_exp.filter_1r_10000_rec_collection  avgt   25   82081.208 ± 2273.975  ns/op
+Filter_exp.filter_1r_10000_rec_sequence    avgt   25   10255.267 ±  240.054  ns/op
+Filter_exp.filter_1r_10000_rec_stream      avgt   25    6905.015 ±  153.147  ns/op
+Filter_exp.filter_2r_10000_rec_collection  avgt   25  107498.773 ± 6080.024  ns/op
+Filter_exp.filter_2r_10000_rec_sequence    avgt   25   98749.775 ± 2641.931  ns/op
+Filter_exp.filter_2r_10000_rec_stream      avgt   25  130895.741 ± 6382.533  ns/op
+c.m.t.experiment.Filter_exp.filter_3r_10000_rec_collection   avgt   25  163008.081 ±  5202.731  ns/op
+c.m.t.experiment.Filter_exp.filter_3r_10000_rec_sequence     avgt   25  230918.029 ±  5773.886  ns/op
+c.m.t.experiment.Filter_exp.filter_3r_10000_rec_stream       avgt   25  128509.545 ±  2165.211  ns/op
+c.m.t.experiment.Filter_exp.filter_5r_10000_rec_collection   avgt   25  271527.679 ±  6649.325  ns/op
+c.m.t.experiment.Filter_exp.filter_5r_10000_rec_sequence     avgt   25  339876.473 ±  5311.252  ns/op
+c.m.t.experiment.Filter_exp.filter_5r_10000_rec_stream       avgt   25  189864.656 ±  3543.058  ns/op
+c.m.t.experiment.Filter_exp.filter_10r_10000_rec_collection  avgt   25  422437.636 ± 10692.609  ns/op
+c.m.t.experiment.Filter_exp.filter_10r_10000_rec_sequence    avgt   25  511811.691 ± 10146.142  ns/op
+c.m.t.experiment.Filter_exp.filter_10r_10000_rec_stream      avgt   25  307312.386 ±  4393.390  ns/op
+
+map1_EXP
+Benchmark                                                    Mode  Cnt       Score       Error  Units
+c.m.t.run.All.map1_X10_10000_rec_collection                  avgt   25   47306.439 ±  1283.867  ns/op
+c.m.t.run.All.array_consume_10000                            avgt   25   34841.676 ±   839.589  ns/op
+c.m.t.run.All.array_create_10000                             avgt   25    6233.058 ±   183.593  ns/op
+c.m.t.run.All.map1_10000_rec_collection                      avgt   25   47189.108 ±  1285.687  ns/op
+c.m.t.run.All.map2_10000_rec_collection                      avgt   25   98673.545 ±  2605.032  ns/op
+c.m.t.run.All.map3_10000_rec_collection                      avgt   25  140027.057 ±  3273.765  ns/op
+c.m.t.run.All.map5_10000_rec_collection                      avgt   25  237744.309 ±  4766.532  ns/op
+c.m.t.run.All.map10_10000_rec_collection                     avgt   25  462895.168 ± 14397.637  ns/op
