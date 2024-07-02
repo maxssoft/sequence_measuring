@@ -1,4 +1,4 @@
-package com.maxssoft.test.exclude.sequence_10000
+package com.maxssoft.test.exclude.experiment.sequence_10000
 
 import com.maxssoft.func.createListOfList
 import com.maxssoft.func.flatten_collection

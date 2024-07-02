@@ -1,9 +1,9 @@
-package com.maxssoft.test.exclude.sequence_10000
+package com.maxssoft.test.exclude.experiment.sequence_10000
 
 import com.maxssoft.func.createIntList
-import com.maxssoft.func.map10_collection
-import com.maxssoft.func.map10_sequence
-import com.maxssoft.func.map10_stream
+import com.maxssoft.func.map5_collection
+import com.maxssoft.func.map5_sequence
+import com.maxssoft.func.map5_stream
 import com.maxssoft.test.factory.WARN_UP_ITERATIONS
 import com.maxssoft.test.factory.WARN_UP_TIME
 import com.maxssoft.test.factory.collectBlackHole
@@ -20,7 +20,7 @@ import java.util.concurrent.TimeUnit
 @State(Scope.Benchmark)
 @Fork(1)
 @Warmup(iterations = WARN_UP_ITERATIONS, time = WARN_UP_TIME, timeUnit = TimeUnit.SECONDS)
-class Map10 {
+class Map5 {
 
     private lateinit var originCollection_10_000: List<Int?>
 
@@ -30,17 +30,17 @@ class Map10 {
     }
 
     @Benchmark
-    fun map10_10000_rec_sequence(blackHole: Blackhole) {
-        return map10_sequence(originCollection_10_000).collectSum(blackHole)
+    fun map5_10000_rec_sequence(blackHole: Blackhole) {
+        map5_sequence(originCollection_10_000).collectSum(blackHole)
     }
 
     @Benchmark
-    fun map10_10000_rec_collection(blackHole: Blackhole) {
-        return map10_collection(originCollection_10_000).collectSum(blackHole)
+    fun map5_10000_rec_collection(blackHole: Blackhole) {
+        map5_collection(originCollection_10_000).collectSum(blackHole)
     }
 
     @Benchmark
-    fun map10_10000_rec_stream(blackHole: Blackhole) {
-        return map10_stream(originCollection_10_000).collectSum(blackHole)
+    fun map5_10000_rec_stream(blackHole: Blackhole) {
+        map5_stream(originCollection_10_000).collectSum(blackHole)
     }
 }

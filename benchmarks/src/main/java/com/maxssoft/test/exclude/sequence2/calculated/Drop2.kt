@@ -45,6 +45,7 @@ class Drop2 {
         //println("filter_collection_10 = 1.000 -> ${filter_collection_10(originCollection_1_000).size}")
     }
 
+/*
     @Benchmark
     fun drop2_90_percentage_100_rec_sequence(blackHole: Blackhole) {
         drop2_sequence(originCollection_100, 90).collectSum(blackHole)
@@ -134,6 +135,7 @@ class Drop2 {
         drop2_collection(originCollection_100_000, 90).collectSum(blackHole)
         blackHole.consume(memoryConsumer.read())
     }
+*/
 
     // ---------
     @Benchmark

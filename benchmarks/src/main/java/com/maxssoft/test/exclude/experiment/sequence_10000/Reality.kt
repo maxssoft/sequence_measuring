@@ -1,4 +1,4 @@
-package com.maxssoft.test.exclude.sequence_10000
+package com.maxssoft.test.exclude.experiment.sequence_10000
 
 import com.maxssoft.func.reality_collection
 import com.maxssoft.func.reality_sequence

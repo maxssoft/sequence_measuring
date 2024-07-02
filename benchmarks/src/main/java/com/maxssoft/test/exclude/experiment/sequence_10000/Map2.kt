@@ -1,9 +1,9 @@
-package com.maxssoft.test.exclude.sequence_10000
+package com.maxssoft.test.exclude.experiment.sequence_10000
 
 import com.maxssoft.func.createIntList
-import com.maxssoft.func.sort_collection
-import com.maxssoft.func.sort_sequence
-import com.maxssoft.func.sort_stream
+import com.maxssoft.func.map2_collection
+import com.maxssoft.func.map2_sequence
+import com.maxssoft.func.map2_stream
 import com.maxssoft.test.factory.WARN_UP_ITERATIONS
 import com.maxssoft.test.factory.WARN_UP_TIME
 import com.maxssoft.test.factory.collectBlackHole
@@ -20,7 +20,7 @@ import java.util.concurrent.TimeUnit
 @State(Scope.Benchmark)
 @Fork(1)
 @Warmup(iterations = WARN_UP_ITERATIONS, time = WARN_UP_TIME, timeUnit = TimeUnit.SECONDS)
-class Sort {
+class Map2 {
 
     private lateinit var originCollection_10_000: List<Int?>
 
@@ -30,17 +30,17 @@ class Sort {
     }
 
     @Benchmark
-    fun sort_10000_rec_sequence(blackHole: Blackhole) {
-        sort_sequence(originCollection_10_000).collectSum(blackHole)
+    fun map2_10000_rec_sequence(blackHole: Blackhole) {
+        map2_sequence(originCollection_10_000).collectSum(blackHole)
     }
 
     @Benchmark
-    fun sort_10000_rec_collection(blackHole: Blackhole) {
-        sort_collection(originCollection_10_000).collectSum(blackHole)
+    fun map2_10000_rec_collection(blackHole: Blackhole) {
+        map2_collection(originCollection_10_000).collectSum(blackHole)
     }
 
     @Benchmark
-    fun sort_10000_rec_stream(blackHole: Blackhole) {
-        sort_stream(originCollection_10_000).collectSum(blackHole)
+    fun map2_10000_rec_stream(blackHole: Blackhole) {
+        map2_stream(originCollection_10_000).collectSum(blackHole)
     }
 }

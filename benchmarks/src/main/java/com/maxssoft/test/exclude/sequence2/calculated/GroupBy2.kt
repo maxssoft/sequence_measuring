@@ -44,6 +44,7 @@ class GroupBy2 {
         memoryConsumer.consumeMemory()
     }
 
+/*
     @Benchmark
     fun groupBy2_90_percentage_100_rec_sequence(blackHole: Blackhole) {
         groupBy2_sequence_90(originCollection_100).keys.collectSum(blackHole)
@@ -133,6 +134,7 @@ class GroupBy2 {
         groupBy2_collection_90(originCollection_100_000).keys.collectSum(blackHole)
         blackHole.consume(memoryConsumer.read())
     }
+*/
 
     @Benchmark
     fun groupBy2_10_percentage_100_rec_sequence(blackHole: Blackhole) {

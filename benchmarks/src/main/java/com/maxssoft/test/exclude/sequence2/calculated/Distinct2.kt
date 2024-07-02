@@ -2,13 +2,9 @@ package com.maxssoft.test.exclude.sequence2.calculated
 
 import com.maxssoft.func.MemoryConsumer
 import com.maxssoft.func.createIntList
-import com.maxssoft.func.distinct2_collection_10
 import com.maxssoft.func.distinct2_collection_90
-import com.maxssoft.func.distinct2_sequence_10
-import com.maxssoft.func.distinct2_sequence_10_optimized
 import com.maxssoft.func.distinct2_sequence_90
 import com.maxssoft.func.distinct2_sequence_90_optimized
-import com.maxssoft.func.distinct2_stream_10
 import com.maxssoft.func.distinct2_stream_90
 import com.maxssoft.test.factory.WARN_UP_ITERATIONS
 import com.maxssoft.test.factory.WARN_UP_TIME
@@ -178,6 +174,7 @@ class Distinct2 {
         blackHole.consume(memoryConsumer.read())
     }
 
+/*
     @Benchmark
     fun distinct2_10_percentage_100_rec_sequence(blackHole: Blackhole) {
         distinct2_sequence_10(originCollection10_100).collectSum(blackHole)
@@ -296,5 +293,6 @@ class Distinct2 {
         distinct2_stream_10(originCollection10_100_000).collectSum(blackHole)
         blackHole.consume(memoryConsumer.read())
     }
+*/
 
 }

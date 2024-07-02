@@ -2,12 +2,18 @@ package com.maxssoft.test.exclude.sequence2.calculated
 
 import com.maxssoft.func.MemoryConsumer
 import com.maxssoft.func.createIntList
+import com.maxssoft.func.distinct2_sequence_10
+import com.maxssoft.func.drop2_sequence
 import com.maxssoft.func.filter2_sequence_90
 import com.maxssoft.func.filter2_collection_10
 import com.maxssoft.func.filter2_collection_90
 import com.maxssoft.func.filter2_sequence_10
 import com.maxssoft.func.filter2_stream_10
 import com.maxssoft.func.filter2_stream_90
+import com.maxssoft.func.groupBy2_sequence_10
+import com.maxssoft.func.map2_sequence
+import com.maxssoft.func.sort2_sequence
+import com.maxssoft.func.take2_sequence
 import com.maxssoft.test.factory.WARN_UP_ITERATIONS
 import com.maxssoft.test.factory.WARN_UP_TIME
 import com.maxssoft.test.factory.collectSum
@@ -74,6 +80,20 @@ class Filter2 {
         blackHole.consume(memoryConsumer.read())
     }
 
+/*
+    val originCollection: List<Int?> = emptyList()
+
+    @Benchmark
+    fun test(blackHole: Blackhole) {
+        originCollection.asSequence()
+            .map { it?.plus(1) }
+            .map { it?.plus(2) }
+            // .......
+            .map { it?.plus(10) }
+            .collectSum(blackHole)
+    }
+*/
+
     @Benchmark
     fun filter2_90_percentage_100_rec_collection(blackHole: Blackhole) {
         filter2_collection_90(originCollection_100).collectSum(blackHole)
@@ -134,6 +154,7 @@ class Filter2 {
         blackHole.consume(memoryConsumer.read())
     }
 
+/*
     @Benchmark
     fun filter2_10_percentage_100_rec_sequence(blackHole: Blackhole) {
         filter2_sequence_10(originCollection_100).collectSum(blackHole)
@@ -223,5 +244,6 @@ class Filter2 {
         filter2_stream_10(originCollection_100_000).collectSum(blackHole)
         blackHole.consume(memoryConsumer.read())
     }
+*/
 
 }

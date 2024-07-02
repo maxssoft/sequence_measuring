@@ -1,4 +1,4 @@
-package com.maxssoft.test.exclude.sequence2.calculated
+package com.maxssoft.test.exclude.sequence2
 
 import com.maxssoft.func.MemoryConsumer
 import com.maxssoft.func.createListOfList

@@ -46,6 +46,7 @@ class Take2 {
         memoryConsumer.consumeMemory()
     }
     
+/*
     @Benchmark
     fun take2_90_percentage_100_rec_sequence(blackHole: Blackhole) {
         take2_sequence(originCollection_100, 90).collectSum(blackHole)
@@ -135,6 +136,7 @@ class Take2 {
         take2_collection(originCollection_100_000, 90).collectSum(blackHole)
         blackHole.consume(memoryConsumer.read())
     }
+*/
 
     @Benchmark
     fun take2_10_percentage_100_rec_sequence(blackHole: Blackhole) {

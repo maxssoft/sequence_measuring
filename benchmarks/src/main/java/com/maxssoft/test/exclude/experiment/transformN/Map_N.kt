@@ -1,20 +1,35 @@
-package com.maxssoft.test.run
+package com.maxssoft.test.exclude.experiment.transformN
 
 import com.maxssoft.func.createIntList
+import com.maxssoft.func.map10_collection
+import com.maxssoft.func.map10_sequence
+import com.maxssoft.func.map10_stream
+import com.maxssoft.func.map1_collection
+import com.maxssoft.func.map1_sequence
+import com.maxssoft.func.map1_stream
 import com.maxssoft.func.map80_collection
 import com.maxssoft.func.map80_sequence
 import com.maxssoft.func.map20_collection
 import com.maxssoft.func.map20_sequence
 import com.maxssoft.func.map20_stream
+import com.maxssoft.func.map2_collection
+import com.maxssoft.func.map2_sequence
+import com.maxssoft.func.map2_stream
 import com.maxssoft.func.map30_collection
 import com.maxssoft.func.map30_sequence
 import com.maxssoft.func.map30_stream
+import com.maxssoft.func.map3_collection
+import com.maxssoft.func.map3_sequence
+import com.maxssoft.func.map3_stream
 import com.maxssoft.func.map40_collection
 import com.maxssoft.func.map40_sequence
 import com.maxssoft.func.map40_stream
 import com.maxssoft.func.map50_collection
 import com.maxssoft.func.map50_sequence
 import com.maxssoft.func.map50_stream
+import com.maxssoft.func.map5_collection
+import com.maxssoft.func.map5_sequence
+import com.maxssoft.func.map5_stream
 import com.maxssoft.func.map80_stream
 import com.maxssoft.test.factory.WARN_UP_ITERATIONS
 import com.maxssoft.test.factory.WARN_UP_TIME
@@ -36,13 +51,88 @@ import java.util.concurrent.TimeUnit
 // jvmArgsAppend = ["-XX:MaxInlineSize=0"]
 // jvmArgsAppend = ["-XX:MaxInlineLevel=0"])
 @Warmup(iterations = WARN_UP_ITERATIONS, time = WARN_UP_TIME, timeUnit = TimeUnit.SECONDS)
-class Map_exp {
+class Map_N {
 
     private lateinit var originCollection: List<Int?>
 
     @Setup
     fun setup() {
         originCollection = createIntList(10_000)
+    }
+
+    @Benchmark
+    fun map1_10000_sequence(blackHole: Blackhole) {
+        map1_sequence(originCollection).collectSum(blackHole)
+    }
+
+    @Benchmark
+    fun map1_10000_collection(blackHole: Blackhole) {
+        map1_collection(originCollection).collectSum(blackHole)
+    }
+
+    @Benchmark
+    fun map1_10000_stream(blackHole: Blackhole) {
+        map1_stream(originCollection).collectSum(blackHole)
+    }
+
+    @Benchmark
+    fun map2_10000_sequence(blackHole: Blackhole) {
+        map2_sequence(originCollection).collectSum(blackHole)
+    }
+
+    @Benchmark
+    fun map2_10000_collection(blackHole: Blackhole) {
+        map2_collection(originCollection).collectSum(blackHole)
+    }
+
+    @Benchmark
+    fun map2_10000_stream(blackHole: Blackhole) {
+        map2_stream(originCollection).collectSum(blackHole)
+    }
+
+    @Benchmark
+    fun map3_10000_sequence(blackHole: Blackhole) {
+        map3_sequence(originCollection).collectSum(blackHole)
+    }
+
+    @Benchmark
+    fun map3_10000_collection(blackHole: Blackhole) {
+        map3_collection(originCollection).collectSum(blackHole)
+    }
+
+    @Benchmark
+    fun map3_10000_stream(blackHole: Blackhole) {
+        map3_stream(originCollection).collectSum(blackHole)
+    }
+
+    @Benchmark
+    fun map5_10000_sequence(blackHole: Blackhole) {
+        map5_sequence(originCollection).collectSum(blackHole)
+    }
+
+    @Benchmark
+    fun map5_10000_collection(blackHole: Blackhole) {
+        map5_collection(originCollection).collectSum(blackHole)
+    }
+
+    @Benchmark
+    fun map5_10000_stream(blackHole: Blackhole) {
+        map5_stream(originCollection).collectSum(blackHole)
+    }
+
+    @Benchmark
+    fun map10_10000_sequence(blackHole: Blackhole) {
+        map10_sequence(originCollection).collectSum(blackHole)
+    }
+
+    @Benchmark
+    fun map10_10000_collection(blackHole: Blackhole) {
+        map10_collection(originCollection).collectSum(blackHole)
+    }
+
+    @Benchmark
+    fun map10_10000_stream(blackHole: Blackhole) {
+        map10_stream(originCollection).collectSum(blackHole)
     }
 
     @Benchmark

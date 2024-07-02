@@ -1,4 +1,4 @@
-package com.maxssoft.test.exclude.sequence_10000
+package com.maxssoft.test.exclude.experiment.sequence_10000
 
 import com.maxssoft.func.createIntList
 import com.maxssoft.func.map1_collection

@@ -98,9 +98,8 @@ fun map5_sequence(sourceCollection: List<Int?>): Sequence<Int?> {
         .map { it?.plus(4) }
         .map { it?.plus(5) }
 }
-
-fun map5_collection(sourceCollection: List<Int?>): List<Int?> {
-    return sourceCollection
+fun map5_stream(sourceCollection: List<Int?>): Stream<Int?> {
+    return sourceCollection.stream()
         .map { it?.plus(1) }
         .map { it?.plus(2) }
         .map { it?.plus(3) }
@@ -108,8 +107,8 @@ fun map5_collection(sourceCollection: List<Int?>): List<Int?> {
         .map { it?.plus(5) }
 }
 
-fun map5_stream(sourceCollection: List<Int?>): Stream<Int?> {
-    return sourceCollection.stream()
+fun map5_collection(sourceCollection: List<Int?>): List<Int?> {
+    return sourceCollection
         .map { it?.plus(1) }
         .map { it?.plus(2) }
         .map { it?.plus(3) }
@@ -1014,292 +1013,825 @@ fun filter2_collection_90(sourceCollection: List<Int?>): List<Int?> {
         .filter { it in 0..percent90 }
 }
 
+class FilterRanges(val size: Int) {
+    val range_1 = (size * 0.99).toInt()
+    val range_2 = (size * 0.98).toInt()
+    val range_3 = (size * 0.97).toInt()
+    val range_4 = (size * 0.96).toInt()
+    val range_5 = (size * 0.95).toInt()
+    val range_6 = (size * 0.94).toInt()
+    val range_7 = (size * 0.93).toInt()
+    val range_8 = (size * 0.92).toInt()
+    val range_9 = (size * 0.91).toInt()
+    val range_10 = (size * 0.9).toInt()
+    val range_11 = (size * 0.89).toInt()
+    val range_12 = (size * 0.88).toInt()
+    val range_13 = (size * 0.87).toInt()
+    val range_14 = (size * 0.86).toInt()
+    val range_15 = (size * 0.85).toInt()
+    val range_16 = (size * 0.84).toInt()
+    val range_17 = (size * 0.83).toInt()
+    val range_18 = (size * 0.82).toInt()
+    val range_19 = (size * 0.81).toInt()
+    val range_20 = (size * 0.8).toInt()
+    val range_21 = (size * 0.79).toInt()
+    val range_22 = (size * 0.78).toInt()
+    val range_23 = (size * 0.77).toInt()
+    val range_24 = (size * 0.76).toInt()
+    val range_25 = (size * 0.75).toInt()
+    val range_26 = (size * 0.74).toInt()
+    val range_27 = (size * 0.73).toInt()
+    val range_28 = (size * 0.72).toInt()
+    val range_29 = (size * 0.71).toInt()
+    val range_30 = (size * 0.7).toInt()
+    val range_31 = (size * 0.69).toInt()
+    val range_32 = (size * 0.68).toInt()
+    val range_33 = (size * 0.67).toInt()
+    val range_34 = (size * 0.66).toInt()
+    val range_35 = (size * 0.65).toInt()
+    val range_36 = (size * 0.64).toInt()
+    val range_37 = (size * 0.63).toInt()
+    val range_38 = (size * 0.62).toInt()
+    val range_39 = (size * 0.61).toInt()
+    val range_40 = (size * 0.6).toInt()
+    val range_41 = (size * 0.59).toInt()
+    val range_42 = (size * 0.58).toInt()
+    val range_43 = (size * 0.57).toInt()
+    val range_44 = (size * 0.56).toInt()
+    val range_45 = (size * 0.55).toInt()
+    val range_46 = (size * 0.54).toInt()
+    val range_47 = (size * 0.53).toInt()
+    val range_48 = (size * 0.52).toInt()
+    val range_49 = (size * 0.51).toInt()
+    val range_50 = (size * 0.5).toInt()
+    val range_51 = (size * 0.499).toInt()
+    val range_52 = (size * 0.498).toInt()
+    val range_53 = (size * 0.497).toInt()
+    val range_54 = (size * 0.496).toInt()
+    val range_55 = (size * 0.495).toInt()
+    val range_56 = (size * 0.494).toInt()
+    val range_57 = (size * 0.493).toInt()
+    val range_58 = (size * 0.492).toInt()
+    val range_59 = (size * 0.491).toInt()
+    val range_60 = (size * 0.49).toInt()
+    val range_61 = (size * 0.489).toInt()
+    val range_62 = (size * 0.488).toInt()
+    val range_63 = (size * 0.487).toInt()
+    val range_64 = (size * 0.486).toInt()
+    val range_65 = (size * 0.485).toInt()
+    val range_66 = (size * 0.484).toInt()
+    val range_67 = (size * 0.483).toInt()
+    val range_68 = (size * 0.482).toInt()
+    val range_69 = (size * 0.481).toInt()
+    val range_70 = (size * 0.48).toInt()
+    val range_71 = (size * 0.479).toInt()
+    val range_72 = (size * 0.478).toInt()
+    val range_73 = (size * 0.477).toInt()
+    val range_74 = (size * 0.476).toInt()
+    val range_75 = (size * 0.475).toInt()
+    val range_76 = (size * 0.474).toInt()
+    val range_77 = (size * 0.473).toInt()
+    val range_78 = (size * 0.472).toInt()
+    val range_79 = (size * 0.471).toInt()
+    val range_80 = (size * 0.47).toInt()
+}
+
 fun filter_sequence_1r(sourceCollection: List<Int?>): Sequence<Int?> {
-    val size = sourceCollection.size
-    val range_1 = size
-    val range_2 = (size * 0.9).toInt()
-    val range_3 = (size * 0.8).toInt()
-    val range_4 = (size * 0.7).toInt()
-    val range_5 = (size * 0.6).toInt()
-    val range_6 = (size * 0.5).toInt()
-    val range_7 = (size * 0.4).toInt()
-    val range_8 = (size * 0.3).toInt()
-    val range_9 = (size * 0.2).toInt()
-    val range_10 = (size * 0.1).toInt()
+    val ranges = FilterRanges(sourceCollection.size)
     return sourceCollection.asSequence()
-        .filter { it in 0..range_1 }
+        .filter { it in 0..ranges.range_1 }
 }
 
 fun filter_sequence_2r(sourceCollection: List<Int?>): Sequence<Int?> {
-    val size = sourceCollection.size
-    val range_1 = size
-    val range_2 = (size * 0.9).toInt()
-    val range_3 = (size * 0.8).toInt()
-    val range_4 = (size * 0.7).toInt()
-    val range_5 = (size * 0.6).toInt()
-    val range_6 = (size * 0.5).toInt()
-    val range_7 = (size * 0.4).toInt()
-    val range_8 = (size * 0.3).toInt()
-    val range_9 = (size * 0.2).toInt()
-    val range_10 = (size * 0.1).toInt()
+    val ranges = FilterRanges(sourceCollection.size)
     return sourceCollection.asSequence()
-        .filter { it in 0..range_1 }
-        .filter { it in 0..range_2 }
+        .filter { it in 0..ranges.range_1 }
+        .filter { it in 0..ranges.range_2 }
 }
 
 fun filter_sequence_3r(sourceCollection: List<Int?>): Sequence<Int?> {
-    val size = sourceCollection.size
-    val range_1 = size
-    val range_2 = (size * 0.9).toInt()
-    val range_3 = (size * 0.8).toInt()
-    val range_4 = (size * 0.7).toInt()
-    val range_5 = (size * 0.6).toInt()
-    val range_6 = (size * 0.5).toInt()
-    val range_7 = (size * 0.4).toInt()
-    val range_8 = (size * 0.3).toInt()
-    val range_9 = (size * 0.2).toInt()
-    val range_10 = (size * 0.1).toInt()
+    val ranges = FilterRanges(sourceCollection.size)
     return sourceCollection.asSequence()
-        .filter { it in 0..range_1 }
-        .filter { it in 0..range_2 }
-        .filter { it in 0..range_3 }
+        .filter { it in 0..ranges.range_1 }
+        .filter { it in 0..ranges.range_2 }
+        .filter { it in 0..ranges.range_3 }
 }
 
 fun filter_sequence_5r(sourceCollection: List<Int?>): Sequence<Int?> {
-    val size = sourceCollection.size
-    val range_1 = size
-    val range_2 = (size * 0.9).toInt()
-    val range_3 = (size * 0.8).toInt()
-    val range_4 = (size * 0.7).toInt()
-    val range_5 = (size * 0.6).toInt()
-    val range_6 = (size * 0.5).toInt()
-    val range_7 = (size * 0.4).toInt()
-    val range_8 = (size * 0.3).toInt()
-    val range_9 = (size * 0.2).toInt()
-    val range_10 = (size * 0.1).toInt()
+    val ranges = FilterRanges(sourceCollection.size)
     return sourceCollection.asSequence()
-        .filter { it in 0..range_1 }
-        .filter { it in 0..range_2 }
-        .filter { it in 0..range_3 }
-        .filter { it in 0..range_4 }
-        .filter { it in 0..range_5 }
+        .filter { it in 0..ranges.range_1 }
+        .filter { it in 0..ranges.range_2 }
+        .filter { it in 0..ranges.range_3 }
+        .filter { it in 0..ranges.range_4 }
+        .filter { it in 0..ranges.range_5 }
 }
 
 fun filter_sequence_10r(sourceCollection: List<Int?>): Sequence<Int?> {
-    val size = sourceCollection.size
-    val range_1 = size
-    val range_2 = (size * 0.9).toInt()
-    val range_3 = (size * 0.8).toInt()
-    val range_4 = (size * 0.7).toInt()
-    val range_5 = (size * 0.6).toInt()
-    val range_6 = (size * 0.5).toInt()
-    val range_7 = (size * 0.4).toInt()
-    val range_8 = (size * 0.3).toInt()
-    val range_9 = (size * 0.2).toInt()
-    val range_10 = (size * 0.1).toInt()
+    val ranges = FilterRanges(sourceCollection.size)
     return sourceCollection.asSequence()
-        .filter { it in 0..range_1 }
-        .filter { it in 0..range_2 }
-        .filter { it in 0..range_3 }
-        .filter { it in 0..range_4 }
-        .filter { it in 0..range_5 }
-        .filter { it in 0..range_6 }
-        .filter { it in 0..range_7 }
-        .filter { it in 0..range_8 }
-        .filter { it in 0..range_9 }
-        .filter { it in 0..range_10 }
+        .filter { it in 0..ranges.range_1 }
+        .filter { it in 0..ranges.range_2 }
+        .filter { it in 0..ranges.range_3 }
+        .filter { it in 0..ranges.range_4 }
+        .filter { it in 0..ranges.range_5 }
+        .filter { it in 0..ranges.range_6 }
+        .filter { it in 0..ranges.range_7 }
+        .filter { it in 0..ranges.range_8 }
+        .filter { it in 0..ranges.range_9 }
+        .filter { it in 0..ranges.range_10 }
 }
 
-fun filter_collection_1r(sourceCollection: List<Int?>): List<Int?> {
-    val size = sourceCollection.size
-    val range_1 = size
-    val range_2 = (size * 0.9).toInt()
-    val range_3 = (size * 0.8).toInt()
-    val range_4 = (size * 0.7).toInt()
-    val range_5 = (size * 0.6).toInt()
-    val range_6 = (size * 0.5).toInt()
-    val range_7 = (size * 0.4).toInt()
-    val range_8 = (size * 0.3).toInt()
-    val range_9 = (size * 0.2).toInt()
-    val range_10 = (size * 0.1).toInt()
-    return sourceCollection
-        .filter { it in 0..range_1 }
+fun filter_sequence_20r(sourceCollection: List<Int?>): Sequence<Int?> {
+    val ranges = FilterRanges(sourceCollection.size)
+    return sourceCollection.asSequence()
+        .filter { it in 0..ranges.range_1 }
+        .filter { it in 0..ranges.range_2 }
+        .filter { it in 0..ranges.range_3 }
+        .filter { it in 0..ranges.range_4 }
+        .filter { it in 0..ranges.range_5 }
+        .filter { it in 0..ranges.range_6 }
+        .filter { it in 0..ranges.range_7 }
+        .filter { it in 0..ranges.range_8 }
+        .filter { it in 0..ranges.range_9 }
+        .filter { it in 0..ranges.range_10 }
+        .filter { it in 0..ranges.range_11 }
+        .filter { it in 0..ranges.range_12 }
+        .filter { it in 0..ranges.range_13 }
+        .filter { it in 0..ranges.range_14 }
+        .filter { it in 0..ranges.range_15 }
+        .filter { it in 0..ranges.range_16 }
+        .filter { it in 0..ranges.range_17 }
+        .filter { it in 0..ranges.range_18 }
+        .filter { it in 0..ranges.range_19 }
+        .filter { it in 0..ranges.range_20 }
 }
 
-fun filter_collection_2r(sourceCollection: List<Int?>): List<Int?> {
-    val size = sourceCollection.size
-    val range_1 = size
-    val range_2 = (size * 0.9).toInt()
-    val range_3 = (size * 0.8).toInt()
-    val range_4 = (size * 0.7).toInt()
-    val range_5 = (size * 0.6).toInt()
-    val range_6 = (size * 0.5).toInt()
-    val range_7 = (size * 0.4).toInt()
-    val range_8 = (size * 0.3).toInt()
-    val range_9 = (size * 0.2).toInt()
-    val range_10 = (size * 0.1).toInt()
-    return sourceCollection
-        .filter { it in 0..range_1 }
-        .filter { it in 0..range_2 }
+fun filter_sequence_30r(sourceCollection: List<Int?>): Sequence<Int?> {
+    val ranges = FilterRanges(sourceCollection.size)
+    return sourceCollection.asSequence()
+        .filter { it in 0..ranges.range_1 }
+        .filter { it in 0..ranges.range_2 }
+        .filter { it in 0..ranges.range_3 }
+        .filter { it in 0..ranges.range_4 }
+        .filter { it in 0..ranges.range_5 }
+        .filter { it in 0..ranges.range_6 }
+        .filter { it in 0..ranges.range_7 }
+        .filter { it in 0..ranges.range_8 }
+        .filter { it in 0..ranges.range_9 }
+        .filter { it in 0..ranges.range_10 }
+        .filter { it in 0..ranges.range_11 }
+        .filter { it in 0..ranges.range_12 }
+        .filter { it in 0..ranges.range_13 }
+        .filter { it in 0..ranges.range_14 }
+        .filter { it in 0..ranges.range_15 }
+        .filter { it in 0..ranges.range_16 }
+        .filter { it in 0..ranges.range_17 }
+        .filter { it in 0..ranges.range_18 }
+        .filter { it in 0..ranges.range_19 }
+        .filter { it in 0..ranges.range_20 }
+        .filter { it in 0..ranges.range_21 }
+        .filter { it in 0..ranges.range_22 }
+        .filter { it in 0..ranges.range_23 }
+        .filter { it in 0..ranges.range_24 }
+        .filter { it in 0..ranges.range_25 }
+        .filter { it in 0..ranges.range_26 }
+        .filter { it in 0..ranges.range_27 }
+        .filter { it in 0..ranges.range_28 }
+        .filter { it in 0..ranges.range_29 }
+        .filter { it in 0..ranges.range_30 }
 }
 
-fun filter_collection_3r(sourceCollection: List<Int?>): List<Int?> {
-    val size = sourceCollection.size
-    val range_1 = size
-    val range_2 = (size * 0.9).toInt()
-    val range_3 = (size * 0.8).toInt()
-    val range_4 = (size * 0.7).toInt()
-    val range_5 = (size * 0.6).toInt()
-    val range_6 = (size * 0.5).toInt()
-    val range_7 = (size * 0.4).toInt()
-    val range_8 = (size * 0.3).toInt()
-    val range_9 = (size * 0.2).toInt()
-    val range_10 = (size * 0.1).toInt()
-    return sourceCollection
-        .filter { it in 0..range_1 }
-        .filter { it in 0..range_2 }
-        .filter { it in 0..range_3 }
+fun filter_sequence_50r(sourceCollection: List<Int?>): Sequence<Int?> {
+    val ranges = FilterRanges(sourceCollection.size)
+    return sourceCollection.asSequence()
+        .filter { it in 0..ranges.range_1 }
+        .filter { it in 0..ranges.range_2 }
+        .filter { it in 0..ranges.range_3 }
+        .filter { it in 0..ranges.range_4 }
+        .filter { it in 0..ranges.range_5 }
+        .filter { it in 0..ranges.range_6 }
+        .filter { it in 0..ranges.range_7 }
+        .filter { it in 0..ranges.range_8 }
+        .filter { it in 0..ranges.range_9 }
+        .filter { it in 0..ranges.range_10 }
+        .filter { it in 0..ranges.range_11 }
+        .filter { it in 0..ranges.range_12 }
+        .filter { it in 0..ranges.range_13 }
+        .filter { it in 0..ranges.range_14 }
+        .filter { it in 0..ranges.range_15 }
+        .filter { it in 0..ranges.range_16 }
+        .filter { it in 0..ranges.range_17 }
+        .filter { it in 0..ranges.range_18 }
+        .filter { it in 0..ranges.range_19 }
+        .filter { it in 0..ranges.range_20 }
+        .filter { it in 0..ranges.range_21 }
+        .filter { it in 0..ranges.range_22 }
+        .filter { it in 0..ranges.range_23 }
+        .filter { it in 0..ranges.range_24 }
+        .filter { it in 0..ranges.range_25 }
+        .filter { it in 0..ranges.range_26 }
+        .filter { it in 0..ranges.range_27 }
+        .filter { it in 0..ranges.range_28 }
+        .filter { it in 0..ranges.range_29 }
+        .filter { it in 0..ranges.range_30 }
+        .filter { it in 0..ranges.range_31 }
+        .filter { it in 0..ranges.range_32 }
+        .filter { it in 0..ranges.range_33 }
+        .filter { it in 0..ranges.range_34 }
+        .filter { it in 0..ranges.range_35 }
+        .filter { it in 0..ranges.range_36 }
+        .filter { it in 0..ranges.range_37 }
+        .filter { it in 0..ranges.range_38 }
+        .filter { it in 0..ranges.range_39 }
+        .filter { it in 0..ranges.range_40 }
+        .filter { it in 0..ranges.range_41 }
+        .filter { it in 0..ranges.range_42 }
+        .filter { it in 0..ranges.range_43 }
+        .filter { it in 0..ranges.range_44 }
+        .filter { it in 0..ranges.range_45 }
+        .filter { it in 0..ranges.range_46 }
+        .filter { it in 0..ranges.range_47 }
+        .filter { it in 0..ranges.range_48 }
+        .filter { it in 0..ranges.range_49 }
+        .filter { it in 0..ranges.range_50 }
 }
 
-fun filter_collection_5r(sourceCollection: List<Int?>): List<Int?> {
-    val size = sourceCollection.size
-    val range_1 = size
-    val range_2 = (size * 0.9).toInt()
-    val range_3 = (size * 0.8).toInt()
-    val range_4 = (size * 0.7).toInt()
-    val range_5 = (size * 0.6).toInt()
-    val range_6 = (size * 0.5).toInt()
-    val range_7 = (size * 0.4).toInt()
-    val range_8 = (size * 0.3).toInt()
-    val range_9 = (size * 0.2).toInt()
-    val range_10 = (size * 0.1).toInt()
-    return sourceCollection
-        .filter { it in 0..range_1 }
-        .filter { it in 0..range_2 }
-        .filter { it in 0..range_3 }
-        .filter { it in 0..range_4 }
-        .filter { it in 0..range_5 }
+fun filter_sequence_80r(sourceCollection: List<Int?>): Sequence<Int?> {
+    val ranges = FilterRanges(sourceCollection.size)
+    return sourceCollection.asSequence()
+        .filter { it in 0..ranges.range_1 }
+        .filter { it in 0..ranges.range_2 }
+        .filter { it in 0..ranges.range_3 }
+        .filter { it in 0..ranges.range_4 }
+        .filter { it in 0..ranges.range_5 }
+        .filter { it in 0..ranges.range_6 }
+        .filter { it in 0..ranges.range_7 }
+        .filter { it in 0..ranges.range_8 }
+        .filter { it in 0..ranges.range_9 }
+        .filter { it in 0..ranges.range_10 }
+        .filter { it in 0..ranges.range_11 }
+        .filter { it in 0..ranges.range_12 }
+        .filter { it in 0..ranges.range_13 }
+        .filter { it in 0..ranges.range_14 }
+        .filter { it in 0..ranges.range_15 }
+        .filter { it in 0..ranges.range_16 }
+        .filter { it in 0..ranges.range_17 }
+        .filter { it in 0..ranges.range_18 }
+        .filter { it in 0..ranges.range_19 }
+        .filter { it in 0..ranges.range_20 }
+        .filter { it in 0..ranges.range_21 }
+        .filter { it in 0..ranges.range_22 }
+        .filter { it in 0..ranges.range_23 }
+        .filter { it in 0..ranges.range_24 }
+        .filter { it in 0..ranges.range_25 }
+        .filter { it in 0..ranges.range_26 }
+        .filter { it in 0..ranges.range_27 }
+        .filter { it in 0..ranges.range_28 }
+        .filter { it in 0..ranges.range_29 }
+        .filter { it in 0..ranges.range_30 }
+        .filter { it in 0..ranges.range_31 }
+        .filter { it in 0..ranges.range_32 }
+        .filter { it in 0..ranges.range_33 }
+        .filter { it in 0..ranges.range_34 }
+        .filter { it in 0..ranges.range_35 }
+        .filter { it in 0..ranges.range_36 }
+        .filter { it in 0..ranges.range_37 }
+        .filter { it in 0..ranges.range_38 }
+        .filter { it in 0..ranges.range_39 }
+        .filter { it in 0..ranges.range_40 }
+        .filter { it in 0..ranges.range_41 }
+        .filter { it in 0..ranges.range_42 }
+        .filter { it in 0..ranges.range_43 }
+        .filter { it in 0..ranges.range_44 }
+        .filter { it in 0..ranges.range_45 }
+        .filter { it in 0..ranges.range_46 }
+        .filter { it in 0..ranges.range_47 }
+        .filter { it in 0..ranges.range_48 }
+        .filter { it in 0..ranges.range_49 }
+        .filter { it in 0..ranges.range_50 }
+        .filter { it in 0..ranges.range_51 }
+        .filter { it in 0..ranges.range_52 }
+        .filter { it in 0..ranges.range_53 }
+        .filter { it in 0..ranges.range_54 }
+        .filter { it in 0..ranges.range_55 }
+        .filter { it in 0..ranges.range_56 }
+        .filter { it in 0..ranges.range_57 }
+        .filter { it in 0..ranges.range_58 }
+        .filter { it in 0..ranges.range_59 }
+        .filter { it in 0..ranges.range_60 }
+        .filter { it in 0..ranges.range_61 }
+        .filter { it in 0..ranges.range_62 }
+        .filter { it in 0..ranges.range_63 }
+        .filter { it in 0..ranges.range_64 }
+        .filter { it in 0..ranges.range_65 }
+        .filter { it in 0..ranges.range_66 }
+        .filter { it in 0..ranges.range_67 }
+        .filter { it in 0..ranges.range_68 }
+        .filter { it in 0..ranges.range_69 }
+        .filter { it in 0..ranges.range_70 }
+        .filter { it in 0..ranges.range_71 }
+        .filter { it in 0..ranges.range_72 }
+        .filter { it in 0..ranges.range_73 }
+        .filter { it in 0..ranges.range_74 }
+        .filter { it in 0..ranges.range_75 }
+        .filter { it in 0..ranges.range_76 }
+        .filter { it in 0..ranges.range_77 }
+        .filter { it in 0..ranges.range_78 }
+        .filter { it in 0..ranges.range_79 }
+        .filter { it in 0..ranges.range_80 }
 }
 
-fun filter_collection_10r(sourceCollection: List<Int?>): List<Int?> {
-    val size = sourceCollection.size
-    val range_1 = size
-    val range_2 = (size * 0.9).toInt()
-    val range_3 = (size * 0.8).toInt()
-    val range_4 = (size * 0.7).toInt()
-    val range_5 = (size * 0.6).toInt()
-    val range_6 = (size * 0.5).toInt()
-    val range_7 = (size * 0.4).toInt()
-    val range_8 = (size * 0.3).toInt()
-    val range_9 = (size * 0.2).toInt()
-    val range_10 = (size * 0.1).toInt()
+fun filter_collection_1r(sourceCollection: List<Int?>): Collection<Int?> {
+    val ranges = FilterRanges(sourceCollection.size)
     return sourceCollection
-        .filter { it in 0..range_1 }
-        .filter { it in 0..range_2 }
-        .filter { it in 0..range_3 }
-        .filter { it in 0..range_4 }
-        .filter { it in 0..range_5 }
-        .filter { it in 0..range_6 }
-        .filter { it in 0..range_7 }
-        .filter { it in 0..range_8 }
-        .filter { it in 0..range_9 }
-        .filter { it in 0..range_10 }
+        .filter { it in 0..ranges.range_1 }
+}
+
+fun filter_collection_2r(sourceCollection: List<Int?>): Collection<Int?> {
+    val ranges = FilterRanges(sourceCollection.size)
+    return sourceCollection
+        .filter { it in 0..ranges.range_1 }
+        .filter { it in 0..ranges.range_2 }
+}
+
+fun filter_collection_3r(sourceCollection: List<Int?>): Collection<Int?> {
+    val ranges = FilterRanges(sourceCollection.size)
+    return sourceCollection
+        .filter { it in 0..ranges.range_1 }
+        .filter { it in 0..ranges.range_2 }
+        .filter { it in 0..ranges.range_3 }
+}
+
+fun filter_collection_5r(sourceCollection: List<Int?>): Collection<Int?> {
+    val ranges = FilterRanges(sourceCollection.size)
+    return sourceCollection
+        .filter { it in 0..ranges.range_1 }
+        .filter { it in 0..ranges.range_2 }
+        .filter { it in 0..ranges.range_3 }
+        .filter { it in 0..ranges.range_4 }
+        .filter { it in 0..ranges.range_5 }
+}
+
+fun filter_collection_10r(sourceCollection: List<Int?>): Collection<Int?> {
+    val ranges = FilterRanges(sourceCollection.size)
+    return sourceCollection
+        .filter { it in 0..ranges.range_1 }
+        .filter { it in 0..ranges.range_2 }
+        .filter { it in 0..ranges.range_3 }
+        .filter { it in 0..ranges.range_4 }
+        .filter { it in 0..ranges.range_5 }
+        .filter { it in 0..ranges.range_6 }
+        .filter { it in 0..ranges.range_7 }
+        .filter { it in 0..ranges.range_8 }
+        .filter { it in 0..ranges.range_9 }
+        .filter { it in 0..ranges.range_10 }
+}
+
+fun filter_collection_20r(sourceCollection: List<Int?>): Collection<Int?> {
+    val ranges = FilterRanges(sourceCollection.size)
+    return sourceCollection
+        .filter { it in 0..ranges.range_1 }
+        .filter { it in 0..ranges.range_2 }
+        .filter { it in 0..ranges.range_3 }
+        .filter { it in 0..ranges.range_4 }
+        .filter { it in 0..ranges.range_5 }
+        .filter { it in 0..ranges.range_6 }
+        .filter { it in 0..ranges.range_7 }
+        .filter { it in 0..ranges.range_8 }
+        .filter { it in 0..ranges.range_9 }
+        .filter { it in 0..ranges.range_10 }
+        .filter { it in 0..ranges.range_11 }
+        .filter { it in 0..ranges.range_12 }
+        .filter { it in 0..ranges.range_13 }
+        .filter { it in 0..ranges.range_14 }
+        .filter { it in 0..ranges.range_15 }
+        .filter { it in 0..ranges.range_16 }
+        .filter { it in 0..ranges.range_17 }
+        .filter { it in 0..ranges.range_18 }
+        .filter { it in 0..ranges.range_19 }
+        .filter { it in 0..ranges.range_20 }
+}
+
+fun filter_collection_30r(sourceCollection: List<Int?>): Collection<Int?> {
+    val ranges = FilterRanges(sourceCollection.size)
+    return sourceCollection
+        .filter { it in 0..ranges.range_1 }
+        .filter { it in 0..ranges.range_2 }
+        .filter { it in 0..ranges.range_3 }
+        .filter { it in 0..ranges.range_4 }
+        .filter { it in 0..ranges.range_5 }
+        .filter { it in 0..ranges.range_6 }
+        .filter { it in 0..ranges.range_7 }
+        .filter { it in 0..ranges.range_8 }
+        .filter { it in 0..ranges.range_9 }
+        .filter { it in 0..ranges.range_10 }
+        .filter { it in 0..ranges.range_11 }
+        .filter { it in 0..ranges.range_12 }
+        .filter { it in 0..ranges.range_13 }
+        .filter { it in 0..ranges.range_14 }
+        .filter { it in 0..ranges.range_15 }
+        .filter { it in 0..ranges.range_16 }
+        .filter { it in 0..ranges.range_17 }
+        .filter { it in 0..ranges.range_18 }
+        .filter { it in 0..ranges.range_19 }
+        .filter { it in 0..ranges.range_20 }
+        .filter { it in 0..ranges.range_21 }
+        .filter { it in 0..ranges.range_22 }
+        .filter { it in 0..ranges.range_23 }
+        .filter { it in 0..ranges.range_24 }
+        .filter { it in 0..ranges.range_25 }
+        .filter { it in 0..ranges.range_26 }
+        .filter { it in 0..ranges.range_27 }
+        .filter { it in 0..ranges.range_28 }
+        .filter { it in 0..ranges.range_29 }
+        .filter { it in 0..ranges.range_30 }
+}
+
+fun filter_collection_50r(sourceCollection: List<Int?>): Collection<Int?> {
+    val ranges = FilterRanges(sourceCollection.size)
+    return sourceCollection
+        .filter { it in 0..ranges.range_1 }
+        .filter { it in 0..ranges.range_2 }
+        .filter { it in 0..ranges.range_3 }
+        .filter { it in 0..ranges.range_4 }
+        .filter { it in 0..ranges.range_5 }
+        .filter { it in 0..ranges.range_6 }
+        .filter { it in 0..ranges.range_7 }
+        .filter { it in 0..ranges.range_8 }
+        .filter { it in 0..ranges.range_9 }
+        .filter { it in 0..ranges.range_10 }
+        .filter { it in 0..ranges.range_11 }
+        .filter { it in 0..ranges.range_12 }
+        .filter { it in 0..ranges.range_13 }
+        .filter { it in 0..ranges.range_14 }
+        .filter { it in 0..ranges.range_15 }
+        .filter { it in 0..ranges.range_16 }
+        .filter { it in 0..ranges.range_17 }
+        .filter { it in 0..ranges.range_18 }
+        .filter { it in 0..ranges.range_19 }
+        .filter { it in 0..ranges.range_20 }
+        .filter { it in 0..ranges.range_21 }
+        .filter { it in 0..ranges.range_22 }
+        .filter { it in 0..ranges.range_23 }
+        .filter { it in 0..ranges.range_24 }
+        .filter { it in 0..ranges.range_25 }
+        .filter { it in 0..ranges.range_26 }
+        .filter { it in 0..ranges.range_27 }
+        .filter { it in 0..ranges.range_28 }
+        .filter { it in 0..ranges.range_29 }
+        .filter { it in 0..ranges.range_30 }
+        .filter { it in 0..ranges.range_31 }
+        .filter { it in 0..ranges.range_32 }
+        .filter { it in 0..ranges.range_33 }
+        .filter { it in 0..ranges.range_34 }
+        .filter { it in 0..ranges.range_35 }
+        .filter { it in 0..ranges.range_36 }
+        .filter { it in 0..ranges.range_37 }
+        .filter { it in 0..ranges.range_38 }
+        .filter { it in 0..ranges.range_39 }
+        .filter { it in 0..ranges.range_40 }
+        .filter { it in 0..ranges.range_41 }
+        .filter { it in 0..ranges.range_42 }
+        .filter { it in 0..ranges.range_43 }
+        .filter { it in 0..ranges.range_44 }
+        .filter { it in 0..ranges.range_45 }
+        .filter { it in 0..ranges.range_46 }
+        .filter { it in 0..ranges.range_47 }
+        .filter { it in 0..ranges.range_48 }
+        .filter { it in 0..ranges.range_49 }
+        .filter { it in 0..ranges.range_50 }
+}
+
+fun filter_collection_80r(sourceCollection: List<Int?>): Collection<Int?> {
+    val ranges = FilterRanges(sourceCollection.size)
+    return sourceCollection
+        .filter { it in 0..ranges.range_1 }
+        .filter { it in 0..ranges.range_2 }
+        .filter { it in 0..ranges.range_3 }
+        .filter { it in 0..ranges.range_4 }
+        .filter { it in 0..ranges.range_5 }
+        .filter { it in 0..ranges.range_6 }
+        .filter { it in 0..ranges.range_7 }
+        .filter { it in 0..ranges.range_8 }
+        .filter { it in 0..ranges.range_9 }
+        .filter { it in 0..ranges.range_10 }
+        .filter { it in 0..ranges.range_11 }
+        .filter { it in 0..ranges.range_12 }
+        .filter { it in 0..ranges.range_13 }
+        .filter { it in 0..ranges.range_14 }
+        .filter { it in 0..ranges.range_15 }
+        .filter { it in 0..ranges.range_16 }
+        .filter { it in 0..ranges.range_17 }
+        .filter { it in 0..ranges.range_18 }
+        .filter { it in 0..ranges.range_19 }
+        .filter { it in 0..ranges.range_20 }
+        .filter { it in 0..ranges.range_21 }
+        .filter { it in 0..ranges.range_22 }
+        .filter { it in 0..ranges.range_23 }
+        .filter { it in 0..ranges.range_24 }
+        .filter { it in 0..ranges.range_25 }
+        .filter { it in 0..ranges.range_26 }
+        .filter { it in 0..ranges.range_27 }
+        .filter { it in 0..ranges.range_28 }
+        .filter { it in 0..ranges.range_29 }
+        .filter { it in 0..ranges.range_30 }
+        .filter { it in 0..ranges.range_31 }
+        .filter { it in 0..ranges.range_32 }
+        .filter { it in 0..ranges.range_33 }
+        .filter { it in 0..ranges.range_34 }
+        .filter { it in 0..ranges.range_35 }
+        .filter { it in 0..ranges.range_36 }
+        .filter { it in 0..ranges.range_37 }
+        .filter { it in 0..ranges.range_38 }
+        .filter { it in 0..ranges.range_39 }
+        .filter { it in 0..ranges.range_40 }
+        .filter { it in 0..ranges.range_41 }
+        .filter { it in 0..ranges.range_42 }
+        .filter { it in 0..ranges.range_43 }
+        .filter { it in 0..ranges.range_44 }
+        .filter { it in 0..ranges.range_45 }
+        .filter { it in 0..ranges.range_46 }
+        .filter { it in 0..ranges.range_47 }
+        .filter { it in 0..ranges.range_48 }
+        .filter { it in 0..ranges.range_49 }
+        .filter { it in 0..ranges.range_50 }
+        .filter { it in 0..ranges.range_51 }
+        .filter { it in 0..ranges.range_52 }
+        .filter { it in 0..ranges.range_53 }
+        .filter { it in 0..ranges.range_54 }
+        .filter { it in 0..ranges.range_55 }
+        .filter { it in 0..ranges.range_56 }
+        .filter { it in 0..ranges.range_57 }
+        .filter { it in 0..ranges.range_58 }
+        .filter { it in 0..ranges.range_59 }
+        .filter { it in 0..ranges.range_60 }
+        .filter { it in 0..ranges.range_61 }
+        .filter { it in 0..ranges.range_62 }
+        .filter { it in 0..ranges.range_63 }
+        .filter { it in 0..ranges.range_64 }
+        .filter { it in 0..ranges.range_65 }
+        .filter { it in 0..ranges.range_66 }
+        .filter { it in 0..ranges.range_67 }
+        .filter { it in 0..ranges.range_68 }
+        .filter { it in 0..ranges.range_69 }
+        .filter { it in 0..ranges.range_70 }
+        .filter { it in 0..ranges.range_71 }
+        .filter { it in 0..ranges.range_72 }
+        .filter { it in 0..ranges.range_73 }
+        .filter { it in 0..ranges.range_74 }
+        .filter { it in 0..ranges.range_75 }
+        .filter { it in 0..ranges.range_76 }
+        .filter { it in 0..ranges.range_77 }
+        .filter { it in 0..ranges.range_78 }
+        .filter { it in 0..ranges.range_79 }
+        .filter { it in 0..ranges.range_80 }
 }
 
 fun filter_stream_1r(sourceCollection: List<Int?>): Stream<Int?> {
-    val size = sourceCollection.size
-    val range_1 = size
-    val range_2 = (size * 0.9).toInt()
-    val range_3 = (size * 0.8).toInt()
-    val range_4 = (size * 0.7).toInt()
-    val range_5 = (size * 0.6).toInt()
-    val range_6 = (size * 0.5).toInt()
-    val range_7 = (size * 0.4).toInt()
-    val range_8 = (size * 0.3).toInt()
-    val range_9 = (size * 0.2).toInt()
-    val range_10 = (size * 0.1).toInt()
+    val ranges = FilterRanges(sourceCollection.size)
     return sourceCollection.stream()
-        .filter { it in 0..range_1 }
+        .filter { it in 0..ranges.range_1 }
 }
 
 fun filter_stream_2r(sourceCollection: List<Int?>): Stream<Int?> {
-    val size = sourceCollection.size
-    val range_1 = size
-    val range_2 = (size * 0.9).toInt()
-    val range_3 = (size * 0.8).toInt()
-    val range_4 = (size * 0.7).toInt()
-    val range_5 = (size * 0.6).toInt()
-    val range_6 = (size * 0.5).toInt()
-    val range_7 = (size * 0.4).toInt()
-    val range_8 = (size * 0.3).toInt()
-    val range_9 = (size * 0.2).toInt()
-    val range_10 = (size * 0.1).toInt()
+    val ranges = FilterRanges(sourceCollection.size)
     return sourceCollection.stream()
-        .filter { it in 0..range_1 }
-        .filter { it in 0..range_2 }
+        .filter { it in 0..ranges.range_1 }
+        .filter { it in 0..ranges.range_2 }
 }
 
 fun filter_stream_3r(sourceCollection: List<Int?>): Stream<Int?> {
-    val size = sourceCollection.size
-    val range_1 = size
-    val range_2 = (size * 0.9).toInt()
-    val range_3 = (size * 0.8).toInt()
-    val range_4 = (size * 0.7).toInt()
-    val range_5 = (size * 0.6).toInt()
-    val range_6 = (size * 0.5).toInt()
-    val range_7 = (size * 0.4).toInt()
-    val range_8 = (size * 0.3).toInt()
-    val range_9 = (size * 0.2).toInt()
-    val range_10 = (size * 0.1).toInt()
+    val ranges = FilterRanges(sourceCollection.size)
     return sourceCollection.stream()
-        .filter { it in 0..range_1 }
-        .filter { it in 0..range_2 }
-        .filter { it in 0..range_3 }
+        .filter { it in 0..ranges.range_1 }
+        .filter { it in 0..ranges.range_2 }
+        .filter { it in 0..ranges.range_3 }
 }
 
 fun filter_stream_5r(sourceCollection: List<Int?>): Stream<Int?> {
-    val size = sourceCollection.size
-    val range_1 = size
-    val range_2 = (size * 0.9).toInt()
-    val range_3 = (size * 0.8).toInt()
-    val range_4 = (size * 0.7).toInt()
-    val range_5 = (size * 0.6).toInt()
-    val range_6 = (size * 0.5).toInt()
-    val range_7 = (size * 0.4).toInt()
-    val range_8 = (size * 0.3).toInt()
-    val range_9 = (size * 0.2).toInt()
-    val range_10 = (size * 0.1).toInt()
+    val ranges = FilterRanges(sourceCollection.size)
     return sourceCollection.stream()
-        .filter { it in 0..range_1 }
-        .filter { it in 0..range_2 }
-        .filter { it in 0..range_3 }
-        .filter { it in 0..range_4 }
-        .filter { it in 0..range_5 }
+        .filter { it in 0..ranges.range_1 }
+        .filter { it in 0..ranges.range_2 }
+        .filter { it in 0..ranges.range_3 }
+        .filter { it in 0..ranges.range_4 }
+        .filter { it in 0..ranges.range_5 }
 }
 
 fun filter_stream_10r(sourceCollection: List<Int?>): Stream<Int?> {
-    val size = sourceCollection.size
-    val range_1 = size
-    val range_2 = (size * 0.9).toInt()
-    val range_3 = (size * 0.8).toInt()
-    val range_4 = (size * 0.7).toInt()
-    val range_5 = (size * 0.6).toInt()
-    val range_6 = (size * 0.5).toInt()
-    val range_7 = (size * 0.4).toInt()
-    val range_8 = (size * 0.3).toInt()
-    val range_9 = (size * 0.2).toInt()
-    val range_10 = (size * 0.1).toInt()
+    val ranges = FilterRanges(sourceCollection.size)
     return sourceCollection.stream()
-        .filter { it in 0..range_1 }
-        .filter { it in 0..range_2 }
-        .filter { it in 0..range_3 }
-        .filter { it in 0..range_4 }
-        .filter { it in 0..range_5 }
-        .filter { it in 0..range_6 }
-        .filter { it in 0..range_7 }
-        .filter { it in 0..range_8 }
-        .filter { it in 0..range_9 }
-        .filter { it in 0..range_10 }
+        .filter { it in 0..ranges.range_1 }
+        .filter { it in 0..ranges.range_2 }
+        .filter { it in 0..ranges.range_3 }
+        .filter { it in 0..ranges.range_4 }
+        .filter { it in 0..ranges.range_5 }
+        .filter { it in 0..ranges.range_6 }
+        .filter { it in 0..ranges.range_7 }
+        .filter { it in 0..ranges.range_8 }
+        .filter { it in 0..ranges.range_9 }
+        .filter { it in 0..ranges.range_10 }
+}
+
+fun filter_stream_20r(sourceCollection: List<Int?>): Stream<Int?> {
+    val ranges = FilterRanges(sourceCollection.size)
+    return sourceCollection.stream()
+        .filter { it in 0..ranges.range_1 }
+        .filter { it in 0..ranges.range_2 }
+        .filter { it in 0..ranges.range_3 }
+        .filter { it in 0..ranges.range_4 }
+        .filter { it in 0..ranges.range_5 }
+        .filter { it in 0..ranges.range_6 }
+        .filter { it in 0..ranges.range_7 }
+        .filter { it in 0..ranges.range_8 }
+        .filter { it in 0..ranges.range_9 }
+        .filter { it in 0..ranges.range_10 }
+        .filter { it in 0..ranges.range_11 }
+        .filter { it in 0..ranges.range_12 }
+        .filter { it in 0..ranges.range_13 }
+        .filter { it in 0..ranges.range_14 }
+        .filter { it in 0..ranges.range_15 }
+        .filter { it in 0..ranges.range_16 }
+        .filter { it in 0..ranges.range_17 }
+        .filter { it in 0..ranges.range_18 }
+        .filter { it in 0..ranges.range_19 }
+        .filter { it in 0..ranges.range_20 }
+}
+
+fun filter_stream_30r(sourceCollection: List<Int?>): Stream<Int?> {
+    val ranges = FilterRanges(sourceCollection.size)
+    return sourceCollection.stream()
+        .filter { it in 0..ranges.range_1 }
+        .filter { it in 0..ranges.range_2 }
+        .filter { it in 0..ranges.range_3 }
+        .filter { it in 0..ranges.range_4 }
+        .filter { it in 0..ranges.range_5 }
+        .filter { it in 0..ranges.range_6 }
+        .filter { it in 0..ranges.range_7 }
+        .filter { it in 0..ranges.range_8 }
+        .filter { it in 0..ranges.range_9 }
+        .filter { it in 0..ranges.range_10 }
+        .filter { it in 0..ranges.range_11 }
+        .filter { it in 0..ranges.range_12 }
+        .filter { it in 0..ranges.range_13 }
+        .filter { it in 0..ranges.range_14 }
+        .filter { it in 0..ranges.range_15 }
+        .filter { it in 0..ranges.range_16 }
+        .filter { it in 0..ranges.range_17 }
+        .filter { it in 0..ranges.range_18 }
+        .filter { it in 0..ranges.range_19 }
+        .filter { it in 0..ranges.range_20 }
+        .filter { it in 0..ranges.range_21 }
+        .filter { it in 0..ranges.range_22 }
+        .filter { it in 0..ranges.range_23 }
+        .filter { it in 0..ranges.range_24 }
+        .filter { it in 0..ranges.range_25 }
+        .filter { it in 0..ranges.range_26 }
+        .filter { it in 0..ranges.range_27 }
+        .filter { it in 0..ranges.range_28 }
+        .filter { it in 0..ranges.range_29 }
+        .filter { it in 0..ranges.range_30 }
+}
+
+fun filter_stream_50r(sourceCollection: List<Int?>): Stream<Int?> {
+    val ranges = FilterRanges(sourceCollection.size)
+    return sourceCollection.stream()
+        .filter { it in 0..ranges.range_1 }
+        .filter { it in 0..ranges.range_2 }
+        .filter { it in 0..ranges.range_3 }
+        .filter { it in 0..ranges.range_4 }
+        .filter { it in 0..ranges.range_5 }
+        .filter { it in 0..ranges.range_6 }
+        .filter { it in 0..ranges.range_7 }
+        .filter { it in 0..ranges.range_8 }
+        .filter { it in 0..ranges.range_9 }
+        .filter { it in 0..ranges.range_10 }
+        .filter { it in 0..ranges.range_11 }
+        .filter { it in 0..ranges.range_12 }
+        .filter { it in 0..ranges.range_13 }
+        .filter { it in 0..ranges.range_14 }
+        .filter { it in 0..ranges.range_15 }
+        .filter { it in 0..ranges.range_16 }
+        .filter { it in 0..ranges.range_17 }
+        .filter { it in 0..ranges.range_18 }
+        .filter { it in 0..ranges.range_19 }
+        .filter { it in 0..ranges.range_20 }
+        .filter { it in 0..ranges.range_21 }
+        .filter { it in 0..ranges.range_22 }
+        .filter { it in 0..ranges.range_23 }
+        .filter { it in 0..ranges.range_24 }
+        .filter { it in 0..ranges.range_25 }
+        .filter { it in 0..ranges.range_26 }
+        .filter { it in 0..ranges.range_27 }
+        .filter { it in 0..ranges.range_28 }
+        .filter { it in 0..ranges.range_29 }
+        .filter { it in 0..ranges.range_30 }
+        .filter { it in 0..ranges.range_31 }
+        .filter { it in 0..ranges.range_32 }
+        .filter { it in 0..ranges.range_33 }
+        .filter { it in 0..ranges.range_34 }
+        .filter { it in 0..ranges.range_35 }
+        .filter { it in 0..ranges.range_36 }
+        .filter { it in 0..ranges.range_37 }
+        .filter { it in 0..ranges.range_38 }
+        .filter { it in 0..ranges.range_39 }
+        .filter { it in 0..ranges.range_40 }
+        .filter { it in 0..ranges.range_41 }
+        .filter { it in 0..ranges.range_42 }
+        .filter { it in 0..ranges.range_43 }
+        .filter { it in 0..ranges.range_44 }
+        .filter { it in 0..ranges.range_45 }
+        .filter { it in 0..ranges.range_46 }
+        .filter { it in 0..ranges.range_47 }
+        .filter { it in 0..ranges.range_48 }
+        .filter { it in 0..ranges.range_49 }
+        .filter { it in 0..ranges.range_50 }
+}
+
+fun filter_stream_80r(sourceCollection: List<Int?>): Stream<Int?> {
+    val ranges = FilterRanges(sourceCollection.size)
+    return sourceCollection.stream()
+        .filter { it in 0..ranges.range_1 }
+        .filter { it in 0..ranges.range_2 }
+        .filter { it in 0..ranges.range_3 }
+        .filter { it in 0..ranges.range_4 }
+        .filter { it in 0..ranges.range_5 }
+        .filter { it in 0..ranges.range_6 }
+        .filter { it in 0..ranges.range_7 }
+        .filter { it in 0..ranges.range_8 }
+        .filter { it in 0..ranges.range_9 }
+        .filter { it in 0..ranges.range_10 }
+        .filter { it in 0..ranges.range_11 }
+        .filter { it in 0..ranges.range_12 }
+        .filter { it in 0..ranges.range_13 }
+        .filter { it in 0..ranges.range_14 }
+        .filter { it in 0..ranges.range_15 }
+        .filter { it in 0..ranges.range_16 }
+        .filter { it in 0..ranges.range_17 }
+        .filter { it in 0..ranges.range_18 }
+        .filter { it in 0..ranges.range_19 }
+        .filter { it in 0..ranges.range_20 }
+        .filter { it in 0..ranges.range_21 }
+        .filter { it in 0..ranges.range_22 }
+        .filter { it in 0..ranges.range_23 }
+        .filter { it in 0..ranges.range_24 }
+        .filter { it in 0..ranges.range_25 }
+        .filter { it in 0..ranges.range_26 }
+        .filter { it in 0..ranges.range_27 }
+        .filter { it in 0..ranges.range_28 }
+        .filter { it in 0..ranges.range_29 }
+        .filter { it in 0..ranges.range_30 }
+        .filter { it in 0..ranges.range_31 }
+        .filter { it in 0..ranges.range_32 }
+        .filter { it in 0..ranges.range_33 }
+        .filter { it in 0..ranges.range_34 }
+        .filter { it in 0..ranges.range_35 }
+        .filter { it in 0..ranges.range_36 }
+        .filter { it in 0..ranges.range_37 }
+        .filter { it in 0..ranges.range_38 }
+        .filter { it in 0..ranges.range_39 }
+        .filter { it in 0..ranges.range_40 }
+        .filter { it in 0..ranges.range_41 }
+        .filter { it in 0..ranges.range_42 }
+        .filter { it in 0..ranges.range_43 }
+        .filter { it in 0..ranges.range_44 }
+        .filter { it in 0..ranges.range_45 }
+        .filter { it in 0..ranges.range_46 }
+        .filter { it in 0..ranges.range_47 }
+        .filter { it in 0..ranges.range_48 }
+        .filter { it in 0..ranges.range_49 }
+        .filter { it in 0..ranges.range_50 }
+        .filter { it in 0..ranges.range_51 }
+        .filter { it in 0..ranges.range_52 }
+        .filter { it in 0..ranges.range_53 }
+        .filter { it in 0..ranges.range_54 }
+        .filter { it in 0..ranges.range_55 }
+        .filter { it in 0..ranges.range_56 }
+        .filter { it in 0..ranges.range_57 }
+        .filter { it in 0..ranges.range_58 }
+        .filter { it in 0..ranges.range_59 }
+        .filter { it in 0..ranges.range_60 }
+        .filter { it in 0..ranges.range_61 }
+        .filter { it in 0..ranges.range_62 }
+        .filter { it in 0..ranges.range_63 }
+        .filter { it in 0..ranges.range_64 }
+        .filter { it in 0..ranges.range_65 }
+        .filter { it in 0..ranges.range_66 }
+        .filter { it in 0..ranges.range_67 }
+        .filter { it in 0..ranges.range_68 }
+        .filter { it in 0..ranges.range_69 }
+        .filter { it in 0..ranges.range_70 }
+        .filter { it in 0..ranges.range_71 }
+        .filter { it in 0..ranges.range_72 }
+        .filter { it in 0..ranges.range_73 }
+        .filter { it in 0..ranges.range_74 }
+        .filter { it in 0..ranges.range_75 }
+        .filter { it in 0..ranges.range_76 }
+        .filter { it in 0..ranges.range_77 }
+        .filter { it in 0..ranges.range_78 }
+        .filter { it in 0..ranges.range_79 }
+        .filter { it in 0..ranges.range_80 }
 }
 
 fun distinct_sequence_90_standard(sourceCollection: List<Int>): Int {
