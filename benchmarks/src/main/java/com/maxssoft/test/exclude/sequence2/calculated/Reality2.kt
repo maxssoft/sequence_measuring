@@ -7,6 +7,7 @@ import com.maxssoft.func.reality_stream
 import com.maxssoft.test.factory.DataFactory
 import com.maxssoft.test.factory.WARN_UP_ITERATIONS
 import com.maxssoft.test.factory.WARN_UP_TIME
+import com.maxssoft.test.factory.collectBlackHole
 import kotlinx.benchmark.Blackhole
 import kotlinx.benchmark.Scope
 import kotlinx.benchmark.Setup
@@ -43,91 +44,91 @@ class Reality2 {
 
     @Benchmark
     fun reality2_100_rec_sequence(blackHole: Blackhole) {
-        reality_sequence(originCollection_100).forEach { blackHole.consume(it) }
+        reality_sequence(originCollection_100).collectBlackHole(blackHole)
         blackHole.consume(memoryConsumer.read())
     }
 
     @Benchmark
     fun reality2_1000_rec_sequence(blackHole: Blackhole) {
-        reality_sequence(originCollection_1_000).forEach { blackHole.consume(it) }
+        reality_sequence(originCollection_1_000).collectBlackHole(blackHole)
         blackHole.consume(memoryConsumer.read())
     }
 
     @Benchmark
     fun reality2_10000_rec_sequence(blackHole: Blackhole) {
-        reality_sequence(originCollection_10_000).forEach { blackHole.consume(it) }
+        reality_sequence(originCollection_10_000).collectBlackHole(blackHole)
         blackHole.consume(memoryConsumer.read())
     }
 
     @Benchmark
     fun reality2_50000_rec_sequence(blackHole: Blackhole) {
-        reality_sequence(originCollection_50_000).forEach { blackHole.consume(it) }
+        reality_sequence(originCollection_50_000).collectBlackHole(blackHole)
         blackHole.consume(memoryConsumer.read())
     }
 
     @Benchmark
     fun reality2_100000_rec_sequence(blackHole: Blackhole) {
-        reality_sequence(originCollection_100_000).forEach { blackHole.consume(it) }
+        reality_sequence(originCollection_100_000).collectBlackHole(blackHole)
         blackHole.consume(memoryConsumer.read())
     }
 
     @Benchmark
     fun reality2_100_rec_stream(blackHole: Blackhole) {
-        reality_stream(originCollection_100).forEach { blackHole.consume(it) }
+        reality_stream(originCollection_100).collectBlackHole(blackHole)
         blackHole.consume(memoryConsumer.read())
     }
 
     @Benchmark
     fun reality2_1000_rec_stream(blackHole: Blackhole) {
-        reality_stream(originCollection_1_000).forEach { blackHole.consume(it) }
+        reality_stream(originCollection_1_000).collectBlackHole(blackHole)
         blackHole.consume(memoryConsumer.read())
     }
 
     @Benchmark
     fun reality2_10000_rec_stream(blackHole: Blackhole) {
-        reality_stream(originCollection_10_000).forEach { blackHole.consume(it) }
+        reality_stream(originCollection_10_000).collectBlackHole(blackHole)
         blackHole.consume(memoryConsumer.read())
     }
 
     @Benchmark
     fun reality2_50000_rec_stream(blackHole: Blackhole) {
-        reality_stream(originCollection_50_000).forEach { blackHole.consume(it) }
+        reality_stream(originCollection_50_000).collectBlackHole(blackHole)
         blackHole.consume(memoryConsumer.read())
     }
 
     @Benchmark
     fun reality2_100000_rec_stream(blackHole: Blackhole) {
-        reality_stream(originCollection_100_000).forEach { blackHole.consume(it) }
+        reality_stream(originCollection_100_000).collectBlackHole(blackHole)
         blackHole.consume(memoryConsumer.read())
     }
 
     @Benchmark
     fun reality2_100_rec_collection(blackHole: Blackhole) {
-        reality_collection(originCollection_100).forEach { blackHole.consume(it) }
+        reality_collection(originCollection_100).collectBlackHole(blackHole)
         blackHole.consume(memoryConsumer.read())
     }
 
     @Benchmark
     fun reality2_1000_rec_collection(blackHole: Blackhole) {
-        reality_collection(originCollection_1_000).forEach { blackHole.consume(it) }
+        reality_collection(originCollection_1_000).collectBlackHole(blackHole)
         blackHole.consume(memoryConsumer.read())
     }
 
     @Benchmark
     fun reality2_10000_rec_collection(blackHole: Blackhole) {
-        reality_collection(originCollection_10_000).forEach { blackHole.consume(it) }
+        reality_collection(originCollection_10_000).collectBlackHole(blackHole)
         blackHole.consume(memoryConsumer.read())
     }
 
     @Benchmark
     fun reality2_50000_rec_collection(blackHole: Blackhole) {
-        reality_collection(originCollection_50_000).forEach { blackHole.consume(it) }
+        reality_collection(originCollection_50_000).collectBlackHole(blackHole)
         blackHole.consume(memoryConsumer.read())
     }
 
     @Benchmark
     fun reality2_100000_rec_collection(blackHole: Blackhole) {
-        reality_collection(originCollection_100_000).forEach { blackHole.consume(it) }
+        reality_collection(originCollection_100_000).collectBlackHole(blackHole)
         blackHole.consume(memoryConsumer.read())
     }
 

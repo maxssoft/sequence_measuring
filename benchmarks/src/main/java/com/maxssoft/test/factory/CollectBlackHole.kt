@@ -4,21 +4,27 @@ import kotlinx.benchmark.Blackhole
 import java.util.stream.Stream
 
 fun Sequence<*>.collectBlackHole(blackHole: Blackhole) {
+    var sum = 0
     forEach { element->
-        blackHole.consume(element)
+        sum += element?.hashCode() ?: 0
     }
+    blackHole.consume(sum)
 }
 
 fun Stream<*>.collectBlackHole(blackHole: Blackhole) {
+    var sum = 0
     forEach { element->
-        blackHole.consume(element)
+        sum += element?.hashCode() ?: 0
     }
+    blackHole.consume(sum)
 }
 
 fun Iterable<*>.collectBlackHole(blackHole: Blackhole) {
+    var sum = 0
     forEach { element->
-        blackHole.consume(element)
+        sum += element?.hashCode() ?: 0
     }
+    blackHole.consume(sum)
 }
 
 fun Sequence<Int?>.collectSum(blackHole: Blackhole) {
