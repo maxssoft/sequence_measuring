@@ -85,11 +85,12 @@ class Filter2 {
 
     @Benchmark
     fun test(blackHole: Blackhole) {
+        val percent90 = (originCollection.size * 0.9).toInt()
         originCollection.asSequence()
             .map { it?.plus(1) }
-            .map { it?.plus(2) }
-            // .......
-            .map { it?.plus(10) }
+            .filter { it in 0..percent90 }
+            .map { it?.let { it % 3 } }
+            .sortedBy { it }
             .collectSum(blackHole)
     }
 */

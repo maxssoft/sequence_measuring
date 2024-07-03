@@ -2506,10 +2506,36 @@ fun crazy_collection(sourceCollection: List<Int?>): List<Int?> {
         .distinctBy { it }
 }
 
+fun middle_sequence(sourceCollection: List<Int?>): Sequence<Int?> {
+    val percent90 = (sourceCollection.size * 0.9).toInt()
+    return sourceCollection.asSequence()
+        .map { it?.plus(1) }
+        .filter { it in 0..percent90 }
+        .map { it?.let { it % 3 } }
+        .sortedBy { it }
+}
+
+fun middle_stream(sourceCollection: List<Int?>): Stream<Int?> {
+    val percent90 = (sourceCollection.size * 0.9).toInt()
+    return sourceCollection.stream()
+        .map { it?.plus(1) }
+        .filter { it in 0..percent90 }
+        .map { it?.let { it % 3 } }
+        .sorted()
+}
+
+fun middle_collection(sourceCollection: List<Int?>): Collection<Int?> {
+    val percent90 = (sourceCollection.size * 0.9).toInt()
+    return sourceCollection
+        .map { it?.plus(1) }
+        .filter { it in 0..percent90 }
+        .map { it?.let { it % 3 } }
+        .sortedBy { it }
+}
+
 // return list of products with default photo Pair<productUid, photoUrl>
 fun reality_sequence(realData: DataFactory): Sequence<Pair<String, String?>> {
-    return realData.sessionManager.productCategories
-        .asSequence()
+    return realData.sessionManager.productCategories.asSequence()
         .map { it.categoryName }
         .mapNotNull { realData.productRepository.getCategoryProducts(it) }
         .flatten()
