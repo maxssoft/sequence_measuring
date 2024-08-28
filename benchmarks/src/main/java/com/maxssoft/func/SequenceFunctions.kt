@@ -8,12 +8,13 @@ import java.util.stream.Stream
 import kotlin.random.Random
 
 
-fun createIntList(count: Int): List<Int?> {
-    return mutableListOf<Int>().apply {
-        (0..count).forEach { if (it == count / 2) null else add(it) }
+fun createIntList(count: Int): List<Int?> =
+    buildList {
+        addAll(0..count)
+        add(null)
         shuffle()
     }
-}
+
 
 fun createStringList(count: Int): List<String> {
     return mutableListOf<String>().apply {
@@ -2639,6 +2640,18 @@ fun testExample(sourceCollection: List<Int?>, blackHole: Blackhole) {
 }
 
 fun testExample_reality(realData: DataFactory, blackHole: Blackhole) {
+    realData.sessionManager.productCategories.asSequence()
+        .map { it.categoryName }
+        .mapNotNull { realData.productRepository.getCategoryProducts(it) }
+        .flatten()
+        .distinctBy { it.productUid }
+        .map { product ->
+            product.productUid to product.photos.firstOrNull { it.isDefault }?.url
+        }
+        .forEach { blackHole.consume(it) }
+}
+
+fun testLargeOperation(realData: DataFactory, blackHole: Blackhole) {
     realData.sessionManager.productCategories.asSequence()
         .map { it.categoryName }
         .mapNotNull { realData.productRepository.getCategoryProducts(it) }
