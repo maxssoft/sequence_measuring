@@ -1,9 +1,7 @@
-package com.maxssoft.test.exclude.sequence2.calculated
+package com.maxssoft.test.exclude.sequence2.recalculate1
 
 import com.maxssoft.func.MemoryConsumer
 import com.maxssoft.func.createIntList
-import com.maxssoft.func.filter_collection_10
-import com.maxssoft.func.filter_collection_90
 import com.maxssoft.func.take2_collection
 import com.maxssoft.func.take2_sequence
 import com.maxssoft.func.take2_stream
@@ -39,9 +37,6 @@ class Take2 {
         originCollection_10_000 = createIntList(10_000)
         originCollection_50_000 = createIntList(50_000)
         originCollection_100_000 = createIntList(100_000)
-
-        //println("filter_collection_90 = 1.000 -> ${filter_collection_90(originCollection_1_000).size}")
-        //println("filter_collection_10 = 1.000 -> ${filter_collection_10(originCollection_1_000).size}")
 
         memoryConsumer.consumeMemory()
     }

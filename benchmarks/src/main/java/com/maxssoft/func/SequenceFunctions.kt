@@ -1914,6 +1914,12 @@ fun distinct_stream_90(sourceCollection: List<Int?>): Stream<Int?> {
         .map { it?.let { it * 90 / 100 }  }
         .distinct()
 }
+/**
+  ...
+  // Более эффективный алгоритм distinct
+  // для упорядоченной последовательности
+ ...
+*/
 
 fun distinct_sequence_10(sourceCollection: List<Int?>): Sequence<Int?> {
     return sourceCollection.asSequence()

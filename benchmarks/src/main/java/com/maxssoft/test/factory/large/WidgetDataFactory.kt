@@ -27,7 +27,8 @@ data class AppWidget(
     val guid: String? = null,
     val isPromo: Boolean = false,
     val isAdvertisement: Boolean = false,
-    val businessType: WidgetBusinessType = WidgetBusinessType.COMMON,
+    val businessType: WidgetBusinessType =
+        WidgetBusinessType.COMMON,
     val attributes: String? = null,
     val adsClickUrl: String? = null,
     val backgroundImage: ImageModel? = null,

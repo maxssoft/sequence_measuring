@@ -1,13 +1,10 @@
-package com.maxssoft.test.exclude.sequence2.calculated
+package com.maxssoft.test.exclude.sequence2.recalculate1
 
 import com.maxssoft.func.MemoryConsumer
 import com.maxssoft.func.createIntList
 import com.maxssoft.func.groupBy2_collection_10
-import com.maxssoft.func.groupBy2_collection_90
 import com.maxssoft.func.groupBy2_sequence_10
-import com.maxssoft.func.groupBy2_sequence_90
 import com.maxssoft.func.groupBy2_stream_10
-import com.maxssoft.func.groupBy2_stream_90
 import com.maxssoft.test.factory.WARN_UP_ITERATIONS
 import com.maxssoft.test.factory.WARN_UP_TIME
 import com.maxssoft.test.factory.collectSum

@@ -17,12 +17,14 @@ import kotlinx.benchmark.Warmup
 import org.openjdk.jmh.annotations.Benchmark
 import org.openjdk.jmh.annotations.Fork
 import java.util.concurrent.TimeUnit
+import java.util.stream.Stream
 
 @State(Scope.Benchmark)
 @Fork(1)
 @Warmup(iterations = WARN_UP_ITERATIONS, time = WARN_UP_TIME, timeUnit = TimeUnit.SECONDS)
 class Crazy {
 
+    private lateinit var originCollection: List<Int?>
     private lateinit var originCollection_10_000: List<Int?>
 
     @Setup
@@ -49,4 +51,17 @@ class Crazy {
     fun crazy_10000_rec_collection(blackHole: Blackhole) {
         crazy_collection(originCollection_10_000).collectSum(blackHole)
     }
+
+    @Benchmark
+    fun test(blackHole: Blackhole) {
+        val percent10 = (originCollection.size * 0.1).toInt()
+        originCollection.asSequence()
+            .map { if ((it ?: 1) % percent10 == 0) null else it }
+            .filter { it != null }
+            .map { (it ?: 0) * 90 / 100 }
+            .distinct()
+            .map { it + 1 }
+            .collectBlackHole(blackHole)
+    }
+
 }
